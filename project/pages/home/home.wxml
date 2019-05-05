@@ -1,0 +1,52 @@
+<view class='container'>
+  <view class='swiper-con'>
+    <swiper indicator-dots="ture" autoplay="true" interval="3000" circular='true' indicator-active-color='#ddd'>
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='tip-con'>
+    <text class='tip'>小提示：连续每日打卡签到会获得更多积分哦！</text>
+  </view>
+  <view class='main-con'>
+    <view class='ranking-list button__float'>
+      <icon></icon>
+      <text>榜单</text>
+    </view>
+    <view class='sign button__float'>
+      <icon></icon>
+      <text>签到</text>
+    </view>
+    <view class='circle-swiper__con'>
+      <swiper current='1'>
+        <swiper-item>
+          <view class='circle-con'>
+            <view class='circle'>
+              <view class='circle-name'>达人圈</view>
+              <view class='circle-slogan'>乒乓好手带你入门</view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='circle-con'>
+            <view class='circle'>
+              <view class='circle-name'>同城圈</view>
+              <view class='circle-slogan'>我们相遇在一座城</view>
+            </view>
+          </view>
+        </swiper-item>
+        <swiper-item>
+          <view class='circle-con'>
+            <view class='circle'>
+              <view class='circle-name'>活动圈</view>
+              <view class='circle-slogan'>以球会友交流互娱</view>
+            </view>
+          </view>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+</view>
