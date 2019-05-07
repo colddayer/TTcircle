@@ -1,52 +1,33 @@
-<view class='container'>
-  <view class='swiper-con'>
-    <swiper indicator-dots="ture" autoplay="true" interval="3000" circular='true' indicator-active-color='#ddd'>
-      <block wx:for="{{imgUrls}}">
-        <swiper-item>
-          <image src="{{item}}" class="slide-image" />
-        </swiper-item>
-      </block>
-    </swiper>
-  </view>
-  <view class='tip-con'>
-    <text class='tip'>小提示：连续每日打卡签到会获得更多积分哦！</text>
-  </view>
-  <view class='main-con'>
-    <view class='ranking-list button__float'>
-      <icon></icon>
-      <text>榜单</text>
-    </view>
-    <view class='sign button__float'>
-      <icon></icon>
-      <text>签到</text>
-    </view>
-    <view class='circle-swiper__con'>
-      <swiper current='1'>
-        <swiper-item>
-          <view class='circle-con'>
-            <view class='circle'>
-              <view class='circle-name'>达人圈</view>
-              <view class='circle-slogan'>乒乓好手带你入门</view>
-            </view>
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+  </swiper-item>
+</swiper>
+
+
+<view class='page-bottom bg-blue'>
+<view class='rank-list bg-blue' bindtap='toRankList'>
+<text class="cuIcon-peoplelist cor"></text>
+<view class='icon-t'>榜单</view>
+</view>
+<view class='rank-list-r bg-blue' bindtap='toSign'>
+<text class="cuIcon-tag cor"></text>
+<view class='icon-t'>打卡</view>
+</view>
+<view class='sign'></view>
+<!-- <view class='tennisnet t-left'></view>
+<view class='tennisnet t-right'></view> -->
+  <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+    <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+      <view class="swiper-item-">
+        <view class='circle'>
+          <view class='star'>
+          <text class="cuIcon-favorfill lg"></text><text class="cuIcon-favorfill lg"></text><text class="cuIcon-favorfill lg"></text>
           </view>
-        </swiper-item>
-        <swiper-item>
-          <view class='circle-con'>
-            <view class='circle'>
-              <view class='circle-name'>同城圈</view>
-              <view class='circle-slogan'>我们相遇在一座城</view>
-            </view>
-          </view>
-        </swiper-item>
-        <swiper-item>
-          <view class='circle-con'>
-            <view class='circle'>
-              <view class='circle-name'>活动圈</view>
-              <view class='circle-slogan'>以球会友交流互娱</view>
-            </view>
-          </view>
-        </swiper-item>
-      </swiper>
+          <view class='circle-id'>{{item.id}}</view>
+          <view class='slogan'>{{item.slogan}}</view>
+        </view>
+      </view>
     </view>
   </view>
 </view>

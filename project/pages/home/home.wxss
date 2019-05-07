@@ -1,83 +1,102 @@
 /* pages/home/home.wxss */
 
-.swiper-con swiper {
+.tower-swiper {
   width: 100%;
-  height: 30vh;
+  position: absolute;
+  bottom: 200rpx;
 }
 
-.swiper-con .slide-image {
-  width: 100%;
+.tower-swiper .tower-item {
+  transform: scale(calc(0.4 + var(--index) / 10));
+  margin-left: calc(var(--left) * 170rpx - 150rpx);
+  z-index: var(--index);
+}
+.swiper-item- {
+  width: 600rpx;
+  height: 600rpx;
+  transform: translateX(-30rpx);
 }
 
-.tip-con {
-  height: 8vh;
-  float: left;
-  text-align: center;
-  width: 100%;
-}
-
-.tip-con .tip {
-  font-size: 24rpx;
-  line-height: 8vh;
-  color: white;
-}
-
-.main-con {
-  box-sizing: border-box;
-  height: 70vh;
-  background-color: #27156A;
-}
-
-.button__float {
-  width: 100rpx;
-  font-size: 32rpx;
-  text-align: center;
-  background-color: white;
-}
-
-.ranking-list {
-  float: left;
-  border-radius:0 3px 3px 0; 
-}
-
-.sign {
-  float: right;
-   border-radius:3px 0 0 3px; 
-}
-
-.circle-con {
-  width: 100%;
-  height: 100%;
+.page-bottom {
+  height: calc(100% - 187px);
   position: relative;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  /* padding-top: 10rpx; */
+}
+
+.tennisnet {
+  width: 2rpx;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+}
+
+.rank-list-r {
+  width: 55rpx;
+  height: 100rpx;
+  border-radius: 5px 0px 0px 5px;
+  float: right;
+  text-align: right;
+}
+
+.rank-list {
+  width: 55rpx;
+  height: 100rpx;
+  border-radius: 0 5px 5px 0;
+  float: left;
+}
+
+.cor {
+  color: white;
+  font-size: 55rpx;
+}
+
+.icon-t {
+  font-size: 20rpx;
+  color: white;
+  text-align: center;
+}
+
+.t-left {
+  left: 50%;
+}
+
+.t-right {
+  left: 52%;
+}
+
+.ball {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  background-color: #aaa;
+  border-radius: 50%;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
 }
 
 .circle {
-  width: 250rpx;
-  height: 250rpx;
+  width: 400rpx;
+  height: 400rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  position: absolute;
-  background-color: white;
+  background-color: rgba(238, 238, 238, 1);
   text-align: center;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
 }
 
-.circle .circle-name {
-  margin: 10rpx;
+.circle .star {
+  margin-top: 100rpx;
 }
 
-.circle .circle-slogan {
-  font-size: 24rpx;
+.circle .circle-id {
+  margin-top: 10rpx;
+  font-size: 46rpx;
+  font-weight: bold;
+  color: rgba(80, 80, 80, 1);
 }
-.circle-swiper__con{
-  overflow: hidden;
-  width: 100%;
-  height: calc(88% - 32rpx);
-}
-.circle-swiper__con swiper{
-  height: 100%;
+
+.slogan {
+  margin-top: 20rpx;
 }

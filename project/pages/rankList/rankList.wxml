@@ -1,0 +1,17 @@
+<view class='page-bottom bg-blue'>
+<view class='list'>
+<view class='list-title'>同城段位积分排行</view>
+<block wx:for='{{rankList}}'>
+<view class='li {{item.number==active?"active":""}}' bindtouchstart='tapDown' bindtouchend='tapEnd' id='{{item.number}}'>
+<view class='number'>{{item.number}}</view>
+<image class='li-img'>{{item.img}}</image>
+<view class='detail'>
+<view class='nickName'>{{item.nickName}}</view>
+<view class='rank'>{{item.rank}}</view>
+</view>
+<view class='level'>{{item.level}}</view>
+<view class='score'>{{item.score}}</view>
+</view>
+</block>
+</view>
+</view>
