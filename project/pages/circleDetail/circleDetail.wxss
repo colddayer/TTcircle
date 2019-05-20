@@ -1,0 +1,10 @@
+/* pages/circleDetail/circleDetail.wxss */
+input{
+  text-align: center;
+}
+.img{
+  margin: 0 auto;
+}
+.textarea{
+  margin-top: 32rpx;
+}

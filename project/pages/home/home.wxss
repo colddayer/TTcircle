@@ -11,10 +11,19 @@
   margin-left: calc(var(--left) * 170rpx - 150rpx);
   z-index: var(--index);
 }
+
 .swiper-item- {
   width: 600rpx;
   height: 600rpx;
   transform: translateX(-30rpx);
+}
+
+.notice {
+  height: 50rpx;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  line-height: 50rpx;
 }
 
 .page-bottom {

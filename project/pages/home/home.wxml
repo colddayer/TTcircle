@@ -4,29 +4,38 @@
   </swiper-item>
 </swiper>
 
+<swiper autoplay='true' vertical='true' circular="true" class='notice bg-blue'>
+  <swiper-item wx:for='{{notice}}' wx:key>
+    <view>{{item}}</view>
+  </swiper-item>
+</swiper>
 
 <view class='page-bottom bg-blue'>
-<view class='rank-list bg-blue' bindtap='toRankList'>
-<text class="cuIcon-peoplelist cor"></text>
-<view class='icon-t'>榜单</view>
-</view>
-<view class='rank-list-r bg-blue' bindtap='toSign'>
-<text class="cuIcon-tag cor"></text>
-<view class='icon-t'>打卡</view>
-</view>
-<view class='sign'></view>
-<!-- <view class='tennisnet t-left'></view>
+  <view class='rank-list bg-blue' bindtap='toRankList'>
+    <text class="cuIcon-peoplelist cor"></text>
+    <view class='icon-t'>榜单</view>
+  </view>
+  <view class='rank-list-r bg-blue' bindtap='toSign'>
+    <text class="cuIcon-tag cor"></text>
+    <view class='icon-t'>打卡</view>
+  </view>
+  <view class='sign'></view>
+  <!-- <view class='tennisnet t-left'></view>
 <view class='tennisnet t-right'></view> -->
   <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
     <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
       <view class="swiper-item-">
-        <view class='circle'>
-          <view class='star'>
-          <text class="cuIcon-favorfill lg"></text><text class="cuIcon-favorfill lg"></text><text class="cuIcon-favorfill lg"></text>
+        <navigator url='../{{item.name}}/{{item.name}}'>
+          <view class='circle'>
+            <view class='star'>
+              <text class="cuIcon-favorfill lg"></text>
+              <text class="cuIcon-favorfill lg"></text>
+              <text class="cuIcon-favorfill lg"></text>
+            </view>
+            <view class='circle-id'>{{item.id}}</view>
+            <view class='slogan'>{{item.slogan}}</view>
           </view>
-          <view class='circle-id'>{{item.id}}</view>
-          <view class='slogan'>{{item.slogan}}</view>
-        </view>
+        </navigator>
       </view>
     </view>
   </view>

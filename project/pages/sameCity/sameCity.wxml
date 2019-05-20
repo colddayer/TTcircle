@@ -1,0 +1,39 @@
+<view class="cu-bar search bg-white">
+  <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索球馆" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <text>南昌</text>
+    <text class="cuIcon-triangledownfill"></text>
+  </view>
+</view>
+<map id='map' show-location='true' latitude="{{latitude}}" longitude="{{longitude}}" scale='{{scale}}' markers='{{markers}}' bindmarkertap='markerTap'>
+
+  <cover-view class='mask' wx:if='{{centerButton.ontab}}'></cover-view>
+  <cover-view class='controls {{!centerButton.ontab?"controls-active":""}}'>
+    <cover-view class='center-button bg-blue {{centerButton.active}}' bindtap='centerButton'>
+      {{centerButton.content}}
+    </cover-view>
+    <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>发起球圈</cover-view>
+    <cover-view class='button date-circle bg-blue' wx:if='{{centerButton.ontab}}'>一键约球</cover-view>
+  </cover-view>
+  <cover-view class='goal-circle' wx:if='{{markerTap}}' bindtap='hidCircle'>
+    <cover-view class='main-circle-con'>
+      <cover-view class='main-circle'>
+      <cover-image src='../../images/394.jpg' class='circleImg'></cover-image>
+      </cover-view>
+      <cover-view class='label about-circle' bindtap='goCircle'>相关球圈</cover-view>
+      <cover-view class='label active-time'>
+        <cover-view class='active-time__text'>活动时间14:00至20:30</cover-view>
+      </cover-view>
+      <cover-view class='label table'>4张球桌</cover-view>
+      <cover-view class='address'>
+        <cover-view class='address__text'>
+          地址：昌北经开区广兰大道418号东华理工大学体育馆一楼乒乓球馆
+        </cover-view>
+      </cover-view>
+    </cover-view>
+  </cover-view>
+</map>

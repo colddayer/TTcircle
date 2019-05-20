@@ -1,0 +1,12 @@
+<!--pages/aboutCircle/aboutCircle.wxml-->
+<view class='circle-con' wx:for='{{aboutCircle}}'>
+  <navigator url='../circleDetail/circleDetail'>
+    <view class='list'>
+      <image src='{{item.img}}' class='list-img'></image>
+      <view class='list-text'>{{item.text}}</view>
+      <view class='list-icon'>
+        <text class="cuIcon-right lg text-gray"></text>
+      </view>
+    </view>
+  </navigator>
+</view>

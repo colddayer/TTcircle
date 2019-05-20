@@ -30,10 +30,16 @@ Page({
       url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
     }],
     circleLise: [
-      { id: '达人圈',slogan: '乒乓好手带你提升' }, 
-      { id: '同城圈',slogan: '我们相遇在一个城市'}, 
-      { id: '赛事圈',slogan: '以球会友交流互娱'},
-      { id: '活动圈', slogan: '乒乓好手带你提升' },
+      { id: '活动圈', slogan: '乒乓好手带你提升', name: 'activity' },
+      { id: '赛事圈', slogan: '以球会友交流互娱', name:'competition'},
+      { id: '同城圈', slogan: '我们相遇在一个城市', name: 'sameCity' }, 
+      { id: '达人圈', slogan: '乒乓好手带你提升', name: 'star' }, 
+    ],
+    notice:[
+      '小提示:段位积分越高，排行榜排名也越高',
+      '同城圈具有一键约球功能，快去寻找你的球友吧',
+      '欢迎进入乒乓圈，这里有你想要的',
+      '小提示:连续多日打卡，可以获得更多积分哦'
     ]
   },
   onLoad() {

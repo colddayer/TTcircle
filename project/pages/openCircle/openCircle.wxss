@@ -1,0 +1,4 @@
+/* pages/openCircle/openCircle.wxss */
+input{
+  text-align: center
+}
