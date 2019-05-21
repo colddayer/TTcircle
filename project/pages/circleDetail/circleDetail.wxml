@@ -24,7 +24,7 @@
 
 <view class="cu-bar bg-white margin-top">
   <view class="action">
-    图片上传
+    相关图片
   </view>
 </view>
 <view class="cu-form-group">

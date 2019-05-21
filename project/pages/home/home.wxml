@@ -25,7 +25,7 @@
   <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
     <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
       <view class="swiper-item-">
-        <navigator url='../{{item.name}}/{{item.name}}'>
+        <navigator url='../{{item.name}}/{{item.name}}' hover-class='none'>
           <view class='circle'>
             <view class='star'>
               <text class="cuIcon-favorfill lg"></text>
