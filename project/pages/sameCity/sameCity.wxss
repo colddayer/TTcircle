@@ -142,7 +142,7 @@
 }
 
 .circleImg {
-  border-radius:50%; 
+  border-radius: 50%;
   width: 80%;
   height: 80%;
   margin-top: 10%;
@@ -199,4 +199,11 @@
 .table {
   left: 300rpx;
   top: 180rpx;
+}
+
+.list-address {
+  margin: 20rpx 0;
+}
+.close-list{
+  font-size: 30rpx;
 }

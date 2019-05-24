@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/openCircle/openCircle",
+    "pages/sameCity/sameCity",
     "pages/circleDetail/circleDetail",
     "pages/aboutCircle/aboutCircle",
-    "pages/sameCity/sameCity",
-    "pages/openCircle/openCircle",
-    "pages/rankList/rankList",
     "pages/message/message",
     "pages/mine/mine",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/rankList/rankList"
   ],
   "window": {
     "backgroundTextStyle": "light",

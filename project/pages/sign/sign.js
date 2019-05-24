@@ -7,19 +7,22 @@ Page({
         month: "current",
         day: '1',
         color: '#fff',
-        background: '#123456'
+        background: '#123456',
+        yue:4
       },
       {
         month: "current",
         day: '2',
         color: '#fff',
-        background: '#123456'
+        background: '#123456',
+        yue:4
       },
       {
         month: "current",
         day: '3',
         color: '#fff',
-        background: '#123456'
+        background: '#123456',
+        yue:4
       }
     ]
   },
@@ -47,7 +50,8 @@ Page({
         month: 'current',
         day: evt.detail.day,
         color: '#fff',
-        background: '#123456'
+        background: '#123456',
+        yue:4
       }
     ]
     this.setData({
