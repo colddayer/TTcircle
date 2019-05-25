@@ -16,7 +16,7 @@
     <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
   </view>
 </view>
-<map id='map' show-location='true' latitude="{{latitude}}" longitude="{{longitude}}" scale='{{scale}}' markers='{{markers}}' bindmarkertap='markerTap'>
+<map id='map' show-location='true' latitude="{{latitude}}" longitude="{{longitude}}" scale='{{scale}}' markers='{{markers}}' bindmarkertap='markerTap' bindregionchange='moveMap'>
 
   <cover-view class='mask' wx:if='{{centerButton.ontab}}'></cover-view>
   <cover-view class='controls {{!centerButton.ontab?"controls-active":""}}'>
@@ -33,12 +33,12 @@
       </cover-view>
       <cover-view class='label about-circle' bindtap='goCircle'>相关球圈</cover-view>
       <cover-view class='label active-time'>
-        <cover-view class='active-time__text'>活动时间14:00至20:30</cover-view>
+        <cover-view class='active-time__text'>活动时间{{current.time}}</cover-view>
       </cover-view>
-      <cover-view class='label table'>4张球桌</cover-view>
+      <cover-view class='label table'>{{current.table}}张球桌</cover-view>
       <cover-view class='address'>
         <cover-view class='address__text'>
-          地址：昌北经开区广兰大道418号东华理工大学体育馆一楼乒乓球馆
+          地址：{{current.address}}
         </cover-view>
       </cover-view>
     </cover-view>

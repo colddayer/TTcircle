@@ -46,7 +46,7 @@
     </view>
     <view class="cu-form-group">
       <view class="title">详细地址</view>
-      <textarea placeholder="{{placeholder.four}}" id='address' value='{{addressValue}}' bindtap='searchAddress'></textarea>
+      <textarea placeholder="{{placeholder.four}}" id='address' value='{{addressValue}}' bindtap='searchAddress' disabled='{{disabled}}'></textarea>
     </view>
     <view class="cu-form-group align-start">
       <view class="title">球圈简介</view>

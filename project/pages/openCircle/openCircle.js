@@ -14,7 +14,8 @@ Page({
       four: '东华理工大学广兰校区-体育馆',
       five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
     },
-    backfill:''
+    backfill: '',
+    disabled: true
   },
   ChooseImage() {
     wx.chooseImage({
@@ -62,7 +63,8 @@ Page({
             five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
           },
           latitude: this.data.suggestion[i].latitude,
-          longitude: this.data.suggestion[i].longitude
+          longitude: this.data.suggestion[i].longitude,
+          disabled: false
         });
       }
     }
@@ -107,7 +109,8 @@ Page({
         four: '东华理工大学广兰校区-体育馆',
         five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
       },
-      addressValue:this.data.backfill
+      addressValue: this.data.backfill,
+      disabled: false
     })
   },
   inputName(e) {
@@ -140,7 +143,7 @@ Page({
       introduce: e.detail.value
     })
   },
-  formSubmit(){
+  formSubmit() {
     const circleInfo = {};
     circleInfo.name = this.data.name;
     circleInfo.members = this.data.members;
@@ -152,6 +155,27 @@ Page({
     circleInfo.latitude = this.data.latitude;
     circleInfo.longitude = this.data.longitude;
     circleInfo.introduce = this.data.introduce;
-    console.log(circleInfo)
+
+    wx.getStorage({
+      key: 'circleInfoArr',
+      success: res => {
+        wx.setStorage({
+          key: 'circleInfoArr',
+          data: res.data.concat([circleInfo]),
+          success: () => {
+            wx.navigateBack()
+          }
+        })
+      },
+      fail: (res) => {
+        wx.setStorage({
+          key: 'circleInfoArr',
+          data: [circleInfo],
+          success: () => {
+            wx.navigateBack()
+          }
+        })
+      }
+    })
   }
 })

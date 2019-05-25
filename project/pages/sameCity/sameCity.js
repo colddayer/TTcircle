@@ -29,6 +29,66 @@ Page({
         })
       }
     })
+    wx.getStorage({
+      key: 'circleInfoArr',
+      success: res => {
+        let markers = this.data.markers;
+        let count = 0;
+        for (let i of res.data) {
+          markers.push({
+            iconPath: '../../images/circle.png',
+            id: count,
+            latitude: i.latitude,
+            longitude: i.longitude,
+            width: 50,
+            height: 50,
+            detail: {
+              name: i.name,
+              members: i.members,
+              areana: i.areana,
+              img: i.img,
+              time: i.time,
+              address: i.address,
+              introduce: i.introduce,
+              table:i.table
+            }
+          })
+          count++;
+        }
+        this.setData({ markers })
+      }
+    })
+  },
+  onShow() {
+    wx.getStorage({
+      key: 'circleInfoArr',
+      success: res => {
+        let markers = [];
+        let count = 0;
+        for (let i of res.data) {
+          markers.push({
+            iconPath: '../../images/circle.png',
+            id: count,
+            latitude: i.latitude,
+            longitude: i.longitude,
+            width: 50,
+            height: 50,
+            detail: {
+              name: i.name,
+              members: i.members,
+              areana: i.areana,
+              img: i.img,
+              time: i.time,
+              address: i.address,
+              introduce: i.introduce,
+              table:i.table
+            }
+          })
+          count++;
+        }
+        this.setData({ markers })
+      }
+    })
   },
   centerButton() {
     if (!this.data.centerButton.ontab) {
@@ -56,6 +116,18 @@ Page({
     })
   },
   markerTap(e) {
+    let markers = this.data.markers;
+    for (let i of markers) {
+      if (i.id == e.markerId) {
+        this.setData({
+          current:{
+            time:i.detail.time,
+            table:i.detail.table,
+            address:i.detail.address
+          }
+        })
+      }
+    }
     this.setData({
       markerTap: true
     })
@@ -110,5 +182,8 @@ Page({
     this.setData({
       listHid: true
     })
+  },
+  moveMap(e) {
+    // console.log(e)
   }
 })
