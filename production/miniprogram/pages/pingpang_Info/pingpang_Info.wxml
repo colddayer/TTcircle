@@ -1,0 +1,9 @@
+<view class="container">
+  <section title="电话" info="{{personInfo.phone}}" infoname="phone" bind:changend="getinfo" />
+  <section title="球龄" info="{{personInfo.years}}" infoname="years" bind:changend="getinfo" />
+  <section title="持拍" info="{{personInfo.bat}}" infoname="bat" bind:changend="getinfo" />
+  <section title="使用底板" info="{{personInfo.board}}" infoname="board" bind:changend="getinfo" />
+  <section title="正手胶皮" info="{{personinfo.infront_rubber}}" infoname="infront_rubber" bind:changend="getinfo" />
+  <section title="反手胶皮" info="{{personinfo.behind_rubber}}" infoname="behind_rubber" bind:changend="getinfo" isbottom="true" />
+  <button type='primary' class='button' bindtap="submit">点击提交</button>
+</view>

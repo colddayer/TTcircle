@@ -1,0 +1,126 @@
+<scroll-view 
+  scroll-y="true"
+  style='height:{{windowHight}}px;'
+  class='friend_Dynamic_Content'>
+  <!-- 头部朋友圈成员按钮 -->
+  <view class='member_button' bindtap='showMember'>
+    <view class='member'></view>
+    <!-- <view class=''></view> -->
+  </view>
+  <!-- 头部时间显示 -->
+  <view class='header'>
+    <view class='now_Time'>{{now_Time}}</view>
+  </view>
+  <!-- 动态内容的显示 -->
+  <view class='Dynamic_Content'>
+    <block wx:for="{{Content}}" wx:key="item" wx:for-index = "index">
+      <!-- 显示用户发布的动态内容 -->
+      <view class='Content'>
+          <view class='Content_left'>
+            <image src = "{{item.header_image}}"/>
+          </view>
+          <view class='Content_mid'>
+            <view class='top'>
+              <view class='name'>{{item.name}}</view>
+              <view class='time'>{{item.time}}</view>
+            </view>
+            <!-- 内容限高6行 -->
+            <text  style='-webkit-line-clamp: {{show_More_Content}}'>{{item.content}}</text>
+            <!-- 判断数组长度来判断是否显示更多 -->
+            <view style = " display: {{item.content.length > 90 ? 'block' : 'none'}}">
+              <view class='more_content' bindtap='show_more_content' style='display: {{show_More_Content == 6 ? "block" : "none" }}'>更多</view>
+              <view class='more_content' bindtap='show_more_content' style='display: {{show_More_Content == 20 ? "block" : "none" }}'>收起</view>
+            </view>
+          </view> 
+          <view class='Content_right'>
+            <view class='more' bindtap='show_more' data-id='{{item.content_id}}' data-index = '{{index}}'>
+              <view class='icon'>
+                <image src='../../images/comment.png'/>
+              </view>
+              <view class='text' >更多评论  {{item.Comment.length}}</view>
+            </view>
+            <view class='like'  bindtap='select_like' data-id='{{item.content_id}}'>
+              <view class='icon'>
+              <image src="{{item.you_like ? '../../images/like' : '../../images/unlike'}}.png"/>
+              </view>
+              <view class='text'>喜欢 {{item.like}}</view>
+            </view>
+          </view>
+      </view>
+        <view style='text-align: center; display:{{item.imgUrl ? "block":"none"}}; margin-top: 20rpx;'>
+           <image src='{{item.imgUrl}}' style='height: 400rpx; width:500rpx; vertical-align: middle;' ></image>
+        </view>
+      <!-- 显示相应的下方的评论之类 显示最新三个-->
+      <view class='Comment'>
+        <view class= "container">
+          <view class='title'>最新评论</view> 
+          <block wx:for="{{item.Comment}}" wx:key = "index" wx:for-index = "j" >
+            <view class='Comment_List' wx:if = "{{ j < 3 }}">
+                <view class='Comment_header_image'>
+                  <image src="{{item.header_image}}"/>
+                </view>
+                <view class='Comment_content'>
+                    <!-- 评论者名字 -->
+                    <view class='Comment_name'>{{item.name}}</view>
+                    <!-- 评论内容 限制两行-->
+                    <view class='Comment_content_detail'>{{item.content}}</view>
+                </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 横线 -->
+      <view class='footer'>
+      <view class='transverse_line'></view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
+  <!-- 发布动态的按钮 -->
+<navigator class="Add_Content" url="../publish_friend_detail/publish_friend_detail">
+  <view class='button'>
+    <view class='pan'></view>
+    <view class='text'>写动态</view>
+  </view>
+</navigator>
+  <!-- 更多评论里的内容 -->
+<view class='more_member' style='display: {{show_More ? "block" : "none"}}'>
+  <view class='container'>
+    <view class='Comment_box'>
+      <block wx:for="{{Content}}" wx:key="index" wx:for-index = "i">
+        <view class='Comment' wx:if = "{{ i === choose_Index }}">
+            <view class= "container">
+              <view class='header'>
+                  <view class='comment_number'>共{{Content.length + 1}}条评论</view>
+                  <view class='close' bindtap='closs_more'></view>
+              </view>
+              <view class='title'>最新评论</view> 
+              <scroll-view scroll-y class='more_member_scroll_view' style='max-height: 1000rpx; padding-right: 15rpx'>
+                <view class='Comment_window'>
+                  <block wx:for="{{item.Comment}}" wx:key = "index"  >
+                    <view class='Comment_List'>
+                        <view class='Comment_header_image'>
+                          <image src="{{item.header_image}}"/>
+                        </view>
+                        <view class='Comment_content'>
+                            <!-- 评论者名字 -->
+                            <view class='Comment_name'>{{item.name}}</view>
+                            <!-- 评论内容 限制两行-->
+                            <view class='Comment_content_detail'>{{item.content}}</view>
+                        </view>
+                    
+                    
+                    </view>
+                  </block>
+                </view>
+              </scroll-view>
+            </view>
+          </view>
+      </block>
+    </view>
+      <view class='input-view'>
+        <input type='text' bindblur='input-content' class='input-style'/>
+        <view class='send_message'></view>
+      </view>
+    </view>
+</view>

@@ -1,0 +1,83 @@
+<view class="page">
+  <!-- 个人信息块 -->
+  <view class="header-card">
+    <view class="userinfo">
+      <image class="userimage" src="{{personInfo.avatarUrl}}" />
+      <view class="info">
+        <view class="name">
+          <input class='username' wx:if="{{changename}}" value='{{personInfo.name}}' focus='true' bindblur='setname' ></input>
+          <text class="username" wx:else bindtap='changename' >{{personInfo.name}}</text>
+        </view>
+        <view class="level">
+          <text class="levelnumber">乒乓球段位：{{level}}</text>
+        </view>
+        <view class="intergal">
+          <text class="textintergal">我的积分：{{personInfo.intergal}}分</text>
+        </view>
+      </view>
+      <view bindtap='ToPage' data-name="pingpang_Info" class='changeicon-box'>
+        <image src="../../images/change.png" class="changeicon" />
+      </view>
+      <view class="resume">
+        <input type="text" wx:if="{{changecontext}}" placeholder='请输入你的个人简介' bindblur='setcontext' focus='true' value="{{personInfo.context}}"></input>
+        <text class="context" wx:else bindtap='changecontext'>个人简介：{{personInfo.context}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 信息盒子 -->
+  <view class="infocard">
+    <view class="like box" bindtap="ToPage" data-name="like">
+      <view class="number">
+        <text>{{infocard.like}}</text>
+      </view>
+      <view class="title">
+        <text>获赞</text>
+      </view>
+    </view>
+    <view class="attention box" bindtap="ToPage" data-name="attention">
+      <view class="number">
+        <text>{{infocard.attention}}</text>
+      </view>
+      <view class="title">
+        <text>关注</text>
+      </view>
+    </view>
+    <view class="fans box" bindtap="ToPage" data-name="fans">
+      <view class="number">
+        <text>{{infocard.fans}}</text>
+      </view>
+      <view class="title">
+        <text>粉丝</text>
+      </view>
+    </view>
+  </view>
+  <!-- 项目栏 -->
+  <view class="project_bar">
+    <view class="project collections" bindtap="ToPage" data-name="collection">
+      <image class="image" src="../../images/collection.png" />
+      <view class="title">精选收藏</view>
+      <image class="righticon" src="../../images/rightto.png" />
+    </view>
+    <view class="project activities" bindtap="ToPage" data-name="activity">
+      <image class="image" src="../../images/activity.png" />
+      <view class="title">我的活动</view>
+      <view class="responed" wx:if="{{waitfordone !=0 }}">{{waitfordone}}个待办项</view>
+      <image class="righticon" src="../../images/rightto.png" />
+    </view>
+    <view class="project managment" bindtap="ToPage" data-name="managment">
+      <image class='image' src="../../images/form.png"></image>
+      <view class="title">球圈管理</view>
+      <image class="righticon" src="../../images/rightto.png" />
+    </view>
+    <view class="project suggest" bindtap="ToPage" data-name="suggest">
+      <image class="image" src="../../images/suggest.png" />
+      <view class="title">意见反馈</view>
+      <image class="righticon" src="../../images/rightto.png" />
+    </view>
+  </view>
+  <!-- 底部块 -->
+  <view class="footer">
+    <view class="andmore" bindtap="ToPage" data-name='abouts'>关于乒乓圈</view>
+    <view class="footbg"></view>
+  </view>
+</view>

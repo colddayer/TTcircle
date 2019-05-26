@@ -1,0 +1,25 @@
+// 签到页面
+{
+  "day": "string", //  签到日期  
+  "month": "number" //  签到月份 
+}
+// 榜单页面
+{
+  "number":"number", // 排行榜  第几名
+  "img": "string",  //  头像  
+  "nickName":"string", // 昵称
+  "level":"string", //  段位
+  "score":"string"  //  积分
+}
+// 同城圈-球圈信息
+{
+  "leader":"string"  //  圈主
+  "name":"string" //  球圈名
+  "members":"number"  // 球圈规模
+  "areana":"string" //  球馆名称
+  "table":"number"  //  球桌数量
+  "img":"string"  // 球圈图片
+  "time":"string" //  时间
+  "address":"string"  //地址
+  "introduce":"string"  //球圈简介
+}

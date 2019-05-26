@@ -1,0 +1,11 @@
+.container{
+  height: 100%;
+  padding: 0 20rpx;
+}
+.button{
+  position: absolute;
+  left: 30rpx;
+  right: 30rpx;
+  border-radius: 40rpx;
+  bottom: 40rpx;
+}

@@ -1,0 +1,159 @@
+/* pages/home/home.wxss */
+.getUser{
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  z-index: 100;
+  opacity: 0;
+}
+.tower-swiper {
+  width: 100%;
+  position: absolute;
+  bottom: 200rpx;
+}
+
+.tower-swiper .tower-item {
+  transform: scale(calc(0.4 + var(--index) / 10));
+  margin-left: calc(var(--left) * 170rpx - 150rpx);
+  z-index: var(--index);
+}
+
+.swiper-item- {
+  width: 600rpx;
+  height: 600rpx;
+  transform: translateX(-30rpx);
+}
+
+.notice {
+  height: 50rpx;
+  text-align: center;
+  color: white;
+  border: 1px solid white;
+  line-height: 50rpx;
+}
+
+.page-bottom {
+  height: calc(100% - 187px);
+  position: relative;
+  background-image: url(https://image.weilanwl.com/color2.0/cardBg.png);
+  background-size: cover;
+  background-position: center;
+  /* padding-top: 10rpx; */
+}
+
+.tennisnet {
+  width: 2rpx;
+  height: 100%;
+  background-color: #eee;
+  position: absolute;
+}
+
+.rank-list-r {
+  width: 55rpx;
+  height: 100rpx;
+  border-radius: 5px 0px 0px 5px;
+  float: right;
+  text-align: right;
+}
+
+.rank-list {
+  width: 55rpx;
+  height: 100rpx;
+  border-radius: 0 5px 5px 0;
+  float: left;
+}
+
+.cor {
+  color: white;
+  font-size: 55rpx;
+}
+
+.icon-t {
+  font-size: 20rpx;
+  color: white;
+  text-align: center;
+}
+
+.t-left {
+  left: 50%;
+}
+
+.t-right {
+  left: 52%;
+}
+
+.ball {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  background-color: #aaa;
+  border-radius: 50%;
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
+}
+
+.circle {
+  width: 400rpx;
+  height: 400rpx;
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-color: rgba(238, 238, 238, 1);
+  text-align: center;
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+}
+
+.circle .star {
+  margin-top: 100rpx;
+}
+
+.circle .circle-id {
+  margin-top: 10rpx;
+  font-size: 46rpx;
+  font-weight: bold;
+  color: rgba(80, 80, 80, 1);
+}
+
+.slogan {
+  margin-top: 20rpx;
+}
+#mask{
+  width: 100%;
+  height: 100vh;
+  top:0;
+  background-color: rgba(0, 0, 0, .6);
+  position: absolute;
+  z-index: 5;
+}
+.setting-con{
+  width: 90%;
+  height: 300rpx;
+  background-color: white;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+}
+.setting{
+  position: absolute;
+  bottom: 20rpx;
+  width: 200rpx;
+  left: 50%;
+  transform:translateX(-50%);
+  font-size: 30rpx; 
+  background-color: #39B54A;
+  color: white;
+}
+.title{
+  text-align: center;
+  width: 100%;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.content{
+  text-align: center;
+  height: 130rpx;
+  background-color: #F8F8F8;
+  line-height: 130rpx;
+}

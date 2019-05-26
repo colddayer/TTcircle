@@ -1,0 +1,32 @@
+<!--pages/message_detail/message_detail.wxml-->
+<!-- 个人留言详情界面 -->
+<view class='Page'>
+  <scroll-view class='message_list' scroll-into-view='{{toView}}' scroll-y style='height: {{scrollHeight}};'>
+    <block wx:for = "{{message}}" wx:key = "index" wx:for-index ="index">
+      <!-- <view class='header'>
+        <view class='{{item.msgtype == 1 ? "now_Time" : "none" }}'>{{item.msg}}</view>
+      </view> -->
+      <view class='container' id='msg-{{index}}' >
+        <view class='{{item.my_id == other_id ? "other_message_list" : "none" }}' >
+          <view class='other_header'>
+            <image src='../../images/Stone.png'/>
+          </view>
+          <view class='other_message'> 
+          {{item.msg}}
+          </view>
+        </view>
+        <view class='{{item.other_id == other_id ? "your_message_list" : "none" }}' >
+          <view class='your_message'> {{item.msg}}</view>
+          <view class='your_header'>
+            <image src='../../images/Stone.png'/>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view class='input-view' style='bottom: {{inputBottom}}'>
+        <input type='text' id = 'input-room' bindinput='inputContent'  class='input-style' maxlength = '100' value = "{{value}}" bindblur='blur' bindfocus='focus' adjust-position = "{{false}}" bindtap='updateView' />
+        <view class='send_message' bindtap='send_message' ></view>
+    </view>
+  </scroll-view>
+</view>
+
