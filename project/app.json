@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/sign/sign",
     "pages/openCircle/openCircle",
     "pages/sameCity/sameCity",
     "pages/circleDetail/circleDetail",
     "pages/aboutCircle/aboutCircle",
     "pages/message/message",
     "pages/mine/mine",
-    "pages/sign/sign",
     "pages/rankList/rankList"
   ],
   "window": {

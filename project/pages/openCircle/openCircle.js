@@ -144,17 +144,17 @@ Page({
     })
   },
   formSubmit() {
-    const circleInfo = {};
-    circleInfo.name = this.data.name;
-    circleInfo.members = this.data.members;
-    circleInfo.areana = this.data.areana;
-    circleInfo.table = this.data.table;
-    circleInfo.img = this.data.imgList[0];
-    circleInfo.time = this.data.time;
-    circleInfo.address = this.data.backfill;
-    circleInfo.latitude = this.data.latitude;
-    circleInfo.longitude = this.data.longitude;
-    circleInfo.introduce = this.data.introduce;
+    const circleInfo = {};// 球圈信息
+    circleInfo.name = this.data.name; // 球圈名
+    circleInfo.members = this.data.members; // 球圈规模
+    circleInfo.areana = this.data.areana; //球馆名
+    circleInfo.table = this.data.table; //球桌数量
+    circleInfo.img = this.data.imgList[0]; //图片地址
+    circleInfo.time = this.data.time; //活动时间
+    circleInfo.address = this.data.backfill; //详细地址
+    circleInfo.latitude = this.data.latitude; //经度
+    circleInfo.longitude = this.data.longitude; //纬度
+    circleInfo.introduce = this.data.introduce;//简介
 
     wx.getStorage({
       key: 'circleInfoArr',

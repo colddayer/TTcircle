@@ -1,0 +1,61 @@
+/* components/info-section/section.wxss */
+
+/* pages/personinfo/personInfo.wxss */
+
+page {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  padding: 12rpx 40rpx;
+}
+
+.section {
+  height: 100rpx;
+  padding-top: 40rpx;
+  box-sizing: content-box;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(51, 51, 51, 1);
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  margin-top: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.title {
+  flex: 3;
+  font-size: 16px;
+  padding-left: 30rpx;
+}
+
+.box {
+  display: flex;
+  font-size: 14px;
+  flex: 10;
+}
+
+/* .box .null{
+  flex: 1;
+} */
+
+.box .info {
+  width: 100%;
+}
+
+.box .info-text {
+  margin: auto 30rpx auto 0;
+}
+
+.box input {
+  width: 100%;
+  margin: auto 30rpx auto 0;
+}

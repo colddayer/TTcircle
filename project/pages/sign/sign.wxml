@@ -1,1 +1,24 @@
-<calendar days-color='{{arr}}' binddayClick="dayClick" header='{{header}}' weeks-type='cn'/>
+<view class='header'>
+<view class='year'>{{year}}</view>
+<view class='month'>{{month}}</view>
+<view class='left-circle'></view>
+<view class='left-circle__small'></view>
+<view class='right-circle'></view>
+</view>
+<view class='sign sign-left'>
+<view class='dot dot-1'></view>
+<view class='dot dot-2'></view>
+<view class='dot dot-3'></view>
+<view class='dot dot-4'></view>
+<view class='sign-day'>{{total}}<text class='i-day'>天</text></view>
+<view class='sign-text'>累计打卡</view>
+</view>
+<view class='sign sign-right'>
+<view class='dot dot-1'></view>
+<view class='dot dot-2'></view>
+<view class='dot dot-3'></view>
+<view class='dot dot-4'></view>
+<view class='sign-day'>{{continuity}}<text class='i-day'>天</text></view>
+<view class='sign-text'>连续打卡</view>
+</view>
+<calendar days-color='{{arr}}' binddayClick="dayClick" header='{{header}}' weeks-type='cn' class='calendar' board-style='calendar-style'/>

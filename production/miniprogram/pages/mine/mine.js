@@ -24,7 +24,7 @@ Page({
   ToPage(event) {
     // console.log(`../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`)
     wx.navigateTo({
-      url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,
+      url: `../pingpang_info/pingpang_info`,
     })
   },
   changecontext() {

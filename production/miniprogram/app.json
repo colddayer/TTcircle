@@ -9,7 +9,7 @@
     "pages/message/message",
     "pages/mine/mine",
     "pages/rankList/rankList",
-    "pages/personInfo/personInfo",
+    "pages/pingpang_info/pingpang_info",
     "pages/publish_friend_detail/publish_friend_detail",
     "pages/friend_detail/friend_detail",
     "pages/message_detail/message_detail",
@@ -17,7 +17,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "乒乓圈",
     "navigationBarTextStyle": "white"
   },

@@ -1,0 +1,13 @@
+<!--components/person-info/person-info.wxml-->
+<view class='container'>
+  <view class='headbox'>
+    <image class='avatarpic' src="{{personInfo.avatarUrl}}"></image>
+    <view class=''>{{level}}</view>
+    <button class='liuyan'>留言</button>
+    <view class='context'>
+      <text>个人简介</text><text>{{personinfo.context}}</text>
+    </view>
+  </view>
+  <view class='nextinfo'>
+  </view>
+</view>
