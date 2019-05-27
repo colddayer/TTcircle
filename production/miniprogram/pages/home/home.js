@@ -32,7 +32,7 @@ Page({
     }],
     circleLise: [{
       id: '活动圈',
-      slogan: '乒乓好手带你提升',
+      slogan: '更多活动一起来玩',
       name: 'activity',
       index:0
     },
@@ -192,6 +192,7 @@ Page({
         const data = {
           name: app.globalData.userInfo.nickName,
           avatarUrl: app.globalData.userInfo.avatarUrl,
+          city: app.globalData.userInfo.city,
         };
         // 显示加载
         wx.showLoading({

@@ -19,6 +19,10 @@ Component({
     isbottom: {
       type: Boolean,
       value: false
+    },
+    type:{
+      type:String,
+      value:'text'
     }
   },
 

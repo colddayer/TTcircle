@@ -2,6 +2,7 @@ const QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
   key: 'HMGBZ-U5XCX-TUX4Y-ZPUH3-7RRX5-BZBCW' // 必填
 });
+const app = getApp();
 Page({
   data: {
     imgList: [],
@@ -145,8 +146,8 @@ Page({
   },
   formSubmit() {
     const circleInfo = {};// 球圈信息
-    circleInfo.name = this.data.name; // 球圈名
-    circleInfo.members = this.data.members; // 球圈规模
+    // circleInfo.name = this.data.name; // 球圈名
+    // circleInfo.members = this.data.members; // 球圈规模
     circleInfo.areana = this.data.areana; //球馆名
     circleInfo.table = this.data.table; //球桌数量
     circleInfo.img = this.data.imgList[0]; //图片地址
@@ -154,28 +155,21 @@ Page({
     circleInfo.address = this.data.backfill; //详细地址
     circleInfo.latitude = this.data.latitude; //经度
     circleInfo.longitude = this.data.longitude; //纬度
-    circleInfo.introduce = this.data.introduce;//简介
+    circleInfo.city = app.globalData.personInfo.city
+    // circleInfo.introduce = this.data.introduce;//简介
 
-    wx.getStorage({
-      key: 'circleInfoArr',
-      success: res => {
-        wx.setStorage({
-          key: 'circleInfoArr',
-          data: res.data.concat([circleInfo]),
-          success: () => {
-            wx.navigateBack()
-          }
-        })
-      },
-      fail: (res) => {
-        wx.setStorage({
-          key: 'circleInfoArr',
-          data: [circleInfo],
-          success: () => {
-            wx.navigateBack()
-          }
-        })
+    wx.showLoading({
+      title: '上传中'
+    })
+    console.log(app.globalData)
+    wx.cloud.callFunction({
+      name:'addpingpang_venue',
+      data:{
+        venue: circleInfo
       }
+    }).then(res=>{
+      wx.hideLoading()
+      wx.navigateBack({})
     })
   }
 })

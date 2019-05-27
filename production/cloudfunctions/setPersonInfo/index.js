@@ -20,7 +20,8 @@ exports.main = async(event, context) => {
       month:event.month,
       sign:event.sign,
       createcircle:event.createcircle,
-      joincircle:event.joincircle
+      joincircle:event.joincircle,
+      city:event.city
     }
   })
 }

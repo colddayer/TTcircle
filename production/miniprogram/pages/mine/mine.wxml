@@ -16,61 +16,35 @@
         </view>
       </view>
       <view bindtap='ToPage' data-name="pingpang_info" class='changeicon-box'>
-        <image src="../../images/change.png" class="changeicon" />
-      </view>
-      <view class="resume" bindtap='typeInfo'>
-        <input type="text" wx:if="{{changecontext}}" placeholder='' bindblur='setcontext' focus='true' value="{{personInfo.context}}" maxlength='22'></input>
-        <text class="context" wx:else bindtap='changecontext'>个性签名：{{personInfo.context}}</text>
+        <!-- <image src="../../images/change.png" class="changeicon" /> -->
       </view>
     </view>
   </view>
   <!-- 信息盒子 -->
-  <view class="infocard">
-    <view class="like box" bindtap="ToPage" data-name="like">
-      <view class="number">
-        <text>{{infocard.like}}</text>
-      </view>
-      <view class="title">
-        <text>获赞</text>
-      </view>
-    </view>
-    <view class="attention box" bindtap="ToPage" data-name="attention">
-      <view class="number">
-        <text>{{infocard.attention}}</text>
-      </view>
-      <view class="title">
-        <text>关注</text>
-      </view>
-    </view>
-    <view class="fans box" bindtap="ToPage" data-name="fans">
-      <view class="number">
-        <text>{{infocard.fans}}</text>
-      </view>
-      <view class="title">
-        <text>粉丝</text>
-      </view>
-    </view>
+  <view class="infocard" bindtap='typeInfo'>
+  <input type="text" wx:if="{{changecontext}}" placeholder='' bindblur='setcontext' focus='true' value="{{personInfo.context}}" maxlength='18' class='input'></input>
+        <view class="context" wx:else bindtap='changecontext'>个性签名：{{personInfo.context}}</view>
   </view>
   <!-- 项目栏 -->
+  
   <view class="project_bar">
+  <view class="project collections" bindtap="ToPage" data-name="pingpang_info">
+      <image class="image" src="../../images/person.svg" />
+      <view class="title">个人资料</view>
+      <image class="righticon" src="../../images/rightto.png" />
+    </view>
     <view class="project collections" bindtap="ToPage" data-name="collection">
       <image class="image" src="../../images/collection.png" />
       <view class="title">精选收藏</view>
       <image class="righticon" src="../../images/rightto.png" />
     </view>
-    <view class="project activities" bindtap="ToPage" data-name="activity">
-      <image class="image" src="../../images/activity.png" />
-      <view class="title">我的活动</view>
-      <view class="responed" wx:if="{{waitfordone !=0 }}">{{waitfordone}}个待办项</view>
-      <image class="righticon" src="../../images/rightto.png" />
-    </view>
     <view class="project managment" bindtap="ToPage" data-name="managment">
-      <image class='image' src="../../images/form.png"></image>
-      <view class="title">球圈管理</view>
+      <image class='image' src="../../images/form.svg"></image>
+      <view class="title">我的赛事</view>
       <image class="righticon" src="../../images/rightto.png" />
     </view>
     <view class="project suggest" bindtap="ToPage" data-name="suggest">
-      <image class="image" src="../../images/suggest.png" />
+      <image class="image" src="../../images/suggest.svg" />
       <view class="title">意见反馈</view>
       <image class="righticon" src="../../images/rightto.png" />
     </view>

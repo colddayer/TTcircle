@@ -1,6 +1,6 @@
 <view class="cu-form-group">
   <view class="title">{{title}}</view>
-  <input type='text' wx:if="{{changeinfo}}" bindblur='changend' value='{{info}}' placeholder="请输入信息" focus='true'></input>
+  <input type='{{type}}' wx:if="{{changeinfo}}" bindblur='changend' value='{{info}}' placeholder="请输入信息" focus='true'></input>
   <view class='info' wx:else>
     <input value='{{info?info:"空"}}' disabled='true'></input>
   </view>

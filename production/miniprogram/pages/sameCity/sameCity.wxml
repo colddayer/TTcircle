@@ -1,13 +1,13 @@
 <view class="cu-bar search bg-white">
-  <view class="cu-avatar round" style="background-image:url(https://image.weilanwl.com/img/square-2.jpg);"></view>
+  <view class="cu-avatar round" style="background-image:url({{avatar}});"></view>
   <view class="search-form round">
     <text class="cuIcon-search"></text>
     <input type="text" placeholder="搜索地址" confirm-type="search" bindinput="getsuggest" value="{{backfill}}"></input>
     <text class='cuIcon-close close-list' wx:if='{{!listHid}}' bindtap='hidList'></text>
   </view>
   <view class="action">
-    <text>南昌</text>
-    <text class="cuIcon-triangledownfill"></text>
+    <text style='font-size:30rpx;margin-right:10rpx;'>{{city}}</text>
+    <text class="cuIcon-locationfill"></text>
   </view>
 </view>
 <view wx:for="{{suggestion}}" wx:key="index" wx:if='{{!listHid}}'>

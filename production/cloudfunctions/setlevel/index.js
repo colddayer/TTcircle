@@ -18,7 +18,7 @@ exports.main = async (event, context) => {
   let continuity = event.continuity;
   let add = continuitys[continuity] || 10;
   console.log(add)
-  let intergal = event.intergal + add;
+  let intergal = event.intergal + add * 2;
   if (intergal < 400) {
     let level = parseInt(add / 30);
     level = level > 10 ? 10 : level;

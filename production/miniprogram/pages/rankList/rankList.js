@@ -1,67 +1,74 @@
 // pages/rankList/rankList.js
 Page({
-  data:{
+  data: {
     active: false,
-    rankList:[
-      {
-        number:1,
-        img:'',
-        nickName:'我',
-        level:'达人3段',
-        score:'3126分',
-      },
-      {
-        number: 2,
-        img: '',
-        nickName: 'aliesda',
-        level: '新晋达人',
-        score: '2500分'
-      },
-      {
-        number: 3,
-        img: '',
-        nickName: 'crown',
-        level: '业余10段',
-        score: '2281分'
-      },
-      {
-        number: 4,
-        img: '',
-        nickName: '40\'',
-        level: '业余8段',
-        score: '1800分'
-      },
-      {
-        number: 5,
-        img: '',
-        nickName: '北京吴彦祖',
-        level: '业余5段',
-        score: '1266分'
-      },
-      {
-        number: 6,
-        img: '',
-        nickName: '留一手',
-        level: '业余4段',
-        score: '1050分'
-      }
+    rankList: [
     ],
-    hidview:false
+    hidview: false,
+    need:false
   },
-  tapDown(evt){
-    this.setData({active:evt.currentTarget.id})
-  },
-  tapEnd(){
-    setTimeout(()=>{
-      this.setData({ active: false })
-    },100)
-  },
-  viewPerson(){
-    this.setData({
-      hidview:true
+  onLoad() {
+    wx.showLoading({
+      title: '正在加载中',
+    })
+    wx.cloud.callFunction({
+      name: 'getPersonInfo',
+      data: {
+        all: true
+      }
+    }).then(res => {
+      wx.hideLoading();
+      let rankList = res.result.data;
+      rankList.sort((a, b) => b.intergal - a.intergal);
+      rankList = rankList.map((e, i) => {
+        return {
+          img: e.avatarUrl,
+          number: i + 1,
+          nickName: e.name,
+          level: e.level,
+          score: e.intergal,
+          openId: e.openId,
+          context:e.context,
+          level:e.level
+        }
+      })
+      this.setData({ rankList })
     })
   },
-  hidviewClose(){
+  tapDown(evt) {
+    this.setData({ active: evt.currentTarget.id })
+  },
+  tapEnd(e) {
+    setTimeout(() => {
+      this.setData({ active: false })
+    }, 100)
+    this.viewPerson(e)
+  },
+  viewPerson(evt) {
+    let id = evt.currentTarget.dataset.id;
+    let rankList = this.data.rankList;
+    let index = rankList.find(e=>e.openId == id)
+    wx.cloud.callFunction({
+      name: 'getpingpang_info',
+      data:{
+        openId:id
+      }
+    }).then(res => {
+      this.setData({
+        hidview: true,
+        bat: res.result.data[0].bat,
+        behind_rubber: res.result.data[0].behind_rubber,
+        infront_rubber: res.result.data[0].infront_rubber,
+        phone: res.result.data[0].phone,
+        years: res.result.data[0].years,
+        name:index.nickName,
+        img:index.img,
+        context:index.context,
+        level:index.level
+      })
+    })
+  },
+  hidviewClose() {
     this.setData({
       hidview: false
     })

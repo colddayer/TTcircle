@@ -1,15 +1,6 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view wx:if='{{hidList}}'>
     <view class="cu-form-group">
-      <view class="title">球圈名</view>
-      <input placeholder="{{placeholder.one}}" maxlength='10' value='{{name}}' bindinput='inputName'></input>
-    </view>
-    <view class="cu-form-group">
-      <view class="title">球圈规模</view>
-      <input type='number' value='{{members}}' bindinput='inputMembers'></input>
-      <text>人数</text>
-    </view>
-    <view class="cu-form-group">
       <view class="title">球馆名称</view>
       <input placeholder='{{placeholder.two}}' value='{{areana}}'
       bindinput='inputAreana'></input>
@@ -47,10 +38,6 @@
     <view class="cu-form-group">
       <view class="title">详细地址</view>
       <textarea placeholder="{{placeholder.four}}" id='address' value='{{addressValue}}' bindtap='searchAddress' disabled='{{disabled}}'></textarea>
-    </view>
-    <view class="cu-form-group align-start">
-      <view class="title">球圈简介</view>
-      <textarea placeholder="{{placeholder.five}}" value='{{introduce}}'bindinput='inputIntroduce'></textarea>
     </view>
   </view>
   <view class="padding flex flex-direction">

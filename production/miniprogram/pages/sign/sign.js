@@ -56,7 +56,7 @@ Page({
               data: app.globalData.personInfo
             }).then(res => {
               wx.showToast({
-                title: `签到成功，积分增加${continuity}`,
+                title: `签到成功，积分增加!`,
                 icon: 'none'
               })
             })

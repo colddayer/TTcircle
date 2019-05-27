@@ -11,14 +11,15 @@ exports.main = async(event, context) => {
       openId: event.openId,
       name: event.name,
       avatarUrl: event.avatarUrl,
-      // level是数值
       level: event.level,
       intergal: event.intergal,
       context: event.context,
+      city:event.city,//所在城市
       month:new Date().getMonth(),
-      sign:[],
-      createcircle:[],
-      joincircle:[]
+      sign:[],//签到
+      createcircle:[],//创建的球圈Id数组
+      joincircle:[],//加入的球圈Id数组
+      message:[]//申请加入球圈的回复
     }
   })
 }

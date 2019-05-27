@@ -52,22 +52,6 @@ Page({
       level:info.level,
       intergal:info.intergal
     })
-    this.setlevel();
-  },
-  setlevel() {
-    // let that=this;
-    // wx.cloud.callFunction({
-    //   name:"setlevel",
-    //   data:{
-    //     intergal: that.data.personInfo.intergal
-    //   }
-    // }).then(res => {
-    //   that.setData({
-    //     level: res.result
-    //   })
-    //   app.globalData.personInfo = that.data.personInfo;
-    //   })
-  
   },
   /**
    * 生命周期函数--监听页面隐藏

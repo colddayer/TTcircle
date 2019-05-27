@@ -11,6 +11,7 @@ exports.main = async(event, context) => {
       openId:event.userInfo.openId,
       name: event.name ||"未获取到名字",
       avatarUrl: event.avatarUrl,
+      city:event.city,//所在城市
       level: "新手0段",
       intergal: 0,
       context: "",

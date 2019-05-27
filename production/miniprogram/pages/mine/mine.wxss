@@ -9,7 +9,7 @@ page {
 }
 
 .header-card {
-  height: 360rpx;
+  height: 300rpx;
   background-color: #0081ff;
   border-radius: 0 0 40rpx 40rpx;
 }
@@ -107,24 +107,24 @@ page {
 /* info card */
 
 .infocard {
-  display: flex;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  top: 300rpx;
-  width: 630rpx;
+  margin: 0 auto;
+  width: 660rpx;
   height: 100rpx;
   color: rgba(80, 80, 80, 1);
-  background-color: rgba(255, 255, 255, 1);
+  background-color: #fffef9;
   border-radius: 12px;
   font-size: 14px;
   line-height: 150%;
   box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
-  text-align: center;
+  transform:translateY(-60rpx);
+  padding-bottom:50rpx; 
 }
-
+.input{
+  display: block;
+  line-height: 100rpx;
+  margin-left: 10rpx;
+  padding-top: 70rpx;
+}
 .box {
   flex: 1;
 }
@@ -140,9 +140,12 @@ page {
 }
 
 /* 项目栏 */
-
+.context{
+  margin-left: 10rpx;
+  line-height: 100rpx;
+}
 .project_bar {
-  margin-top: 80rpx;
+  /* margin-top: 80rpx; */
   box-sizing: border-box;
   padding: 0 32rpx;
   width: 100%;
@@ -217,7 +220,7 @@ page {
   text-align: center;
   line-height: 80rpx;
   color: rgba(119, 119, 119, 1);
-  background-color: #fff;
+  background-color: #F1F1F1;
   z-index: 5;
   left: 0;
   right: 0;

@@ -1,50 +1,20 @@
 <view class='page-bottom bg-blue'>
 <view class='list'>
 <view class='list-title'>同城段位积分排行</view>
-<block wx:for='{{rankList}}'>
-<view class='li {{item.number==active?"active":""}}' bindtouchstart='tapDown' bindtouchend='tapEnd' id='{{item.number}}'>
+<block wx:for='{{rankList}}' wx:key>
+<view class='li {{item.number==active?"active":""}}' bindtouchstart='tapDown' bindtouchend='tapEnd' id='{{item.number}}' data-id='{{item.openId}}'>
 <view class='number'>{{item.number}}</view>
-<image class='li-img' bindtap='viewPerson'>{{item.img}}</image>
+<image class='li-img' bindtap='viewPerson' src='{{item.img}}' data-id='{{item.openId}}'></image>
 <view class='detail'>
 <view class='nickName'>{{item.nickName}}</view>
 <view class='rank'>第{{item.number}}名</view>
 </view>
 <view class='level'>{{item.level}}</view>
-<view class='score'>{{item.score}}</view>
+<view class='score'>积分：{{item.score}}</view>
 </view>
 </block>
 </view>
 
-<view class='hidview' wx:if='{{hidview}}'>
-<text class="cuIcon-close lg text-gray hidview-close" bindtap='hidviewClose'></text>
-<image class='hidview-avatal'></image>
-<view class='hidview-score'>
-<text>达人4段</text></view>
-<button class='restbtn'>留言</button>
-<view class='hidview-list'>
-<text class='hidview-left'>个人简介</text><text class='hidview-right'>这家伙打完球不留痕迹</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>昵称</text><text class='hidview-right'>张继科</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>电话</text><text class='hidview-right'>15770538096</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>球龄</text><text class='hidview-right'>10年</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>持拍</text><text class='hidview-right'>右手横拍</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>使用底板</text><text class='hidview-right'>蝴蝶张继科ALC</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>正手胶皮</text><text class='hidview-right'>黑色反胶狂飙八，厚度2.2mm</text>
-</view>
-<view class='hidview-list'>
-<text class='hidview-left'>反手胶皮</text><text class='hidview-right'>红色反胶尤拉敏冲，厚度2.0mm</text>
-</view>
-</view>
+<info-user hidview='{{hidview}}' bind:hidView='hidviewClose' need='{{need}}' level='{{level}}' context='{{context}}' name='{{name}}' phone='{{phone}}' years='{{years}}' bat='{{bat}}' board='{{board}}' infront_rubber='{{infront_rubber}}' behind_rubber = '{{behind_rubber}}' img='{{img}}'></info-user>
 </view>
 <view class='mask' wx:if='{{hidview}}'></view>

@@ -2,6 +2,7 @@ const QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
 const qqmapsdk = new QQMapWX({
   key: 'HMGBZ-U5XCX-TUX4Y-ZPUH3-7RRX5-BZBCW'
 });
+const app = getApp()
 Page({
   data: {
     latitude: null,
@@ -25,69 +26,71 @@ Page({
       success: (res) => {
         this.setData({
           latitude: res.latitude,
-          longitude: res.longitude
+          longitude: res.longitude,
+          avatar: app.globalData.personInfo.avatarUrl,
+          city: app.globalData.personInfo.city
         })
       }
     })
-    wx.getStorage({
-      key: 'circleInfoArr',
-      success: res => {
-        let markers = this.data.markers;
-        let count = 0;
-        for (let i of res.data) {
-          markers.push({
-            iconPath: '../../images/circle.png',
-            id: count,
-            latitude: i.latitude,
-            longitude: i.longitude,
-            width: 50,
-            height: 50,
-            detail: {
-              name: i.name,
-              members: i.members,
-              areana: i.areana,
-              img: i.img,
-              time: i.time,
-              address: i.address,
-              introduce: i.introduce,
-              table:i.table
-            }
-          })
-          count++;
-        }
-        this.setData({ markers })
+    wx.cloud.callFunction({
+      name: 'getpingpang_venue',
+      data: {
+        city: app.globalData.personInfo.city
       }
+    }).then(res => {
+      let markers = res.result.data;
+      markers = markers.map(e => {
+        return {
+          iconPath: '../../images/circle.png',
+          id: e._id,
+          latitude: e.latitude,
+          longitude: e.longitude,
+          width: 50,
+          height: 50,
+          detail: {
+            // name: i.name,
+            // members: i.members,
+            areana: e.areana,
+            img: e.img,
+            time: e.time,
+            address: e.address,
+            // introduce: e.introduce,
+            table: e.table
+          }
+        }
+      })
+      this.setData({ markers })
     })
   },
   onShow() {
-    wx.getStorage({
-      key: 'circleInfoArr',
-      success: res => {
-        let markers = [];
-        let count = 0;
-        for (let i of res.data) {
-          markers.push({
-            iconPath: '../../images/circle.png',
-            id: count,
-            latitude: i.latitude,
-            longitude: i.longitude,
-            width: 50,
-            height: 50,
-            detail: {
-              name: i.name,
-              members: i.members,
-              areana: i.areana,
-              img: i.img,
-              time: i.time,
-              address: i.address,
-              introduce: i.introduce,
-              table:i.table
-            }
-          })
-          count++;
-        }
-        this.setData({ markers })
+    wx.cloud.callFunction({
+      name: 'getpingpang_venue',
+      data: {
+        city: app.globalData.personInfo.city
       }
+    }).then(res => {
+      let markers = res.result.data;
+      markers = markers.map(e => {
+        return {
+          iconPath: '../../images/circle.png',
+          id: e._id,
+          latitude: e.latitude,
+          longitude: e.longitude,
+          width: 50,
+          height: 50,
+          detail: {
+            // name: i.name,
+            // members: i.members,
+            areana: e.areana,
+            img: e.img,
+            time: e.time,
+            address: e.address,
+            // introduce: e.introduce,
+            table: e.table
+          }
+        }
+      })
+      this.setData({ markers })
     })
   },
   centerButton() {
@@ -113,6 +116,17 @@ Page({
   openCircle() {
     wx.navigateTo({
       url: '../openCircle/openCircle',
+      success: res => {
+        this.setData(
+          {
+            centerButton: {
+              ontab: false,
+              content: '+',
+              active: 'freeze'
+            }
+          }
+        )
+      }
     })
   },
   markerTap(e) {
@@ -120,10 +134,10 @@ Page({
     for (let i of markers) {
       if (i.id == e.markerId) {
         this.setData({
-          current:{
-            time:i.detail.time,
-            table:i.detail.table,
-            address:i.detail.address
+          current: {
+            time: i.detail.time,
+            table: i.detail.table,
+            address: i.detail.address
           }
         })
       }
