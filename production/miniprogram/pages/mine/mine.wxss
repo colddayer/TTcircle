@@ -10,12 +10,12 @@ page {
 
 .header-card {
   height: 360rpx;
-  background-color: #0081FF;
+  background-color: #0081ff;
   border-radius: 0 0 40rpx 40rpx;
 }
 
 .userinfo {
-  padding: 48rpx 32rpx 60rpx 32rpx;
+  padding: 48rpx 32rpx 0rpx 32rpx;
   justify-items: center;
   z-index: 1;
 }
@@ -56,12 +56,14 @@ page {
   height: 40rpx;
   color: #fff;
   font-size: 14px;
+  margin-top:5rpx; 
 }
 
 .intergal {
   height: 40rpx;
   color: #fff;
   font-size: 14px;
+  margin-top: 5rpx;
 }
 
 .changeicon-box {
@@ -95,6 +97,11 @@ page {
   text-overflow: ellipsis;
   overflow: hidden;
   display: table-cell;
+  transform: translateY(28rpx)
+}
+
+.type-info {
+  width: 100%;
 }
 
 /* info card */
@@ -142,7 +149,7 @@ page {
 }
 
 .project {
-  height: 80rpx;
+  height: 90rpx;
   vertical-align: middle;
   display: flex;
 }
@@ -152,8 +159,8 @@ page {
 }
 
 .project image {
-  height: 48rpx;
-  width: 48rpx;
+  height: 50rpx;
+  width: 50rpx;
   margin: auto 0;
 }
 
@@ -161,7 +168,7 @@ page {
   margin-left: 14rpx;
   margin-top: -4rpx;
   flex: 1;
-  line-height: 80rpx;
+  line-height: 90rpx;
 }
 
 .project .number {
@@ -192,7 +199,7 @@ page {
 }
 
 .footer .footbg {
-  background-color: #0081FF;
+  background-color: #0081ff;
   border-radius: 40rpx 40rpx 0 0;
   height: 60rpx;
   width: 100%;

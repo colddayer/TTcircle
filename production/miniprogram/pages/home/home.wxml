@@ -17,19 +17,19 @@
 </swiper>
 <view class='page-bottom bg-blue'>
   <view class='rank-list bg-blue' bindtap='toRankList'>
-    <text class="cuIcon-peoplelist cor"></text>
+     <image src='../../images/list.png' class='sign-icon'></image>
     <view class='icon-t'>榜单</view>
   </view>
   <view class='rank-list-r bg-blue' bindtap='toSign'>
-    <text class="cuIcon-tag cor"></text>
+  <image src='../../images/sign.png' class='sign-icon'></image>
     <view class='icon-t'>打卡</view>
   </view>
   <view class='sign'></view>
   <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
     <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
       <view class="swiper-item-">
-        <navigator url='../{{item.name}}/{{item.name}}' hover-class='none'>
-          <view class='circle'>
+        <navigator url='../{{item.name}}/{{item.name}}' hover-class='none' class='navigator'>
+          <view class='circle {{item.index == center?"circle-active":""}}'>
             <view class='star'>
               <text class="cuIcon-favorfill lg"></text>
               <text class="cuIcon-favorfill lg"></text>

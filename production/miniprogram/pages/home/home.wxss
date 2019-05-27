@@ -25,7 +25,6 @@
   height: 600rpx;
   transform: translateX(-30rpx);
 }
-
 .notice {
   height: 50rpx;
   text-align: center;
@@ -56,6 +55,7 @@
   border-radius: 5px 0px 0px 5px;
   float: right;
   text-align: right;
+  margin: 10px;
 }
 
 .rank-list {
@@ -63,15 +63,20 @@
   height: 100rpx;
   border-radius: 0 5px 5px 0;
   float: left;
+  margin: 10px;
 }
 
+.sign-icon{
+  width: 55rpx;
+  height: 55rpx;
+}
 .cor {
   color: white;
   font-size: 55rpx;
 }
 
 .icon-t {
-  font-size: 20rpx;
+  font-size: 23rpx;
   color: white;
   text-align: center;
 }
@@ -92,21 +97,29 @@
   border-radius: 50%;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.5);
 }
-
+.navigator{
+  width: 400rpx;
+  height: 400rpx;
+}
 .circle {
   width: 400rpx;
   height: 400rpx;
   border: 1rpx solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  background-color: rgba(238, 238, 238, 1);
+  background-color: rgba(255, 255, 255, 0.7);
   text-align: center;
   box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
 }
-
+.circle-active{
+  background-color: rgba(255, 255, 255, 1);
+  transition: all 1s;
+}
 .circle .star {
   margin-top: 100rpx;
 }
-
+.star{
+  color: #F74300;
+}
 .circle .circle-id {
   margin-top: 10rpx;
   font-size: 46rpx;

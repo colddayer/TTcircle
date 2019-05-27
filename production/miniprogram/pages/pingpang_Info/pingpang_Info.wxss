@@ -1,11 +1,16 @@
 .container{
-  height: 100%;
+  width: 100%;
   padding: 0 20rpx;
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%)
 }
 .button{
-  position: absolute;
   left: 30rpx;
   right: 30rpx;
   border-radius: 40rpx;
-  bottom: 40rpx;
+  bottom: -150rpx;
+  position: absolute;
+  background-color: #8799A3;
+  color: white;
 }

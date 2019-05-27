@@ -33,22 +33,26 @@ Page({
     circleLise: [{
       id: '活动圈',
       slogan: '乒乓好手带你提升',
-      name: 'activity'
+      name: 'activity',
+      index:0
     },
     {
       id: '赛事圈',
       slogan: '以球会友交流互娱',
-      name: 'competition'
+      name: 'competition',
+      index:1
     },
     {
       id: '同城圈',
       slogan: '我们相遇在一个城市',
-      name: 'sameCity'
+      name: 'sameCity',
+      index: 2
     },
     {
       id: '达人圈',
       slogan: '乒乓好手带你提升',
-      name: 'star'
+      name: 'star',
+      index: 3
     },
     ],
     notice: [
@@ -57,7 +61,9 @@ Page({
       '欢迎进入乒乓圈，这里有你想要的',
       '小提示:连续多日打卡，可以获得更多积分哦'
     ],
-    login: false
+    login: false,
+    current: [-2, -1, 0, -1],
+    center:2
   },
   onLoad() {
     this.towerSwiper('circleLise');
@@ -107,8 +113,16 @@ Page({
       }
       list[list.length - 1].mLeft = mLeft;
       list[list.length - 1].zIndex = zIndex;
+
+      const current = this.data.current;
+      let left = current.shift();
+      current.push(left);
+      let center = current.indexOf(0)
+
       this.setData({
-        circleLise: list
+        circleLise: list,
+        current,
+        center
       })
     } else {
       let mLeft = list[list.length - 1].mLeft;
@@ -119,8 +133,16 @@ Page({
       }
       list[0].mLeft = mLeft;
       list[0].zIndex = zIndex;
+      
+      const current = this.data.current;
+      let right = current.pop();
+      current.unshift(right);
+      let center = current.indexOf(0)
+
       this.setData({
-        circleLise: list
+        circleLise: list,
+        current,
+        center
       })
     }
   },

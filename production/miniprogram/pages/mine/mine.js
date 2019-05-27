@@ -2,17 +2,8 @@
 const app = getApp();
 Page({
   data: {
-    personInfo: {
-      name: "张继科",
-      avatarUrl: "",
-      level: 30,
-      intergal: 3000,
-      context: "这个家伙很懒什么也没留下",
-      activities:[],
-      circle:[]
-    },
     waitfordone: 0,
-    level: "达人10段",
+    level: "查询中",
     infocard: {
       like: 0,
       attention: 0,
@@ -24,7 +15,7 @@ Page({
   ToPage(event) {
     // console.log(`../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`)
     wx.navigateTo({
-      url: `../pingpang_info/pingpang_info`,
+      url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,
     })
   },
   changecontext() {
@@ -108,4 +99,9 @@ Page({
       data: personinfo
     })
   },
+  typeInfo(){
+    this.setData({
+      changecontext:true
+    })
+  }
 })
