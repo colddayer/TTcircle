@@ -47,7 +47,6 @@ Page({
   onLoad: function(options) {
     let info = app.globalData.personInfo;
     info.context = info.context || "这个人很懒什么都没留下";
-
     this.setData({
       personInfo:info,
       level:info.level,

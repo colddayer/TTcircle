@@ -31,7 +31,7 @@ exports.main = async (event, context) => {
   if (intergal < 2500) {
     level = parseInt((intergal - 400) / 200) + 1;
     level = level > 10 ? 10 : level;
-    level = '达人' + level + '段'
+    level = '业余' + level + '段'
     return {
       intergal,
       level
