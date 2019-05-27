@@ -43,12 +43,23 @@ Page({
             continuity
           })
           wx.cloud.callFunction({
-            name:'setPersonInfo',
-            data: app.globalData.personInfo
-          })
-          wx.showToast({
-            title: '签到成功，积分增加20！',
-            icon: 'none'
+            name: "setlevel",
+            data: {
+              continuity: continuity,
+              intergal: app.globalData.personInfo.intergal
+            }
+          }).then(res => {
+            app.globalData.personInfo.intergal = res.result.intergal;
+            app.globalData.personInfo.level = res.result.level;
+            wx.cloud.callFunction({
+              name: 'setPersonInfo',
+              data: app.globalData.personInfo
+            }).then(res => {
+              wx.showToast({
+                title: `签到成功，积分增加${continuity}`,
+                icon: 'none'
+              })
+            })
           })
         }
       })

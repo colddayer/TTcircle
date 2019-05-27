@@ -13,7 +13,6 @@ Page({
     changename: false,
   },
   ToPage(event) {
-    // console.log(`../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`)
     wx.navigateTo({
       url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,
     })
@@ -50,30 +49,26 @@ Page({
     info.context = info.context || "这个人很懒什么都没留下";
 
     this.setData({
-      // "personInfo.name": info.name,
-      // "personInfo.intergal": info.intergal,
-      // "personInfo.level": info.level,
-      // "personInfo.context": info.context || "这个人很懒什么都没留下",
-      // "personInfo.avatarUrl": info.avatarUrl
       personInfo:info,
+      level:info.level,
+      intergal:info.intergal
     })
     this.setlevel();
   },
   setlevel() {
-    let that=this;
-    wx.cloud.callFunction({
-      name:"setlevel",
-      data:{
-        level: that.data.personInfo.level
-      }
-    }).then(res => {
-      that.setData({
-        level: res.result
-      })
-      app.globalData.personInfo = that.data.personInfo;
-      })
-    
-    // console.log(app.globalData.personInfo)
+    // let that=this;
+    // wx.cloud.callFunction({
+    //   name:"setlevel",
+    //   data:{
+    //     intergal: that.data.personInfo.intergal
+    //   }
+    // }).then(res => {
+    //   that.setData({
+    //     level: res.result
+    //   })
+    //   app.globalData.personInfo = that.data.personInfo;
+    //   })
+  
   },
   /**
    * 生命周期函数--监听页面隐藏
