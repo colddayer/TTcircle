@@ -30,6 +30,12 @@ App({
                   })
               }
             })
+            wx.cloud.callFunction({
+              name: "getpingpang_info",
+              success: res => {
+                this.globalData.ping_personInfo = res.result.data[0]
+              }
+            })
           })
         }
       }

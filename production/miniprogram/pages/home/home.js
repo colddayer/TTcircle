@@ -4,31 +4,23 @@ Page({
     swiperList: [{
       id: 0,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+      url: 'http://xhimg.sports.cn/Image/190528/6-1Z52P91420139.jpg'
     }, {
       id: 1,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84001.jpg',
+        url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132Z51A.jpg',
     }, {
       id: 2,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+        url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132636364.jpg'
     }, {
       id: 3,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+        url: 'http://xhimg.sports.cn/Image/190517/51-1Z51FU024931.jpg'
     }, {
       id: 4,
       type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
-    }, {
-      id: 5,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
-    }, {
-      id: 6,
-      type: 'image',
-      url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+        url: 'http://xhimg.sports.cn/Image/190514/6-1Z5140T9422D.jpg'
     }],
     circleLise: [{
       id: '活动圈',
@@ -63,9 +55,20 @@ Page({
     ],
     login: false,
     current: [-2, -1, 0, -1],
-    center:2
+    center:2,
+    newsList: [
+      '中国乒乓球协会与广东品胜宣布开启战略合作',
+      '中国乒乓球公开赛 双打变阵只为找到最佳组合',
+      '“乒乒乓乓”奏响中国声音',
+      '为了国旗国歌的飘、升、奏',
+      '中国公开赛｜“5金国乒”再次吹响“集结号”']
   },
   onLoad() {
+    wx.cloud.callFunction({
+      name:'spider'
+    }).then(res=>{
+      console.log(res)
+    })
     this.towerSwiper('circleLise');
     // 初始化towerSwiper 传已有的数组名即可
     wx.getSetting({
@@ -225,9 +228,9 @@ Page({
       }
     })
 
-    app.globalData = {
-      personInfo: {
-      }
-    }
+  //   app.globalData = {
+  //     personInfo: {
+  //     }
+  //   }
   }
 })

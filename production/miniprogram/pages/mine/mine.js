@@ -15,6 +15,13 @@ Page({
   ToPage(event) {
     wx.navigateTo({
       url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,
+      fail:()=>{
+        wx.showModal({
+          title: '(ಥ_ಥ)',
+          content: '非常抱歉，该功能仍在测试哦',
+          showCancel:false
+        })
+      }
     })
   },
   changecontext() {

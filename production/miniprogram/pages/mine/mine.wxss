@@ -114,16 +114,12 @@ page {
   background-color: #fffef9;
   border-radius: 12px;
   font-size: 14px;
-  line-height: 150%;
   box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, 0.5);
   transform:translateY(-60rpx);
-  padding-bottom:50rpx; 
+  padding:  20rpx 20rpx;
 }
-.input{
-  display: block;
-  line-height: 100rpx;
-  margin-left: 10rpx;
-  padding-top: 70rpx;
+.infocard input{
+  padding-left: 30rpx;
 }
 .box {
   flex: 1;
@@ -141,8 +137,10 @@ page {
 
 /* 项目栏 */
 .context{
-  margin-left: 10rpx;
-  line-height: 100rpx;
+  margin-left: 20rpx;
+  /* transform: translateY(18rpx); */
+  width: 100%;
+  line-height: 60rpx;
 }
 .project_bar {
   /* margin-top: 80rpx; */

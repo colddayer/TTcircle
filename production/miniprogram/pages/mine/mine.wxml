@@ -22,8 +22,8 @@
   </view>
   <!-- 信息盒子 -->
   <view class="infocard" bindtap='typeInfo'>
-  <input type="text" wx:if="{{changecontext}}" placeholder='' bindblur='setcontext' focus='true' value="{{personInfo.context}}" maxlength='18' class='input'></input>
-        <view class="context" wx:else bindtap='changecontext'>个性签名：{{personInfo.context}}</view>
+  <input type="text" wx:if="{{changecontext}}" placeholder='' bindblur='setcontext' focus='true' value="{{personInfo.context}}" maxlength='18'></input>
+        <view class="context" wx:else bindtap='changecontext'>{{personInfo.context}}</view>
   </view>
   <!-- 项目栏 -->
   

@@ -1,15 +1,22 @@
 <view id='mask' wx:if='{{!login}}'>
-<view class='setting-con'>
-<view class='title'>提示</view>
-<view class='content'>请使用微信登录喲(✪ω✪)</view>
-<button open-type="getUserInfo" bindtap='settingInfo' class='setting'>确定</button>
+  <view class='setting-con'>
+    <view class='title'>提示</view>
+    <view class='content'>请使用微信登录喲(✪ω✪)</view>
+    <button open-type="getUserInfo" bindtap='settingInfo' class='setting'>确定</button>
+  </view>
 </view>
-</view>
-<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500">
+<view class='head-swiper'>
+<swiper class="screen-swiper" circular="true" autoplay="true" interval="3000" duration="500">
   <swiper-item wx:for="{{swiperList}}" wx:key>
     <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
   </swiper-item>
 </swiper>
+<swiper circular="true" autoplay="true" interval="3000" duration="500" class='news'>
+    <swiper-item wx:for='{{newsList}}' wx:key>
+      <view>{{item}}</view>
+    </swiper-item>
+  </swiper>
+</view>
 <swiper autoplay='true' vertical='true' circular="true" class='notice bg-blue'>
   <swiper-item wx:for='{{notice}}' wx:key>
     <view>{{item}}</view>
@@ -17,11 +24,11 @@
 </swiper>
 <view class='page-bottom bg-blue'>
   <view class='rank-list bg-blue' bindtap='toRankList'>
-     <image src='../../images/list.png' class='sign-icon'></image>
+    <image src='../../images/list.png' class='sign-icon'></image>
     <view class='icon-t'>榜单</view>
   </view>
   <view class='rank-list-r bg-blue' bindtap='toSign'>
-  <image src='../../images/sign.png' class='sign-icon'></image>
+    <image src='../../images/sign.png' class='sign-icon'></image>
     <view class='icon-t'>打卡</view>
   </view>
   <view class='sign'></view>

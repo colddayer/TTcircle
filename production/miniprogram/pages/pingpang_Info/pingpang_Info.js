@@ -35,14 +35,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.cloud.callFunction({
-      name: "getpingpang_info",
-      success: res => {
-        app.globalData.ping_personInfo = res.result.data[0]
-        this.setData({
-          personInfo: app.globalData.ping_personInfo
-        })
-      }
+    this.setData({
+      personInfo: app.globalData.ping_personInfo
     })
   },
 
