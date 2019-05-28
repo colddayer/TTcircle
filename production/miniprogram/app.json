@@ -13,7 +13,10 @@
     "pages/publish_friend_detail/publish_friend_detail",
     "pages/friend_detail/friend_detail",
     "pages/message_detail/message_detail",
-    "pages/pingpangquan/pingpangquan"
+    "pages/pingpangquan/pingpangquan",
+    "pages/star/star",
+    "pages/competition/competition",
+    "pages/activity/activity"
   ],
   "window": {
     "backgroundTextStyle": "light",
