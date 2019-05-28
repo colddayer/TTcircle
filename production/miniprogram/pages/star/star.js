@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
       wx.showModal({
-        title: '(ಥ_ಥ)',
+        title: '(〒▽〒)',
         content: '功能在加紧完善中!',
         showCancel: false,
         success:()=>{

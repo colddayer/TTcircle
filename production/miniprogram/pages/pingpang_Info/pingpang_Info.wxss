@@ -7,7 +7,7 @@
 }
 .button{
   left: 30rpx;
-  right: 30rpx;
+  right: 30rpx; 
   border-radius: 40rpx;
   bottom: -150rpx;
   position: absolute;

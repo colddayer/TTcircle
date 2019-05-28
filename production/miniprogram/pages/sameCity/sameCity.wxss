@@ -131,12 +131,12 @@
   width: 230rpx;
   height: 230rpx;
   position: absolute;
-  background-color: #b5b5b5;
+  /* background-color:#1986F0; */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 5px solid #9f9f9f;
+  border: 5px solid #9d9087;
   overflow: visible;
   box-shadow: 5px 3px;
 }
@@ -145,7 +145,7 @@
   border-radius: 50%;
   width: 80%;
   height: 80%;
-  margin-top: 10%;
+  margin-top: 11%;
   margin-left: 10%;
 }
 

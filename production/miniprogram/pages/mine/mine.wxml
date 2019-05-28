@@ -29,24 +29,24 @@
   
   <view class="project_bar">
   <view class="project collections" bindtap="ToPage" data-name="pingpang_info">
-      <image class="image" src="../../images/person.svg" />
+      <image class="image" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/person.svg?sign=73135fcd2247e0a00ca78c131fa0d7d6&t=1559030458" />
       <view class="title">个人资料</view>
-      <image class="righticon" src="../../images/rightto.png" />
+      <image class="righticon" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/rightto.png?sign=611bee3d75647d9aba15035261f5f395&t=1559030534" />
     </view>
     <view class="project collections" bindtap="ToPage" data-name="collection">
-      <image class="image" src="../../images/collection.png" />
+      <image class="image" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/collection.png?sign=faf560fe50511d5e5da72d4b2c7cfec0&t=1559030431" />
       <view class="title">精选收藏</view>
-      <image class="righticon" src="../../images/rightto.png" />
+      <image class="righticon" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/rightto.png?sign=611bee3d75647d9aba15035261f5f395&t=1559030534" />
     </view>
     <view class="project managment" bindtap="ToPage" data-name="managment">
-      <image class='image' src="../../images/form.svg"></image>
+      <image class='image' src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/form.svg?sign=b8be413538695574004d9645b602c09f&t=1559030479"></image>
       <view class="title">我的赛事</view>
-      <image class="righticon" src="../../images/rightto.png" />
+      <image class="righticon" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/rightto.png?sign=611bee3d75647d9aba15035261f5f395&t=1559030534" />
     </view>
     <view class="project suggest" bindtap="ToPage" data-name="suggest">
-      <image class="image" src="../../images/suggest.svg" />
+      <image class="image" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/suggest.svg?sign=45a71ab48ceb8f60531deec056bda374&t=1559030497" />
       <view class="title">意见反馈</view>
-      <image class="righticon" src="../../images/rightto.png" />
+      <image class="righticon" src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/rightto.png?sign=611bee3d75647d9aba15035261f5f395&t=1559030534" />
     </view>
   </view>
   <!-- 底部块 -->

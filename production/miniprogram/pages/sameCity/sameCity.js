@@ -137,7 +137,8 @@ Page({
           current: {
             time: i.detail.time,
             table: i.detail.table,
-            address: i.detail.address
+            address: i.detail.address,
+            img:i.detail.img
           }
         })
       }

@@ -145,31 +145,58 @@ Page({
     })
   },
   formSubmit() {
-    const circleInfo = {};// 球圈信息
-    // circleInfo.name = this.data.name; // 球圈名
-    // circleInfo.members = this.data.members; // 球圈规模
-    circleInfo.areana = this.data.areana; //球馆名
-    circleInfo.table = this.data.table; //球桌数量
-    circleInfo.img = this.data.imgList[0]; //图片地址
-    circleInfo.time = this.data.time; //活动时间
-    circleInfo.address = this.data.backfill; //详细地址
-    circleInfo.latitude = this.data.latitude; //经度
-    circleInfo.longitude = this.data.longitude; //纬度
-    circleInfo.city = app.globalData.personInfo.city
-    // circleInfo.introduce = this.data.introduce;//简介
+    if (!this.data.areana || !this.data.table || this.data.imgList.length == 0 || !this.data.time || !this.data.addressValue) {
+      wx.showModal({
+        title: '提交错误',
+        content: '请完善所有信息!',
+        showCancel: false
+      })
+      return
+    }
+    let name = this.data.imgList[0].split('.');
+    let cloudPath = name.slice(-2, -1) + '.' + name.slice(-1);
+    let filePath = this.data.imgList[0];
+    wx.cloud.uploadFile({
+      cloudPath,
+      filePath, // 文件路径
+      success: res => {
+        // get resource ID
+        let fileId = res.fileID
+        wx.cloud.getTempFileURL({
+          fileList: [fileId],
+          success: res => {
+            this.setData({
+              imgList: [res.fileList[0].tempFileURL]
+            })
+            const circleInfo = {};// 球圈信息
+            // circleInfo.name = this.data.name; // 球圈名
+            // circleInfo.members = this.data.members; // 球圈规模
+            circleInfo.areana = this.data.areana; //球馆名
+            circleInfo.table = this.data.table; //球桌数量
+            circleInfo.img = this.data.imgList[0]; //图片地址
+            circleInfo.time = this.data.time; //活动时间
+            circleInfo.address = this.data.backfill; //详细地址
+            circleInfo.latitude = this.data.latitude; //经度
+            circleInfo.longitude = this.data.longitude; //纬度
+            circleInfo.city = app.globalData.personInfo.city
+            // circleInfo.introduce = this.data.introduce;//简介
+            circleInfo.fileId = fileId
 
-    wx.showLoading({
-      title: '上传中'
-    })
-    console.log(app.globalData)
-    wx.cloud.callFunction({
-      name:'addpingpang_venue',
-      data:{
-        venue: circleInfo
+            wx.showLoading({
+              title: '上传中'
+            })
+            wx.cloud.callFunction({
+              name: 'addpingpang_venue',
+              data: {
+                venue: circleInfo
+              }
+            }).then(res => {
+              wx.hideLoading()
+              wx.navigateBack({})
+            })
+          }
+        })
       }
-    }).then(res=>{
-      wx.hideLoading()
-      wx.navigateBack({})
     })
   }
 })

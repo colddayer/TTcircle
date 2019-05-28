@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/home/home",
+    "pages/sameCity/sameCity",
     "pages/sign/sign",
     "pages/openCircle/openCircle",
-    "pages/sameCity/sameCity",
     "pages/circleDetail/circleDetail",
     "pages/aboutCircle/aboutCircle",
     "pages/message/message",
@@ -20,7 +20,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#293047",
+    "navigationBarBackgroundColor": "#11264f",
     "navigationBarTitleText": "乒乓圈",
     "navigationBarTextStyle": "white"
   },

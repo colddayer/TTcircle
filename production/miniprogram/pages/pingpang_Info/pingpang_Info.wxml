@@ -6,4 +6,4 @@
   <section title="正手胶皮" info="{{personInfo.infront_rubber}}" infoname="infront_rubber" bind:changend="getinfo" />
   <section title="反手胶皮" info="{{personInfo.behind_rubber}}" infoname="behind_rubber" bind:changend="getinfo" isbottom="true" />
   <button  class='button' bindtap="submit">点击提交</button>
-</view>
+</view> 

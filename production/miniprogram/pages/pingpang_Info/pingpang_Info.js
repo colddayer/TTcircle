@@ -9,7 +9,7 @@ Page({
   },
   getinfo() {
     this.setData({
-      personInfo: app.globalData.ping_personInfo,
+      personInfo: app.globalData.ping_personInfo, 
     })
   },
   submit() {

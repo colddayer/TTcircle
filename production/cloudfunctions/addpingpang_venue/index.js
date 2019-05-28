@@ -6,7 +6,7 @@ const db = cloud.database();
 const venuedb = db.collection("pingpang_venue")
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   let {
     venue, //球馆对象
     areana, //球馆名
@@ -28,7 +28,8 @@ exports.main = async(event, context) => {
       latitude: venue.latitude || latitude, //经度
       longitude: venue.longitude || longitude, //纬度
       city: venue.city || city, //所在城市
-      circles: [] //球馆中包含的球圈
+      circles: [], //球馆中包含的球圈
+      fileId: venue.fileId || fileId //图片Id
     }
   })
 }

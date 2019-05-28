@@ -23,13 +23,13 @@
     <cover-view class='center-button bg-blue {{centerButton.active}}' bindtap='centerButton'>
       {{centerButton.content}}
     </cover-view>
-    <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>发起球圈</cover-view>
+    <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>预约球馆</cover-view>
     <cover-view class='button date-circle bg-blue' wx:if='{{centerButton.ontab}}'>一键约球</cover-view>
   </cover-view>
   <cover-view class='goal-circle' wx:if='{{markerTap}}' bindtap='hidCircle'>
     <cover-view class='main-circle-con'>
       <cover-view class='main-circle'>
-        <cover-image src='../../images/394.jpg' class='circleImg'></cover-image>
+        <cover-image src='{{current.img}}' class='circleImg'></cover-image>
       </cover-view>
       <cover-view class='label about-circle' bindtap='goCircle'>相关球圈</cover-view>
       <cover-view class='label active-time'>

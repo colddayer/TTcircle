@@ -5,6 +5,6 @@
     <input value='{{info?info:"空"}}' disabled='true'></input>
   </view>
   <view class='icon-con' bindtap='changeinfo'>
-    <image src="../../images/change-1.png" class='icon'></image>
+    <image src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/change-1.png?sign=c8936111328dcb2ee416201369716380&t=1559030699" class='icon'></image>
   </view>
 </view>
