@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "section": "/components/info-section/section"
+  } 
+}

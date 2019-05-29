@@ -1,0 +1,72 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view wx:if='{{hidList}}'>
+    <view class="cu-form-group">
+      <view class="title">球馆名称</view>
+      <input placeholder='{{placeholder.two}}' value='{{areana}}' bindinput='inputAreana' bindblur='testName'></input>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">球桌数量</view>
+      <input type='number' value='{{table}}' bindinput='inputTable'></input>
+      <text>桌数</text>
+    </view>
+
+    <view class="cu-bar bg-white margin-top">
+      <view class="action">
+        图片上传
+      </view>
+    </view>
+    <view class="cu-form-group">
+      <view class="grid col-4 grid-square flex-sub">
+        <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+          <image src='{{imgList[index]}}' mode='aspectFill'></image>
+          <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+            <text class="cuIcon-close"></text>
+          </view>
+        </view>
+        <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<1}}">
+          <text class="cuIcon-cameraadd"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="cu-form-group">
+      <view class="title">开始时间</view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
+        <view class="picker">
+          {{begintime}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">结束时间</view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChanger">
+        <view class="picker">
+          {{endtime}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">详细地址</view>
+      <textarea placeholder="{{placeholder.four}}" id='address' value='{{addressValue}}' bindtap='searchAddress' disabled='{{disabled}}'></textarea>
+    </view>
+  </view>
+  <view class="padding flex flex-direction">
+    <button class="cu-btn bg-red margin-tb-sm lg" form-type='submit'>确认发起</button>
+    <button class="cu-btn bg-grey lg" form-type='reset'>信息重置</button>
+  </view>
+</form>
+<view class='search-address' wx:if='{{!hidList}}'>
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" confirm-type="search" bindinput="getsuggest" value="{{backfill}}" placeholder='请输入地址' focus='{{focus}}' class='search-input'></input>
+      <text class='cuIcon-close close-list' bindtap='hidlist'></text>
+    </view>
+  </view>
+  <view wx:for="{{suggestion}}" wx:key="index">
+    <view class='list-address'>
+      <view style="text-align:center;font-size:17px;font-weight:bold" bindtap="backfill" id="{{index}}">{{item.title}}</view>
+      <view style="font-size:12px;color:black;text-align:center;">{{item.addr}}</view>
+    </view>
+  </view>
+</view>

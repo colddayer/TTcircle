@@ -1,0 +1,33 @@
+.page{
+  padding: 26rpx;
+}
+
+.text{
+  font-size: 16px;
+	line-height: 150%;
+  width: 100%;
+  margin-bottom: 40rpx;
+  font-size: 40rpx;
+  padding: 20rpx;
+  min-height: 300rpx;
+  color: rgba(80, 80, 80, 1);
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.image{
+  width: 31%;
+  height: 200rpx;
+  padding: 4rpx;
+}
+
+.moment_img{
+  width: 196rpx;
+  height: 196rpx;
+}
+
+.image_content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40rpx;
+}

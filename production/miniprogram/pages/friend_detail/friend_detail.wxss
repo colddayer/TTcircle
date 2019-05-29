@@ -1,0 +1,351 @@
+/* pages/friend_detail/friend_detail.wxss */
+.friend_Dynamic_Content{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* 头部时间显示 */
+.header{
+  display: flex;
+  justify-content: center;
+}
+.header .now_Time{
+  color: rgba(56, 56, 56, 1);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  font-size: 11px;
+	line-height: 150%;
+  margin-top: 20rpx; 
+}
+/* 球友圈的用户展示 */
+.member_button{
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+.member_button .member{
+  transform: rotate(-90deg);
+  width: 56rpx;
+  height: 56rpx;
+  background: url("data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgNDggNDgiIGZpbGw9InJnYmEoNzQsIDY4LCA2OCwgMSkiPgogICAgPHBhdGggZD0iTTI0IDE2LjgzTDMzLjE3IDI2IDM2IDIzLjE3bC0xMi0xMi0xMiAxMkwxNC44MyAyNiAyNCAxNi44M3pNMTIgMzZoMjR2LTRIMTJ2NHoiPjwvcGF0aD4KICAgIDxwYXRoIGQ9Ik0wIDBoNDh2NDhIMHoiIGZpbGw9Im5vbmUiPjwvcGF0aD4KPC9zdmc+");
+  background-size: cover;
+}
+/* 每个动态的容器样式 */
+.Dynamic_Content Content{
+  margin-top: 20rpx;
+}
+/* 用户发布动态的样式，flex布局分为左中右 */
+.Content{
+  width: 100%;
+  display: flex;
+}
+.Content .Content_left{
+  flex: 1
+}
+.Content .Content_mid{
+  flex: 4.49;
+  margin-left: 18rpx;
+}
+.Content .Content_right{
+  flex: 1.62;
+  display: flex;
+  margin-top: 46rpx;
+  margin-left: 20rpx;
+}
+.Content_left image{
+  height: 84rpx;
+  width: 84rpx;
+  margin-left: 20rpx;
+  background-color: rgba(247, 247, 247,1);
+}
+.Content_mid .top{
+  display: flex;
+  align-items: flex-end;
+}
+.Content_mid .more_content{
+  font-size: 12px;
+  color: rgba(80, 80, 80, 1);
+  line-height: 150%;
+}
+.Content_mid .top .name{
+  color: rgba(87, 107, 149, 1);
+	font-size: 14px;
+	line-height: 140%;
+}
+.Content_mid .top .time{
+  color: rgba(115, 115, 115, 1);
+	font-size: 12px;
+	line-height: 140%;
+  margin-left: 8rpx;
+}
+.Content_mid text{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  color: rgba(43, 43, 43, 1);
+	font-size: 14px;
+	line-height: 110%;
+  margin-top: 20rpx;
+}
+.Content_right .icon{
+  display: flex;
+  justify-content: center
+}
+.Content_right image{
+  width: 36rpx;
+	height: 36rpx;
+  margin-top: 10rpx;
+}
+.Content_right .more{
+  height: 64rpx;
+  width:60rpx;
+  flex: 0.6;
+}
+.Content_right .like{
+  height: 64rpx;
+  width:60rpx;
+  flex: 1;
+}
+.Content_right .text{
+  color: rgba(80, 80, 80, 1);
+	font-size: 6px;
+	line-height: 150%;
+}
+.Content_right .like .text{
+  margin-left: 24rpx;
+}
+.Comment{
+  display: flex
+}
+/* 三条评论的样式 */
+.Comment .container{
+    margin-left: 124rpx;
+    padding-top: 28rpx;
+    max-height: 800rpx; 
+}
+.Comment .container .title{
+    color: rgba(166, 166, 166, 1);
+    font-size: 11px;
+    line-height: 150%;
+}
+.Comment .container .Comment_List{
+    width: 500rpx;
+	  height: 114rpx;
+    display: flex;
+    margin-top: 12rpx;
+}
+.Comment .container .Comment_List .Comment_header_image image{
+  height: 64rpx;
+  width: 64rpx;
+  background-color: rgba(247, 247, 247,1);
+}
+.Comment .container .Comment_List .Comment_content{
+   margin-left: 32rpx;
+}
+.Comment .container .Comment_List .Comment_content .Comment_name{
+  color: rgba(87, 107, 149, 1);
+	font-size: 11px;
+	line-height: 120%;
+}
+/* 限制评论的行数最高两行 多的用省略号代替 */
+.Comment .container .Comment_List .Comment_content .Comment_content_detail{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: rgba(22, 21, 25, 1);
+	font-size: 12px;
+	line-height: 130%;
+
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60rpx;
+}
+/* 横线阴影 */
+.transverse_line{
+  color: rgba(223, 223, 221, 1);
+	background-color: rgba(223, 223, 221, 1);
+  line-height: 150%;
+	box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.5);
+  width: 560rpx;
+	height: 4rpx;
+}
+add-wrap {
+  position:fixed;
+  right: 0;
+  bottom:0;
+  display:flex;
+  width:100%;
+  justify-content:center;
+}
+/* 写动态的按钮样式 */
+.Add_Content{
+  position: fixed;
+  width: 100rpx;
+	height: 100rpx;
+	right: 16rpx;
+	bottom: 114rpx;
+	color: rgba(80, 80, 80, 1);
+	background-color: rgba(0, 159, 232, 1);
+	border-radius: 52rpx;
+	font-size: 16px;
+	line-height: 150%;
+	box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+.Add_Content .pan{
+  z-index: 1000;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+ background: url("data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgNDggNDgiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMSkiPgogICAgPHBhdGggZD0iTTYgMzQuNVY0Mmg3LjVsMjIuMTMtMjIuMTMtNy41LTcuNUw2IDM0LjV6bTM1LjQxLTIwLjQxYy43OC0uNzguNzgtMi4wNSAwLTIuODNsLTQuNjctNC42N2MtLjc4LS43OC0yLjA1LS43OC0yLjgzIDBsLTMuNjYgMy42NiA3LjUgNy41IDMuNjYtMy42NnoiPjwvcGF0aD4KICAgIDxwYXRoIGQ9Ik0wIDBoNDh2NDhIMHoiIGZpbGw9Im5vbmUiPjwvcGF0aD4KPC9zdmc+");
+  background-size: cover;
+  /* 这个一定要加，不然会看不到 */
+}
+.Add_Content .text{
+	color: rgba(255, 255, 255, 1);
+	font-size: 12px;
+	line-height: 150%;
+	text-align: left;
+  margin-left: 14rpx;
+}
+
+ /* 更多评论中的评论的样式 */
+.Comment .container .header{
+    font-size: 11px;
+    margin-left: 10rpx;
+    line-height: 150%;
+    color: rgba(80, 80, 80, 1);
+    font-size: 12px;
+    line-height: 150%;
+    text-align: center;
+}
+.more_member .container .Comment{
+  display: flex;
+}
+.more_member .container .Comment_box{
+  width: 638rpx;
+}
+.more_member_scroll_view .Comment_window{
+  width: 546rpx;
+  overflow: hidden;
+}
+/* 设置滚动条消失不见 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.more_member .Comment .container .header .comment_number{
+  flex: 14;
+  margin-left:0rpx;
+}
+.more_member .container .header .close{
+  flex: 1;
+  display: block; 
+  margin-left: 0rpx;
+  width: 44rpx;
+  height: 44rpx;
+  background: url("data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgNDggNDgiIGZpbGw9InJnYmEoMTUzLCAxNTMsIDE1MywgMSkiPgogICAgPHBhdGggZD0iTTM4IDEyLjgzTDM1LjE3IDEwIDI0IDIxLjE3IDEyLjgzIDEwIDEwIDEyLjgzIDIxLjE3IDI0IDEwIDM1LjE3IDEyLjgzIDM4IDI0IDI2LjgzIDM1LjE3IDM4IDM4IDM1LjE3IDI2LjgzIDI0eiI+PC9wYXRoPgogICAgPHBhdGggZD0iTTAgMGg0OHY0OEgweiIgZmlsbD0ibm9uZSI+PC9wYXRoPgo8L3N2Zz4=");
+  background-size: cover;
+}
+.Comment_box .Comment .container{
+    /* margin-left: 124rpx; */
+    padding-top: 28rpx;
+    margin-left: 39rpx;
+}
+.Comment .container .title{
+    color: rgba(166, 166, 166, 1);
+    font-size: 11px;
+    line-height: 150%;
+}
+.Comment_box .Comment .container .Comment_List{
+    width: 524rpx;
+	  height: 114rpx;
+    display: flex;
+    margin-top: 12rpx;
+}
+.Comment .container .Comment_List .Comment_header_image image{
+  height: 64rpx;
+  width: 64rpx;
+  background-color: rgba(247, 247, 247,1);
+}
+.Comment .container .Comment_List .Comment_content{
+   margin-left: 32rpx;
+}
+.Comment .container .Comment_List .Comment_content .Comment_name{
+  color: rgba(87, 107, 149, 1);
+	font-size: 11px;
+	line-height: 120%;
+}
+/* 更多评论中 限制评论的行数最高两行 多的用省略号代替 */
+.Comment_window .Comment .container .Comment_List .Comment_content .Comment_content_detail{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: rgba(22, 21, 25, 1);
+	font-size: 12px;
+	line-height: 130%;
+}
+
+/* 更多评论选项中的输入框样式 */
+.more_member{
+  position: fixed;
+  bottom:98rpx;
+}
+.more_member .Comment_box{
+  margin-left: 56rpx;
+  width: 320px;
+  border-top-right-radius: 18px;
+  border-top-left-radius: 18px;
+	font-size: 16px;
+	line-height: 150%;
+	border: rgba(0, 150, 191, 0.5) solid 1rpx;
+  color: rgba(80, 80, 80, 1);
+  background-color: rgba(238, 238, 238, 1);
+}
+.more_member .container .input-view{
+  position: absolute;
+  width: 750rpx;
+	height: 98rpx;
+  color: rgba(80, 80, 80, 1);
+	background-color: rgba(0, 159, 232, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+  display: flex;
+}
+.more_member .container .input-style{
+  margin: 16rpx auto 12rpx 30rpx;
+  padding-left: 28rpx;
+  width: 635rpx;
+	height: 70rpx;
+	text-indent: 6px;
+	color: rgba(0, 0, 0, 1);
+	border-radius: 2px;
+	font-size: 14px;
+	line-height: 150%;
+	text-align: left;
+  background-color: rgba(255, 255, 255, 1)
+}
+.more_member .container .input-view .send_message{
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 15rpx;
+  margin-top: 23rpx;
+  background: url("data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgNDggNDgiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMSkiPgogICAgPHBhdGggZD0iTTAgMGg0OHY0OEgweiIgZmlsbD0ibm9uZSI+PC9wYXRoPgogICAgPHBhdGggZD0iTTM4IDM4SDEwVjEwaDE0VjZIMTBjLTIuMjEgMC00IDEuNzktNCA0djI4YzAgMi4yMSAxLjc5IDQgNCA0aDI4YzIuMjEgMCA0LTEuNzkgNC00VjI0aC00djE0ek0yOCA2djRoNy4xN0wxNS41MSAyOS42NmwyLjgzIDIuODNMMzggMTIuODNWMjBoNFY2SDI4eiI+PC9wYXRoPgo8L3N2Zz4=");
+  background-size: cover;
+}
+
+

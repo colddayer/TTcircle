@@ -1,0 +1,106 @@
+/* pages/message_detail/message_detail.wxss */
+.container{
+  width: 750rpx;
+  overflow: hidden;
+  margin-top: 0rpx;
+}
+.none{
+  display: none;
+}
+.header .now_Time{
+  color: rgba(56, 56, 56, 1);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  font-size: 11px;
+	line-height: 150%;
+  margin-top: 20rpx; 
+}
+.other_message_list{
+  float: left;
+  padding-top: 20rpx;
+}
+.other_message_list .other_header{
+  display: inline-block;
+}
+.other_message_list .other_header image{
+  display: inline-block;
+  width: 80rpx;
+	height: 80rpx;
+  margin-left: 26rpx;
+}
+.other_message_list .other_message{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 400rpx;
+  margin-left: 16rpx;
+  padding: 22rpx;
+  color: rgba(56, 56, 56, 1);
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: rgba(255, 255, 255, 1) solid 9px;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 150%;
+	border: rgba(229, 229, 229, 1) solid 1px;
+	text-align: left;
+}
+.your_message_list{
+  float: right;
+  padding-top: 20rpx;
+}
+.your_message_list .your_header{
+  display: inline-block;
+}
+.your_message_list .your_header image{
+  display: inline-block;
+  width: 80rpx;
+	height: 80rpx;
+  margin-left: 26rpx;
+}
+.your_message_list .your_message{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 400rpx;
+  margin-left: 16rpx;
+  padding: 22rpx;
+  color: rgba(56, 56, 56, 1);
+  background-color: rgba(151, 200, 255, 1);
+	box-shadow: rgba(255, 255, 255, 1) solid 9px;
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 150%;
+	border: rgba(229, 229, 229, 1) solid 1px;
+	text-align: left;
+}
+
+.input-view{
+  position: fixed;
+  width: 750rpx;
+	height: 98rpx;
+  color: rgba(80, 80, 80, 1);
+	background-color: rgba(0, 159, 232, 1);
+	font-size: 16px;
+	line-height: 150%;
+	text-align: center;
+  display: flex;
+}
+.input-style{
+  margin: 16rpx auto 12rpx 30rpx;
+  padding-left: 28rpx;
+  width: 635rpx;
+	height: 70rpx;
+	text-indent: 6px;
+	color: rgba(0, 0, 0, 1);
+	border-radius: 2px;
+	font-size: 14px;
+	line-height: 150%;
+	text-align: left;
+  background-color: rgba(255, 255, 255, 1)
+}
+.input-view .send_message{
+  width: 56rpx;
+  height: 56rpx;
+  margin-right: 15rpx;
+  margin-top: 23rpx;
+  background: url("data:image/svg+xml;base64,77u/PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiB2aWV3Qm94PSIwIDAgNDggNDgiIGZpbGw9InJnYmEoMjU1LCAyNTUsIDI1NSwgMSkiPgogICAgPHBhdGggZD0iTTAgMGg0OHY0OEgweiIgZmlsbD0ibm9uZSI+PC9wYXRoPgogICAgPHBhdGggZD0iTTM4IDM4SDEwVjEwaDE0VjZIMTBjLTIuMjEgMC00IDEuNzktNCA0djI4YzAgMi4yMSAxLjc5IDQgNCA0aDI4YzIuMjEgMCA0LTEuNzkgNC00VjI0aC00djE0ek0yOCA2djRoNy4xN0wxNS41MSAyOS42NmwyLjgzIDIuODNMMzggMTIuODNWMjBoNFY2SDI4eiI+PC9wYXRoPgo8L3N2Zz4=");
+  background-size: cover;
+}

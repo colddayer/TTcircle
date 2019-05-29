@@ -1,0 +1,53 @@
+/* pages/aboutCircle/aboutCircle.wxss */
+.c-container{
+  width: 90%;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 50rpx;
+}
+.c-title{
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: rgba(41, 41, 41, 1);
+}
+.list{
+  width: 100%;
+  height: 128rpx;
+  padding: 16rpx;
+  box-sizing: border-box;
+  display: flex;
+  background-color: white;
+  animation: drop .2s linear forwards;
+}
+@keyframes drop{
+  0%{
+    transform: translateY(-10px)
+  }
+  100%{
+    transform: translateY(0px)
+  }
+}
+.list-img{
+  width: 96rpx;
+  height: 96rpx;
+  transform: translateX(10px);
+}
+.list-text{
+  width: 200rpx;
+  line-height: 96rpx;
+  margin-left: 50rpx;
+}
+.list-icon{
+  line-height: 96rpx;
+  font-size: 45rpx;
+  margin-left: 20rpx;
+}
+.list-slogan{
+  line-height: 96rpx;
+  margin-left: 100rpx;
+}
+.slogan{
+  font-size: 14px;
+}

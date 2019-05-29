@@ -1,0 +1,136 @@
+/* .nav{
+  border: rgba(153, 153, 153, 1) solid 1px;
+  background-color: rgba(221, 221, 221, 1);
+  height: 48px;
+  width: 100%;
+}
+.nav .pingpang_firend{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 48px;
+  font-size: 14px;
+  line-height: 150%;
+  border: rgba(153, 153, 153, 1);
+  background-color: rgba(181, 181, 181, 1);
+}
+
+.pingpang_firend .ballFriend_Tip{
+  width: 28rpx;
+  height: 28rpx;
+  display: inline-block;
+  margin-right: 12rpx;
+  border-radius: 50%;
+  background-color: rgba(61, 213, 0, 1);
+}
+
+.message .message_Tip{
+  width: 42rpx;
+  height: 42rpx;
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 10rpx;
+  margin-bottom: -8rpx;
+  background-color: rgba(255, 102, 102, 1);
+  margin-top: 10rpx;
+} 
+
+.message .message_Tip .message_num{
+  font-size: 12px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 150%;
+  text-align: center;
+  display: inline-block;
+}
+
+.nav .message{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 48px;
+  font-size: 14px;
+  line-height: 150%;
+  border: rgba(153, 153, 153, 1);
+  background-color: rgba(221, 221, 221, 1);
+}
+
+.nav text{
+  display: inline-block;
+  padding-top: 12px;
+}
+
+.message_list{
+  width: 750rpx;
+  height: 946rpx;
+  background-color: rgba(247, 247, 247,1);
+}
+
+.message_list .message{
+  display: flex;
+  height: 150rpx;
+  margin-top: 6rpx;
+  background-color: rgba(238, 238, 238, 1);
+}
+
+.message_list .head_image{
+  
+  height: 96rpx;
+  width: 96rpx;
+  margin-left: 32rpx;
+  margin-top: 38rpx;
+  border-radius: 50%;
+  background-color: rgba(247, 247, 247,1);
+}
+
+.head_image image{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.message_list .name{
+  width: 304rpx;
+  height: 82rpx;
+  margin-top: 50rpx;
+  margin-left: 40rpx;
+}
+.message_list .join_icon{
+  width: 9px;
+  height: 16rpx;
+  margin-top: 70rpx;
+  margin-left: 216rpx;
+}
+.message_list .join_icon image{
+  width: 9px;
+  height: 16px;
+} */
+.nav{
+  white-space: nowrap;
+  /* border-bottom: 4rpx solid; */
+}
+.nav .item{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 48px;
+  font-size: 14px;
+  line-height: 150%;
+  border: rgba(153, 153, 153, 1);
+  background-color: rgba(181, 181, 181, 1);
+}
+.nav .item .select{
+  
+}
+.nav .item text{
+  display: inline-block;
+  padding-top: 12px;
+  
+}
+.nav .item .ballFriend_Tip.on{
+  width: 28rpx;
+  height: 28rpx;
+  display: inline-block;
+  margin-right: 12rpx;
+  border-radius: 50%;
+  background-color: rgba(61, 213, 0, 1);
+}
