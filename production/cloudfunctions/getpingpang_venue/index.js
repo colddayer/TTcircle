@@ -8,8 +8,11 @@ const _=db.command;
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  let { latitude, longitude, latitudearr, longitudearr,city}=event;
+  let { latitude, longitude, latitudearr, longitudearr,city,address}=event;
+  if(city)
   return await venuedb.where({city}).get()
+  if(address)
+    return await venuedb.where({ address }).get()
   // if(latitudearr&&longitudearr)
   // {
   //   return await venuedb.where({

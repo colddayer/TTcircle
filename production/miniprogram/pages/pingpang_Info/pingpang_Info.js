@@ -5,7 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    personInfo: {}
+    personInfo: {},
+    picker: ['右手横拍', '右手直拍', '左手横拍','左手直拍']
+  },
+  PickerChange(e) {
+    console.log(e);
+    this.setData({
+      index: e.detail.value,
+    })
+    app.globalData.ping_personInfo.bat = this.data.picker[this.data.index]
   },
   getinfo() {
     this.setData({
@@ -29,6 +37,9 @@ Page({
         duration:1000,
       })
       console.log(res, "修改成功")
+      wx.navigateBack({
+        
+      })
       })
   },
   /**

@@ -12,7 +12,7 @@ exports.main = async(event, context) => {
       name: event.name ||"未获取到名字",
       avatarUrl: event.avatarUrl,
       city:event.city,//所在城市
-      level: "新手0段",
+      level: "新手",
       intergal: 0,
       context: "",
       activitiew:[],

@@ -56,7 +56,8 @@ Page({
             address: e.address,
             // introduce: e.introduce,
             table: e.table
-          }
+          },
+          circles: e.circles
         }
       })
       this.setData({ markers })
@@ -87,7 +88,8 @@ Page({
             address: e.address,
             // introduce: e.introduce,
             table: e.table
-          }
+          },
+          circles: e.circles
         }
       })
       this.setData({ markers })
@@ -138,7 +140,8 @@ Page({
             time: i.detail.time,
             table: i.detail.table,
             address: i.detail.address,
-            img:i.detail.img
+            img: i.detail.img,
+            circles:i.circles
           }
         })
       }
@@ -154,7 +157,7 @@ Page({
   },
   goCircle() {
     wx.navigateTo({
-      url: '../aboutCircle/aboutCircle',
+      url: `../aboutCircle/aboutCircle?circles=${this.data.current.circles}`,
     })
   },
   backfill(e) {

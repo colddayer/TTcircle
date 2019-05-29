@@ -2,12 +2,11 @@
   <view wx:if='{{hidList}}'>
     <view class="cu-form-group">
       <view class="title">球馆名称</view>
-      <input placeholder='{{placeholder.two}}' value='{{areana}}'
-      bindinput='inputAreana'></input>
+      <input placeholder='{{placeholder.two}}' value='{{areana}}' bindinput='inputAreana' bindblur='testName'></input>
     </view>
     <view class="cu-form-group">
       <view class="title">球桌数量</view>
-      <input type='number' value='{{table}}'bindinput='inputTable'></input>
+      <input type='number' value='{{table}}' bindinput='inputTable'></input>
       <text>桌数</text>
     </view>
 
@@ -30,10 +29,21 @@
       </view>
     </view>
 
-    <view class="cu-form-group margin-top">
-      <view class="title">活动时间</view>
-      <input placeholder='{{placeholder.three}}' value='{{time}}'
-      bindinput='inputTime'></input>
+    <view class="cu-form-group">
+      <view class="title">开始时间</view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
+        <view class="picker">
+          {{begintime}}
+        </view>
+      </picker>
+    </view>
+    <view class="cu-form-group">
+      <view class="title">结束时间</view>
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChanger">
+        <view class="picker">
+          {{endtime}}
+        </view>
+      </picker>
     </view>
     <view class="cu-form-group">
       <view class="title">详细地址</view>

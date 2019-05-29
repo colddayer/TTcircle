@@ -28,7 +28,7 @@
   text-align: center;
 }
 .icon-con{
-  width: 42rpx;
+  width: 50rpx;
   height: 36rpx;
 }
 .icon{

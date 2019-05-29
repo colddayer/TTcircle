@@ -2,22 +2,22 @@
   <!-- 个人信息块 -->
   <view class="header-card">
     <view class="userinfo">
-      <image class="userimage" src="{{personInfo.avatarUrl}}" />
+      <image class="userimage" src="{{personInfo.avatarUrl}}" bindtap='viewInfo'/>
       <view class="info">
         <view class="name">
           <input class='username' wx:if="{{changename}}" value='{{personInfo.name}}' focus='true' bindblur='setname' ></input>
           <text class="username" wx:else bindtap='changename' >{{personInfo.name}}</text>
         </view>
         <view class="level">
-          <text class="levelnumber">乒乓球段位：{{level}}</text>
+          <text class="levelnumber">乒乓段位：{{level}}</text>
         </view>
         <view class="intergal">
           <text class="textintergal">我的积分：{{personInfo.intergal}}分</text>
         </view>
       </view>
-      <view bindtap='ToPage' data-name="pingpang_info" class='changeicon-box'>
+      <!-- <view bindtap='ToPage' data-name="pingpang_info" class='changeicon-box'> -->
         <!-- <image src="../../images/change.png" class="changeicon" /> -->
-      </view>
+      <!-- </view> -->
     </view>
   </view>
   <!-- 信息盒子 -->
@@ -54,4 +54,8 @@
     <view class="andmore" bindtap="ToPage" data-name='abouts'>关于乒乓圈</view>
     <view class="footbg"></view>
   </view>
+
+  <view class='user-info' wx:if='{{hidview}}'>
+<info-user hidview='{{hidview}}' bind:hidView='hidviewClose' need='{{need}}' level='{{level}}' context='{{context}}' name='{{name}}' phone='{{phone}}' years='{{years}}' bat='{{bat}}' board='{{board}}' infront_rubber='{{infront_rubber}}' behind_rubber = '{{behind_rubber}}' img='{{img}}'></info-user>
+</view>
 </view>

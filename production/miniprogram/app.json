@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/guide/guide",
     "pages/home/home",
     "pages/sameCity/sameCity",
-    "pages/sign/sign",
     "pages/openCircle/openCircle",
+    "pages/sign/sign",
     "pages/circleDetail/circleDetail",
     "pages/aboutCircle/aboutCircle",
     "pages/message/message",

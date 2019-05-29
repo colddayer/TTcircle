@@ -18,18 +18,36 @@ exports.main = async (event, context) => {
     longitude, //纬度
     city, //所在城市
   } = event;
-  return await venuedb.add({
-    data: venue || {
-      areana: venue.areana || areana, //球馆名
-      table: venue.table || table, // 球桌数量
-      imgList: venue.imgList || imgList, //图片
-      time: venue.time || time, //活动时间
-      address: venue.address || address, //详细地址
-      latitude: venue.latitude || latitude, //经度
-      longitude: venue.longitude || longitude, //纬度
-      city: venue.city || city, //所在城市
-      circles: [], //球馆中包含的球圈
-      fileId: venue.fileId || fileId //图片Id
+  const res = await cloud.callFunction({
+    name: 'getpingpang_venue',
+    data: {
+      address: venue.address
     }
   })
+  console.log(res)
+  if (res.result.data.length != 0) {
+    let venue_res = res.result.data[0];
+    console.log(venue_res)
+    return await venuedb.doc(venue_res._id).update({
+      data: {
+        circles: venue_res.circles.concat([event.userInfo.openId])
+      }
+    })
+  }
+  else {
+    return await venuedb.add({
+      data: venue || {
+        areana: venue.areana || areana, //球馆名
+        table: venue.table || table, // 球桌数量
+        imgList: venue.imgList || imgList, //图片
+        time: venue.time || time, //活动时间
+        address: venue.address || address, //详细地址
+        latitude: venue.latitude || latitude, //经度
+        longitude: venue.longitude || longitude, //纬度
+        city: venue.city || city, //所在城市
+        circles: [event.userInfo.openId], //球馆中包含的球圈
+        fileId: venue.fileId || fileId //图片Id
+      }
+    })
+  }
 }

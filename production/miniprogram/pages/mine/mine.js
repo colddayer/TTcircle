@@ -11,15 +11,16 @@ Page({
     },
     changecontext: false,
     changename: false,
+    hidview: false
   },
   ToPage(event) {
     wx.navigateTo({
       url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,
-      fail:()=>{
+      fail: () => {
         wx.showModal({
           title: '(ಥ_ಥ)',
-          content: '非常抱歉，该功能仍在测试哦',
-          showCancel:false
+          content: '敬请期待！',
+          showCancel: false
         })
       }
     })
@@ -33,7 +34,7 @@ Page({
     if (event.detail.value != "")
       this.setData({
         "personInfo.name": event.detail.value,
-        changename:false
+        changename: false
       })
   },
   changename() {
@@ -51,19 +52,38 @@ Page({
       })
     }
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     let info = app.globalData.personInfo;
     info.context = info.context || "这个人很懒什么都没留下";
     this.setData({
-      personInfo:info,
-      level:info.level,
-      intergal:info.intergal
+      personInfo: info,
+      level: info.level,
+      intergal: info.intergal,
+      context: app.globalData.personInfo.context,
+      phone: app.globalData.ping_personInfo.phone,
+      years: app.globalData.ping_personInfo.years,
+      bat: app.globalData.ping_personInfo.bat,
+      board: app.globalData.ping_personInfo.board,
+      infront_rubber: app.globalData.ping_personInfo.infront_rubber,
+      behind_rubber: app.globalData.ping_personInfo.behind_rubber,
+      img: app.globalData.personInfo.avatarUrl,
+      name: app.globalData.personInfo.name
+    })
+  },
+  onShow() {
+    this.setData({
+      phone: app.globalData.ping_personInfo.phone,
+      years: app.globalData.ping_personInfo.years,
+      infront_rubber: app.globalData.ping_personInfo.infront_rubber,
+      behind_rubber: app.globalData.ping_personInfo.behind_rubber,
+      bat: app.globalData.ping_personInfo.bat,
+      board: app.globalData.ping_personInfo.board
     })
   },
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
     let personinfo = this.data.personInfo
     wx.cloud.callFunction({
       name: "setPersonInfo",
@@ -77,16 +97,26 @@ Page({
       data: personinfo
     })
   },
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     let personinfo = this.data.personInfo
     wx.cloud.callFunction({
       name: "setPersonInfo",
       data: personinfo
     })
   },
-  typeInfo(){
+  typeInfo() {
     this.setData({
-      changecontext:true
+      changecontext: true
+    })
+  },
+  hidviewClose() {
+    this.setData({
+      hidview: false
+    })
+  },
+  viewInfo() {
+    this.setData({
+      hidview: true
     })
   }
 })

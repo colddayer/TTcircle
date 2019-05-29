@@ -194,7 +194,7 @@
   text-align: center;
   white-space: normal;
   font-size: 12px;
-  margin-top: 12px;
+  margin-top: 15px;
 }
 
 .table {

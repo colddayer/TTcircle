@@ -224,3 +224,10 @@ page {
   right: 0;
   margin: 0 auto;
 }
+.user-info{
+  width: 100%;
+  height: 100vh;
+  padding-left: 5%;
+  position: absolute;
+  top:0;
+}

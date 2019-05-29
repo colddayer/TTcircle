@@ -71,12 +71,8 @@ Page({
     })
     this.towerSwiper('circleLise');
     // 初始化towerSwiper 传已有的数组名即可
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          this.setData({ login: true })
-        }
-      }
+    this.setData({
+      login:app.globalData.login
     })
   },
   // towerSwiper

@@ -23,7 +23,7 @@
     <cover-view class='center-button bg-blue {{centerButton.active}}' bindtap='centerButton'>
       {{centerButton.content}}
     </cover-view>
-    <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>预约球馆</cover-view>
+    <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>共享球馆</cover-view>
     <cover-view class='button date-circle bg-blue' wx:if='{{centerButton.ontab}}'>一键约球</cover-view>
   </cover-view>
   <cover-view class='goal-circle' wx:if='{{markerTap}}' bindtap='hidCircle'>

@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
       wx.showModal({
         title: '(〒▽〒)',
-        content: '功能在加紧完善中!',
+        content: '敬请期待!',
         showCancel: false,
         success:()=>{
           wx.navigateBack({})
