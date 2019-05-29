@@ -203,5 +203,12 @@ Page({
   },
   moveMap(e) {
     // console.log(e)
+  },
+  dateCircle(){
+    wx.showModal({
+      title: '(ಥ_ಥ)',
+      content: '敬请期待！',
+      showCancel: false
+    })
   }
 })

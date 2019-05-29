@@ -15,7 +15,7 @@
 <text class='hidview-left'>电话</text><text class='hidview-right'>{{phone}}</text>
 </view>
 <view class='hidview-list'>
-<text class='hidview-left'>球龄</text><text class='hidview-right'>{{years}}年</text>
+<text class='hidview-left'>球龄</text><text class='hidview-right'>{{years}}</text>
 </view>
 <view class='hidview-list'>
 <text class='hidview-left'>持拍</text><text class='hidview-right'>{{bat}}</text>

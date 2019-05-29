@@ -34,8 +34,10 @@ Page({
     if (event.detail.value != "")
       this.setData({
         "personInfo.name": event.detail.value,
-        changename: false
+        changename: false,
+        name: event.detail.value
       })
+     
   },
   changename() {
     this.setData({
@@ -48,7 +50,8 @@ Page({
     })
     if (event.detail.value != "") {
       this.setData({
-        "personInfo.context": event.detail.value
+        "personInfo.context": event.detail.value,
+        context: event.detail.value
       })
     }
   },

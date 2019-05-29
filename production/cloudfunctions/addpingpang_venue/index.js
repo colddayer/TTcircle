@@ -35,6 +35,7 @@ exports.main = async (event, context) => {
     })
   }
   else {
+    venue.circles = [event.userInfo.openId]
     return await venuedb.add({
       data: venue || {
         areana: venue.areana || areana, //球馆名

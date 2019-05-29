@@ -1,6 +1,14 @@
 <view class="container">
+ <view class="cu-form-group">
+		<view class="title">球龄</view>
+		<picker bindchange="PickerChange" value="{{indexAge}}" range="{{pickerAge}}">
+			<view id='picker' class='picker'>
+				{{indexAge?pickerAge[indexAge]:personInfo.years}}
+			</view>
+		</picker>
+	</view>
   <section title="电话" info="{{personInfo.phone}}" infoname="phone" bind:changend="getinfo" type='number'/>
-  <section title="球龄" info="{{personInfo.years}}" infoname="years" bind:changend="getinfo" type='number'/>
+  <!-- <section title="球龄" info="{{personInfo.years}}" infoname="years" bind:changend="getinfo" type='number'/> -->
   <!-- <section title="持拍" info="{{personInfo.bat}}" infoname="bat" bind:changend="getinfo" /> -->
   <section title="使用底板" info="{{personInfo.board}}" infoname="board" bind:changend="getinfo" />
   <section title="正手胶皮" info="{{personInfo.infront_rubber}}" infoname="infront_rubber" bind:changend="getinfo" />
@@ -9,7 +17,7 @@
 		<view class="title">持拍</view>
 		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
 			<view id='picker' class='picker'>
-				{{index?picker[index]:personInfo.bat}}
+				{{index?picker[index]:personInfo.bat || '点击选择'}}
 			</view>
 		</picker>
 	</view>

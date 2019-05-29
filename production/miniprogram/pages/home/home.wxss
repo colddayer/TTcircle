@@ -34,20 +34,20 @@
   color: white;
   border: 1px solid white;
   line-height: 50rpx;
+  background-color: #00407F;
 }
 .head-swiper{
   position: relative;
 }
 .news {
-  width: 100%;
   height: 70rpx;
   line-height: 70rpx;
-  background-color: rgba(0, 0, 0, 0.5);
   position: absolute;
   z-index: 3;
-  text-align: center;
   color: white;
-  bottom: 0;
+  bottom: 35rpx;
+  font-size: 24rpx;
+  text-indent: 2em;
 }
 
 .page-bottom {
@@ -58,12 +58,18 @@
   background-position: center;
   /* padding-top: 10rpx; */
 }
-
+.page-mask{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .tennisnet {
   width: 2rpx;
   height: 100%;
-  background-color: #eee;
+  background-color: #bbb;
   position: absolute;
+  top:0;
 }
 
 .rank-list-r {
@@ -73,6 +79,10 @@
   float: right;
   text-align: right;
   margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #00407F;
 }
 
 .rank-list {
@@ -81,6 +91,9 @@
   border-radius: 0 5px 5px 0;
   float: left;
   margin: 10px;
+  position: absolute;
+  top:0;
+  background-color: #00407F;
 }
 
 .sign-icon {

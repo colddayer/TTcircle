@@ -6,18 +6,19 @@ Page({
    */
   data: {
     personInfo: {},
-    picker: ['右手横拍', '右手直拍', '左手横拍','左手直拍']
+    picker: ['右手横拍', '右手直拍', '左手横拍', '左手直拍']
   },
   PickerChange(e) {
-    console.log(e);
     this.setData({
       index: e.detail.value,
+      indexAge: e.detail.value
     })
     app.globalData.ping_personInfo.bat = this.data.picker[this.data.index]
+    app.globalData.ping_personInfo.years = this.data.pickerAge[this.data.indexAge]
   },
   getinfo() {
     this.setData({
-      personInfo: app.globalData.ping_personInfo, 
+      personInfo: app.globalData.ping_personInfo,
     })
   },
   submit() {
@@ -34,13 +35,13 @@ Page({
       wx.hideLoading();
       wx.showToast({
         title: "提交成功",
-        duration:1000,
+        duration: 1000,
       })
       console.log(res, "修改成功")
       wx.navigateBack({
-        
+
       })
-      })
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -49,6 +50,11 @@ Page({
     this.setData({
       personInfo: app.globalData.ping_personInfo
     })
+    let pickerAge = []
+    for (let i = 0; i < 51; i++) {
+      pickerAge.push(i+'年')
+    }
+    this.setData({pickerAge})
   },
 
   /**

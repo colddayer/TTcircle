@@ -24,8 +24,8 @@
       {{centerButton.content}}
     </cover-view>
     <cover-view class='button open-circle bg-blue animation-slide-bottom' wx:if='{{centerButton.ontab}}' bindtap='openCircle'>共享球馆</cover-view>
-    <cover-view class='button date-circle bg-blue' wx:if='{{centerButton.ontab}}'>一键约球</cover-view>
-  </cover-view>
+    <cover-view class='button date-circle bg-grey' wx:if='{{centerButton.ontab}}' bindtap='dateCircle'>一键约球</cover-view>
+  </cover-view> 
   <cover-view class='goal-circle' wx:if='{{markerTap}}' bindtap='hidCircle'>
     <cover-view class='main-circle-con'>
       <cover-view class='main-circle'>
