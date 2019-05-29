@@ -37,7 +37,6 @@ Page({
         changename: false,
         name: event.detail.value
       })
-     
   },
   changename() {
     this.setData({
@@ -52,6 +51,12 @@ Page({
       this.setData({
         "personInfo.context": event.detail.value,
         context: event.detail.value
+      })
+    }
+    else {
+      this.setData({
+        "personInfo.context": "这家伙打完球后不留任何足迹",
+        context: "这家伙打完球后不留任何足迹"
       })
     }
   },

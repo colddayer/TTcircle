@@ -1,7 +1,7 @@
 <view class="container">
  <view class="cu-form-group">
 		<view class="title">球龄</view>
-		<picker bindchange="PickerChange" value="{{indexAge}}" range="{{pickerAge}}">
+		<picker bindchange="PickerAgeChange" value="{{indexAge}}" range="{{pickerAge}}">
 			<view id='picker' class='picker'>
 				{{indexAge?pickerAge[indexAge]:personInfo.years}}
 			</view>

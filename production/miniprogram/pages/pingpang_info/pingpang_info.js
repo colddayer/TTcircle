@@ -10,10 +10,14 @@ Page({
   },
   PickerChange(e) {
     this.setData({
-      index: e.detail.value,
-      indexAge: e.detail.value
+      index: e.detail.value
     })
     app.globalData.ping_personInfo.bat = this.data.picker[this.data.index]
+  },
+  PickerAgeChange(e) {
+    this.setData({
+      indexAge: e.detail.value
+    })
     app.globalData.ping_personInfo.years = this.data.pickerAge[this.data.indexAge]
   },
   getinfo() {
@@ -52,9 +56,9 @@ Page({
     })
     let pickerAge = []
     for (let i = 0; i < 51; i++) {
-      pickerAge.push(i+'年')
+      pickerAge.push(i + '年')
     }
-    this.setData({pickerAge})
+    this.setData({ pickerAge })
   },
 
   /**
