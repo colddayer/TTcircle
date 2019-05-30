@@ -40,6 +40,8 @@ Page({
     // this.TotalMessageNum();
   },
   onLoad: function (options) {
+    console.log(options)
+    if (options != true)
     wx.showLoading({
       title: '加载中...',
     })
@@ -53,11 +55,11 @@ Page({
       },
       success: res => {
         let _res = res.result.data
-        console.log(_res, '_res')
+        // console.log(_res, '_res')
         _res = res.result.data.filter((item) => {
           return item.openId != app.globalData.personInfo.openId
         })
-        console.log(_res, 'f_res')
+        // console.log(_res, 'f_res')
         let messageList = _res.map(member => {
           return {
             ball_friend_id: member.openId,
@@ -75,7 +77,7 @@ Page({
       },
       complete: () => {
         console.log("获取南昌区域球友已完成")
-        wx.hideLoading()
+        // wx.hideLoading()
         // ...
       }
     })
@@ -83,16 +85,16 @@ Page({
     wx.cloud.callFunction({
       name: 'getpingpang_dialogue'
     }).then(res => {
-      console.log(peopleList, '+++++++++++++++++++++++')
-      console.log(res.result.data, "-----------peopleList1")
+      // console.log(peopleList, '+++++++++++++++++++++++')
+      // console.log(res.result.data, "-----------peopleList1")
       peopleList = res.result.data.map(item => {
-        console.log(item, '-------item')
+        // console.log(item, '-------item')
         return {
           other_id: item.other_id,
           other_message: item.message
         }
       })
-      console.log(peopleList, "peopleList2")
+      // console.log(peopleList, "peopleList2")
       let peopleIdlist = peopleList.map(item => {
         return item.other_id
       })
@@ -122,11 +124,13 @@ Page({
         this.setData({
           peopleList
         })
-        wx.hideLoading()
+        wx.hideLoading();
+        wx.stopPullDownRefresh();
       })
     })
   },
   onPullDownRefresh() {
-    this.onLoad()
+    let noloading = true;
+    this.onLoad(noloading);
   }
 })

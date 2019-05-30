@@ -5,13 +5,6 @@ Page({
   },
   getUserInfo(e) {
     if (e.detail.userInfo) {
-      this.setData({
-        login: true
-      })
-      wx.setStorage({
-        key: 'login',
-        data: this.data.login
-      })
       let the_first = false;
       // 掉用获取用户信息函数，用openId作为唯一标识符
       wx.cloud.callFunction({
@@ -31,6 +24,10 @@ Page({
               if (res.result.data.length != 0) {
                 console.log(res.result.data)
                 app.globalData.ping_personInfo = res.result.data[0]
+                wx.setStorage({
+                  key: 'login',
+                  data: this.data.login
+                })
                 wx.switchTab({
                   url: '../home/home',
                 })
@@ -51,6 +48,10 @@ Page({
                     pingpang_info: app.globalData.ping_personInfo
                   }
                 }).then(res => {
+                  wx.setStorage({
+                    key: 'login',
+                    data: this.data.login
+                  })
                   wx.switchTab({
                     url: '../home/home',
                   })
@@ -123,6 +124,10 @@ Page({
                 //   title: '注册',
                 //   content: '注册完成',
                 // })
+                wx.setStorage({
+                  key: 'login',
+                  data: this.data.login
+                })
                 wx.switchTab({
                   url: '../home/home',
                 })
@@ -141,6 +146,8 @@ Page({
         })
       },
     })
+    setTimeout(()=>{
+    }, 10000)
   },
   // settingInfo() {
   //   this.setData({
