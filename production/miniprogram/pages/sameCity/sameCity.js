@@ -18,7 +18,12 @@ Page({
   },
   onReady(e) {
     // 使用 wx.createMapContext 获取 map 上下文
-    this.mapCtx = wx.createMapContext('map');
+    let mapCtx = wx.createMapContext('map');
+    this.setData({mapCtx})
+  },
+  relocation(){
+    console.log(1)
+    this.data.mapCtx.moveToLocation()
   },
   onLoad() {
     wx.getLocation({
@@ -206,8 +211,8 @@ Page({
   },
   dateCircle(){
     wx.showModal({
-      title: '(ಥ_ಥ)',
-      content: '敬请期待！',
+      title: '((^_−)☆)',
+      content: '即日上线！',
       showCancel: false
     })
   }

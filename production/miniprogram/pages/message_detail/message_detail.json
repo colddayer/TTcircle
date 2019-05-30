@@ -2,7 +2,7 @@
   "usingComponents": {
   },
   "backgroundTextStyle": "light",
-  "navigationBarBackgroundColor": "#1b1b1f",
-  "navigationBarTitleText": "球友留言",
+  "navigationBarBackgroundColor": "#5D7EDD",
+  "navigationBarTitleText": "圈友留言",
   "navigationBarTextStyle": "white"
 }

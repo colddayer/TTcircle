@@ -11,92 +11,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    other_id: "id_1",
-    my_id: "id_2",
+    other_id: "",
+    other_img: "",
+    my_img: "",
     inputBottom: 0,
     send_message: "",
     scrollHeight: '91vh',
-    value:"",//用来清除输入框里的内容
-    message:[
-      {
-        other_id: "id_1",
-        my_id:"id_2",
-        msg: "圈主您好,我想加入您的乒乓圈,已经申请了,请同意下好吗？谢谢！"
-      },
-      {
-        other_id: "id_2",
-        my_id: "id_1",
-        msg: "好的，这就同意你的申请."
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的"
-      },
-      {
-        other_id: "id_2",
-        my_id: "id_1",
-        msg: "好的，这就同意你的申请."
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的7"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的6"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的5"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的4"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的3"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的2"
-      },
-      {
-        other_id: "id_1",
-        my_id: "id_2",
-        msg: "好的1"
-      }
-    ]
+    value: "",//用来清除输入框里的内容
+    message_id: [],
+    message: []
   },
-  updateView(){
+  updateView() {
     this.setData({
       toView: 'msg-' + (this.data.message.length)
     })
   },
-  focus(e){
+  //聚焦输入框时scroll的高度设置
+  focus(e) {
     let length = this.data.message.length
+    this.setData({
+      toView: 'msg-' + (length)
+    })
+    console.log(length, "focus")
     keyHeight = e.detail.height;
-    console.log(windowHeight);
-    // console.log(e.datail);
-    console.log(keyHeight)
     this.setData({
-      scrollHeight: (windowHeight - keyHeight - 48 ) + 'px'
+      scrollHeight: (windowHeight - keyHeight - 48) + 'px'
     });
-    console.log(this.data.scrollHeight)
     this.setData({
-      toView: 'msg-'+ (length),
       inputBottom: keyHeight + 'px'
     })
   },
   blur(e) {
     let length = this.data.message.length - 1
+    console.log(this.data.message.length,"blur")
     this.setData({
       scrollHeight: '91vh',
       inputBottom: 0
@@ -105,37 +52,106 @@ Page({
       toView: 'msg-' + (length)
     })
   },
-  inputContent(e){
+  inputContent(e) {
     let length = this.data.message.length
-    console.log(e.detail.value)
     let _send_message = e.detail.value
     let message = this.data.message
     this.setData({
-      send_message : _send_message,
+      send_message: _send_message,
       toView: 'msg-' + (length)
-      })
+    })
+    console.log(length, "inputContent")
   },
-  send_message(e){
+  send_message(e) {
+    if (this.data.send_message == '')
+      return
     let length = this.data.message.length - 1
     let _message = {}
     _message.msg = this.data.send_message
     _message.other_id = this.data.other_id
-    _message.my_id = this.data.my_id
     let message = this.data.message
-    message.push(_message) 
+    message.push(_message)
     this.setData({
-      message : message,
-      value:"",
+      message: message,
+      value: "",
       toView: 'msg-' + (length)
+    })
+    if (_message == null) return
+    wx.cloud.callFunction({
+      // 要调用的云函数名称
+      name: 'addpingpang_message',
+      // 传递给云函数的参数
+      data: {
+        other_id: this.data.other_id,
+        msg: _message.msg
+      },
+      success: res => {
+        console.log(res, 'success')
+        this.setData({
+          send_message: ''
+        })
+        _message = null;
+      },
+      fail: err => {
+        console.log("获取留言会话id失败")
+        // handle error
+      },
+      complete: () => {
+        console.log("获取留言会话id已完成")
+        // ...
+      }
     })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  up_show(){
+    let length = this.data.message.length
     this.setData({
-      toView: 'msg-' + (this.data.message.length - 1)
+      toView: 'msg-' + (length)
     })
+  },
+  onLoad: function (opts) {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    console.log(opts)
+    this.setData({
+      other_id: opts.other_id,
+      other_head_image_src: opts.head_image_src,
+      my_head_image_src: app.globalData.personInfo.avatarUrl
+    })
+    let messageList;
+    if (opts.message) {
+      messageList = opts.message.split(',');
+      wx.cloud.callFunction({
+        name: 'getpingpang_message',
+        data: {
+          message: messageList
+        }
+      }).then(res => {
+        let message = this.data.message
+        this.setData({
+          message: message.concat(res.result)
+        })
+        let length = this.data.message.length
+        this.setData({
+          toView: 'msg-' + (length-1)
+        })
+        wx.hideLoading()
+      })
+    }
+    else {
+      this.setData({
+        message: []
+      })
+      wx.hideLoading()
+    }
+    
+    // console.log(length, "onload")
+
+   
+    
   },
 
   /**

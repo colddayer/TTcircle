@@ -1,22 +1,30 @@
-<!--pages/messge/message.wxml-->
+<!--pages/messge/message.wxml--> 
 <!-- 乒乓圈主页 -->
-<view class="section">
+<view class='back_image' bindtap='send'>
+      <image src='https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/friend-page%20.png?sign=5fc5b8cbcb3590bf8aef8b6e8a859102&t=1559158098'></image>
+      <view class='circle-1'></view>
+      <view class='circle-2'></view>
+      <view class='circle-3'></view>
+      <view class='circle-4'></view>
+      <view class='circle-5'></view>
+      <view class='circle-6'></view>
+      <view class='circle-7'></view>
+</view>
+<view class="section"> 
     <view  class='nav'  style="width: 100%" >
         <view class="item pingpang_firend {{Choose == 'true' ? 'select':'' }} " bindtap='switchTab' data-choose="true">
           <view class="ballFriend_Tip {{Choose == 'true' ? 'on':'off' }}"></view>
-          <text>球友圈</text>
+          <text>圈友</text>
         </view>
-        <view class="item message {{Choose != 'true' ? 'select':'' }}" bindtap='switchTab' data-choose="false">
+        <view id='message'class="item message {{Choose != 'true' ? 'select':'' }}" bindtap='switchTab' data-choose="false">
           <view class="ballFriend_Tip {{Choose != 'true' ? 'on':'off' }}"></view>
-          <text>留言板</text>
-          <view class="message_Tip">
-              <view class="message_num">{{TotalMessageNum}}</view>
-          </view>
+          <text>留言</text>
         </view>
     </view>
     <view class="message_list {{Choose == 'true' ? '' : 'hide'}}" >
-      <block wx:for="{{messageList}}"  wx:key = "item">
-        <navigator url="../friend_detail/friend_detail">
+      <block wx:for="{{messageList}}"  wx:key = "item" >
+        <!-- <navigator url="../friend_date/friend_date?id={{item.ball_friend_id}}" > -->
+        <view class='jump_window' bindtap='jump_date' data-index_friend = "{{item.ball_friend_id}}">
           <view class="message" >
                 <view class="head_image">
                   <image src="{{item.head_image_src}}" />  
@@ -25,30 +33,29 @@
                   <text>{{item.name}}</text>
                 </view>
                 <view class="join_icon">
-                  <image src="../../images/arrow.png" />  
+                    <view class='arrow_icon'></view> 
                 </view>
           </view>
-        </navigator>
+        <!-- </navigator> -->
+        </view>
       </block>
     </view>
     <view class="message_list {{Choose != 'true' ? '' : 'hide'}}" >
-        <block wx:for="{{messageList_one}}" wx:key = "index" data-index = "{{index}}" bindtap = "choose_one" >
-          <navigator url="../message_detail/message_detail">
+        <block wx:for="{{peopleList}}" wx:key = "index"  bindtap = "choose_one" >
+          <view class='jump_window' bindtap='creat_message' data-other_id = "{{item.other_id}}">
             <view class="message">
                   <view class="head_image">
                     <image src="{{item.head_image_src}}" />  
                   </view>
                   <view class="name">
-                    <text>{{item.name}}</text>
-                  </view>
-                  <view class="message_Tip">
-                    <view class="message_num">{{item.num}}</view>
+                    <view class='title'>{{item.name}}</view>
                   </view>
                   <view class="join_icon">
-                    <image src="../../images/arrow.png" />  
+                    <view class='arrow_icon'></view> 
                   </view>
             </view>
-          </navigator>
+          </view>
       </block>
     </view>
 </view>
+

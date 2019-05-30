@@ -1,7 +1,120 @@
 /* pages/messge/message.wxss */
+.section{
+  height: 100%;
+  position: absolute;
+  top:0px; 
+}
 .nav{
   white-space: nowrap;
-  /* border-bottom: 4rpx solid; */
+  border-bottom: 3px solid  rgba(153, 153, 153, 0.5);
+  z-index: 1000;
+}
+.back_image{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.back_image image{
+  height: 117%;
+  width: 100%;
+}
+.back_image .circle-1{
+  position: absolute;
+  width: 134rpx;
+	height: 134rpx;
+	left: 124rpx; 
+	top: 306rpx;
+	opacity: 0.33;
+	color: rgba(245, 166, 35, 1);
+	background-color: rgba(245, 166, 35, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+}
+.back_image .circle-2{
+  position: absolute;
+  width: 94rpx;
+	height: 94rpx;
+  left: 190rpx;
+	top: 364rpx;
+	opacity: 0.3;
+	color: rgba(175, 132, 250, 1);
+	background-color: rgba(175, 132, 250, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-3{
+  position: absolute;
+  width: 288rpx;
+	height: 288rpx;
+	left: 422rpx;
+	top: 284rpx;
+	opacity: 0.12;
+	color: rgba(205, 78, 72, 1);
+	background-color: rgba(205, 78, 72, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-4{
+  position: absolute;
+  width: 94rpx;
+	height: 94rpx;
+	left: 564rpx;
+	top: 526rpx;
+	opacity: 0.3;
+	color: rgba(251, 94, 87, 1);
+	background-color: rgba(251, 94, 87, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-5{
+  position: absolute;
+  width: 104rpx;
+	height: 104rpx;
+	left: 244rpx;
+	top: 670rpx;
+	opacity: 0.33;
+	color: rgba(126, 211, 33, 1);
+	background-color: rgba(126, 211, 33, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-6{
+  position: absolute;
+  width: 160rpx;
+	height: 160rpx;
+	left: 376rpx;
+	top: 814rpx;
+	opacity: 0.05;
+	color: rgba(189, 16, 224, 1);
+	background-color: rgba(189, 16, 224, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-7{
+  position: absolute;
+  width: 62rpx;
+	height: 62rpx;
+	left: 404rpx;
+	top: 944rpx;
+	opacity: 0.3;
+	color: rgba(80, 227, 194, 1);
+	background-color: rgba(80, 227, 194, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
 }
 .nav .item{
   display: inline-block;
@@ -10,11 +123,11 @@
   height: 48px;
   font-size: 14px;
   line-height: 150%;
-  border: rgba(153, 153, 153, 1);
-  background-color: rgba(221, 221, 221, 1);  
+  /* border: rgba(153, 153, 153, 0.5); */
+  background-color: rgba(93, 126, 221, 1);  
 }
 .nav .item.select{
-  background-color: rgba(181, 181, 181, 1);
+  background-color: rgba(93, 126, 221, 1);  
 }
 .nav .item text{
   display: inline-block;
@@ -40,8 +153,12 @@
   border-radius: 50%;
   /* background-color: rgba(61, 213, 0, 1); */
 }
+#message{
+  border-right:none; 
+}
 .message{
   display: flex;
+  border-right:none; 
 }
 .message .message_Tip{
   width: 42rpx;
@@ -65,14 +182,14 @@
 .message_list{
   width: 750rpx;
   height: 100%;
-  background-color: rgba(247, 247, 247,1);
+  /* background-color: rgba(247, 247, 247,1); */
 }
 
 .message_list .message{
   display: flex;
-  height: 150rpx;
+  height: 130rpx;
   margin-top: 6rpx;
-  background-color: rgba(238, 238, 238, 1);
+  border-bottom: 3px solid rgba(248, 248, 248, 1)
 }
 
 .message_list .head_image{
@@ -82,14 +199,14 @@
   /* margin: auto; */
   margin-top: auto;
   margin-bottom: auto;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background-color: rgba(247, 247, 247,1);
 }
 
 .head_image image{
   height: 100%;
   width: 100%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .message_list .name{
@@ -99,6 +216,11 @@
   margin-bottom: auto;
   margin-left: 30rpx;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.message_list .title{
+ 
 }
 
 .message_list .message_Tip{
@@ -127,4 +249,10 @@
   width: 9px;
   height: 16px;
   margin: auto;
+}
+.arrow_icon{
+  width: 18rpx;
+  height: 32rpx;
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTAgMTYiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDQzICgzODk5OSkgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+U2hhcGU8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iL0YtRmFzaGlvbi1BcHAtVUktS2l0LS8tRnJlZS12ZXJzaW9uIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgICAgICA8ZyBpZD0iMS1NZXNzYWdlcyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM0OS4wMDAwMDAsIC0xOTQuMDAwMDAwKSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjQkJCQUNEIj4KICAgICAgICAgICAgPGcgaWQ9IkNoYXRzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwgMTU5LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPGcgaWQ9IjEiPgogICAgICAgICAgICAgICAgICAgIDxnIGlkPSJyaWdodC1hcnJvdyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzQ5LjAwMDAwMCwgMzUuMDAwMDAwKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xLjAzMDU5NTgxLDE1LjgzNDQ4MjggQzAuOTEyODEzNDM1LDE1Ljk0NDgyNzYgMC43NjU1ODU0NjEsMTYgMC42MDM2MzQ2OTEsMTYgQzAuNDQxNjgzOTIsMTYgMC4yOTQ0NTU5NDcsMTUuOTQ0ODI3NiAwLjE3NjY3MzU2OCwxNS44MzQ0ODI4IEMtMC4wNTg4OTExODkzLDE1LjYxMzc5MzEgLTAuMDU4ODkxMTg5MywxNS4yNTUxNzI0IDAuMTc2NjczNTY4LDE1LjAzNDQ4MjggTDcuNjg1MzAwMjEsOCBMMC4xNzY2NzM1NjgsMC45NjU1MTcyNDEgQy0wLjA1ODg5MTE4OTMsMC43NDQ4Mjc1ODYgLTAuMDU4ODkxMTg5MywwLjM4NjIwNjg5NyAwLjE3NjY3MzU2OCwwLjE2NTUxNzI0MSBDMC40MTIyMzgzMjUsLTAuMDU1MTcyNDEzOCAwLjc5NTAzMTA1NiwtMC4wNTUxNzI0MTM4IDEuMDMwNTk1ODEsMC4xNjU1MTcyNDEgTDguOTY2MTgzNTcsNy42IEM5LjIwMTc0ODMzLDcuODIwNjg5NjYgOS4yMDE3NDgzMyw4LjE3OTMxMDM0IDguOTY2MTgzNTcsOC40IEwxLjAzMDU5NTgxLDE1LjgzNDQ4MjggTDEuMDMwNTk1ODEsMTUuODM0NDgyOCBaIiBpZD0iU2hhcGUiPjwvcGF0aD4KICAgICAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgICAgICA8L2c+CiAgICAgICAgICAgIDwvZz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==");
+  background-size: cover;
 }

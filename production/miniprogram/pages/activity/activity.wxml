@@ -1,1 +1,8 @@
-
+<view class='pg-img'>
+<view class='mask'>
+<view class='text'>
+更待探索
+</view>
+</view>
+<image src='../../images/secret.jpg' class='img'></image>
+</view>

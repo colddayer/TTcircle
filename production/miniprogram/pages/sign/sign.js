@@ -51,6 +51,7 @@ Page({
           }).then(res => {
             app.globalData.personInfo.intergal = res.result.intergal;
             app.globalData.personInfo.level = res.result.level;
+            app.globalData.personInfo.signned = new Date().getDate();
             wx.cloud.callFunction({
               name: 'setPersonInfo',
               data: app.globalData.personInfo

@@ -12,14 +12,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      wx.showModal({
-        title: '(〒▽〒)',
-        content: '敬请期待!',
-        showCancel: false,
-        success:()=>{
-          wx.navigateBack({})
-        }
-      })
+      // wx.showModal({
+      //   title: '(〒▽〒)',
+      //   content: '敬请期待!',
+      //   showCancel: false,
+      //   success:()=>{
+      //     wx.navigateBack({})
+      //   }
+      // })
   },
 
   /**

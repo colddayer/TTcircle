@@ -77,7 +77,7 @@
   width: 750rpx;
 	height: 98rpx;
   color: rgba(80, 80, 80, 1);
-	background-color: rgba(0, 159, 232, 1);
+	background-color: #5D7EDD;
 	font-size: 16px;
 	line-height: 150%;
 	text-align: center;

@@ -10,7 +10,7 @@ page {
 
 .header-card {
   height: 300rpx;
-  background-color: #0081ff;
+  background-color: #5D7EDD;
   border-radius: 0 0 40rpx 40rpx;
 }
 
@@ -150,7 +150,7 @@ page {
 }
 
 .project {
-  height: 90rpx;
+  height: 120rpx;
   vertical-align: middle;
   display: flex;
 }
@@ -158,7 +158,10 @@ page {
 .project > .image, .title, .righticon {
   display: inline-block;
 }
-
+.righticon{
+  font-size: 30rpx;
+  margin-top: 40rpx;
+}
 .project image {
   height: 50rpx;
   width: 50rpx;
@@ -169,7 +172,7 @@ page {
   margin-left: 14rpx;
   margin-top: -4rpx;
   flex: 1;
-  line-height: 90rpx;
+  line-height: 120rpx;
 }
 
 .project .number {
@@ -200,7 +203,7 @@ page {
 }
 
 .footer .footbg {
-  background-color: #0081ff;
+  background-color: #5D7EDD;
   border-radius: 40rpx 40rpx 0 0;
   height: 60rpx;
   width: 100%;

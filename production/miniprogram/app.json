@@ -17,11 +17,12 @@
     "pages/pingpangquan/pingpangquan",
     "pages/star/star",
     "pages/competition/competition",
-    "pages/activity/activity"
+    "pages/activity/activity",
+    "pages/news/news"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#11264f",
+    "navigationBarBackgroundColor": "#5D7EDD",
     "navigationBarTitleText": "乒乓圈",
     "navigationBarTextStyle": "white"
   },
@@ -37,7 +38,7 @@
       },
       {
         "pagePath": "pages/message/message",
-        "text": "球友消息",
+        "text": "圈友",
         "iconPath": "images/class.png",
         "selectedIconPath": "images/hover-class.png"
       },

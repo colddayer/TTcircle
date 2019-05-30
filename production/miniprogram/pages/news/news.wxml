@@ -1,0 +1,15 @@
+<!--miniprogram/pages/news/news.wxml-->
+<view class='head-swiper'>
+<swiper class="screen-swiper square-dot" circular="true" autoplay="true" indicator-dots="true" interval="3000" duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+    <view class='news'>{{item.news}}</view>
+  </swiper-item>
+</swiper>
+</view>
+<image src='../../images/news.png' class='img'></image>
+<view class='mask'>
+<view class='text'>
+即日上线
+</view>
+</view>

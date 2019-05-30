@@ -1,0 +1,46 @@
+<!--miniprogram/pages/friend_date/friend_date.wxml-->
+<!-- <text>miniprogram/pages/friend_date/friend_date.wxml</text> -->
+<!-- <text class="cuIcon-close lg text-gray hidview-close" bindtap='hidviewClose'></text> --> 
+<view class='back_image' bindtap='send'>
+      <view class='circle-1'></view>
+      <view class='circle-2'></view>
+      <view class='circle-3'></view>
+      <view class='circle-4'></view>
+      <view class='circle-5'></view>
+      <view class='circle-6'></view>
+      <view class='circle-7'></view>
+</view>
+<view class='section'>
+<image src = "{{avatarUrl}}"></image>
+<view class='hidview-score'>
+  <text>{{level}}</text>
+</view>
+<button class='restbtn' bindtap='creat_message' data-id='{{}}'>留言</button>
+<view class='hidview-list'>
+<text class='hidview-left'>个人简介</text><text class='hidview-right'>{{context}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>昵称</text><text class='hidview-right'>{{name}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>电话</text><text class='hidview-right'>{{phone}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>球龄</text><text class='hidview-right'>{{years}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>持拍</text><text class='hidview-right'>{{bat}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>使用底板</text><text class='hidview-right'>{{board}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>正手胶皮</text><text class='hidview-right'>{{infront_rubber}}</text>
+</view>
+<view class='hidview-list'>
+<text class='hidview-left'>反手胶皮</text><text class='hidview-right'>{{behind_rubber}}</text>
+</view>
+</view>
+
+
+

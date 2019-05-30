@@ -61,6 +61,7 @@ Page({
         infront_rubber: res.result.data[0].infront_rubber,
         phone: res.result.data[0].phone,
         years: res.result.data[0].years,
+        board: res.result.data[0].board,
         name:index.nickName,
         img:index.img,
         context:index.context,

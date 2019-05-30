@@ -56,6 +56,9 @@ Component({
   methods: {
     hidviewClose() {
       this.triggerEvent("hidView");
+    },
+    leaveMessage() {
+      this.triggerEvent("message");
     }
   }
 })

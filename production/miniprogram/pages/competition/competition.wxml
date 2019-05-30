@@ -1,1 +1,12 @@
 <!--miniprogram/pages/competition/competition.wxml-->
+<!--miniprogram/pages/star/star.wxml-->
+<view class='pg-img'>
+<view class='mask'>
+<view class='text'>
+即日上线
+</view>
+</view>
+<image src='../../images/match.jpg' class='img'></image>
+</view>
+
+

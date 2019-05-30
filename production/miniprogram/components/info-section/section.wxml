@@ -2,7 +2,7 @@
   <view class="title">{{title}}</view>
   <input type='{{type}}' wx:if="{{changeinfo}}" bindblur='changend' value='{{info}}' placeholder="请输入信息" focus='true'></input>
   <view class='info' wx:else>
-    <input value='{{info?info:"空"}}' disabled='true'></input>
+    <input value='{{info?info:"新手用具"}}' disabled='true'></input>
   </view>
   <view class='icon-con' bindtap='changeinfo'>
     <image src="https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/change-1.png?sign=c8936111328dcb2ee416201369716380&t=1559030699" class='icon'></image>

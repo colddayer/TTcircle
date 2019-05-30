@@ -33,7 +33,11 @@ App({
             wx.cloud.callFunction({
               name: "getpingpang_info",
               success: res => {
+                console.log('登录从app.js')
                 this.globalData.ping_personInfo = res.result.data[0]
+                wx.switchTab({
+                  url: '../home/home',
+                })
               }
             })
           })

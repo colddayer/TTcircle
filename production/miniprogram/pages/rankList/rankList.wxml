@@ -1,4 +1,4 @@
-<view class='page-bottom bg-blue'>
+<view class='page-bottom'>
 <view class='list'>
 <view class='list-title'>同城段位积分排行</view>
 <block wx:for='{{rankList}}' wx:key>

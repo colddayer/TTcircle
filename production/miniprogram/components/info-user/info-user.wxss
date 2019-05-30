@@ -7,6 +7,7 @@
   top: 0;
   animation: show .3s linear forwards;
   z-index: 2;
+  border-radius: 10px;
 }
 .mt{
   margin-top: 30rpx;
@@ -35,7 +36,7 @@
   display: block;
   width: 240rpx;
   height: 70rpx;
-  background-color: rgba(42, 169, 228, 1);
+  background-color:#5D7EDD;
   color: white;
   font-size: 28rpx;
   border-radius:38rpx;
@@ -64,4 +65,5 @@
   right: 10rpx;
   top:10rpx;
   font-size: 60rpx;
+  width: 50rpx;
 }

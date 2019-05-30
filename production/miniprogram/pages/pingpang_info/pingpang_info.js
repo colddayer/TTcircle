@@ -9,16 +9,20 @@ Page({
     picker: ['右手横拍', '右手直拍', '左手横拍', '左手直拍']
   },
   PickerChange(e) {
+    let personInfo = this.data.personInfo;
     this.setData({
       index: e.detail.value
     })
-    app.globalData.ping_personInfo.bat = this.data.picker[this.data.index]
+    personInfo.bat = this.data.picker[this.data.index];
+    this.setData({personInfo})
   },
   PickerAgeChange(e) {
+    let personInfo = this.data.personInfo;
     this.setData({
       indexAge: e.detail.value
     })
-    app.globalData.ping_personInfo.years = this.data.pickerAge[this.data.indexAge]
+    personInfo.years = this.data.pickerAge[this.data.indexAge];
+    this.setData({personInfo})
   },
   getinfo() {
     this.setData({
@@ -26,7 +30,20 @@ Page({
     })
   },
   submit() {
-    const that = this;
+    let personInfo = this.data.personInfo;
+    if(personInfo.phone.length != 11){
+      wx.showModal({
+        title: '提示',
+        content: '无效电话号码',
+        showCancel:false
+      })
+      personInfo.phone = '';
+      this.setData({
+        personInfo
+      })
+      return
+    }
+      const that = this;
     console.log("开始提交")
     wx.showLoading({
       title: '提交中',

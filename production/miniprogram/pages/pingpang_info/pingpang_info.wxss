@@ -3,7 +3,7 @@
   padding: 0 20rpx;
   position: absolute;
   top: 35%;
-  transform: translateY(-50%)
+  transform: translateY(-50%);
 }
 .button{
   left: 30rpx;
@@ -11,7 +11,7 @@
   border-radius: 40rpx;
   bottom: -150rpx;
   position: absolute;
-  background-color: #8799A3;
+  background-color: #5D7EDD;
   color: white;
 }
 .cu-form-group {

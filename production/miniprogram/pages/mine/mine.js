@@ -13,6 +13,13 @@ Page({
     changename: false,
     hidview: false
   },
+  aboutPingpang(){
+    wx.showModal({
+      title: '(◕ᴗ◕✿)',
+      content: '一起来约球!',
+      showCancel: false
+    })
+  },
   ToPage(event) {
     wx.navigateTo({
       url: `../${event.currentTarget.dataset.name}/${event.currentTarget.dataset.name}`,

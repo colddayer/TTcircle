@@ -16,7 +16,41 @@
 .controls-active {
   height: 200rpx;
 }
-
+.c-location{
+  width: 70rpx;
+  height: 70rpx;
+  background-color: white;
+  position: absolute;
+  left: 20rpx;
+  bottom: 60rpx;
+  border-radius:50%; 
+  z-index: 5;
+}
+.c-img__con{
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  /* border: 1px solid black; */
+}
+.big-circle{
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.dot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius:50%; 
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%)
+}
 .center-button {
   display: block;
   width: 130rpx;

@@ -9,48 +9,48 @@ Page({
     }, {
       id: 1,
       type: 'image',
-        url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132Z51A.jpg',
-        news: '中国乒乓球公开赛 双打变阵只为找到最佳组合'
+      url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132Z51A.jpg',
+      news: '中国乒乓球公开赛 双打变阵只为找到最佳组合'
     }, {
       id: 2,
       type: 'image',
-        url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132636364.jpg',
-        news:'“乒乒乓乓”奏响中国声音'
+      url: 'http://xhimg.sports.cn/Image/190524/51-1Z524132636364.jpg',
+      news: '“乒乒乓乓”奏响中国声音'
     }, {
       id: 3,
       type: 'image',
-        url: 'http://xhimg.sports.cn/Image/190517/51-1Z51FU024931.jpg',
-        news: '为了国旗国歌的飘、升、奏'
+      url: 'http://xhimg.sports.cn/Image/190517/51-1Z51FU024931.jpg',
+      news: '为了国旗国歌的飘、升、奏'
     }, {
       id: 4,
       type: 'image',
-        url: 'http://xhimg.sports.cn/Image/190514/6-1Z5140T9422D.jpg',
-        news: '中国公开赛｜“5金国乒”再次吹响“集结号”'
+      url: 'http://xhimg.sports.cn/Image/190514/6-1Z5140T9422D.jpg',
+      news: '中国公开赛｜“5金国乒”再次吹响“集结号”'
     }],
     circleLise: [{
-      id: '活动圈',
-      slogan: '更多活动一起来玩',
+      id: '未知圈',
+      slogan: '未知功能更待探索',
       name: 'activity',
-      index:0
+      index: 0
     },
     {
       id: '赛事圈',
       slogan: '以球会友交流互娱',
       name: 'competition',
-      index:1
-    },
-    {
-      id: '同城圈',
-      slogan: '我们相遇在一个城市',
-      name: 'sameCity',
-      index: 2
+      index: 1
     },
     {
       id: '达人圈',
       slogan: '乒乓好手带你提升',
       name: 'star',
-      index: 3
+      index: 2
     },
+    {
+      id: '快讯圈',
+      slogan: '这里有你想知道的',
+      name: 'news',
+      index: 3
+    }
     ],
     notice: [
       '小提示:段位积分越高，排行榜排名也越高',
@@ -60,19 +60,31 @@ Page({
     ],
     login: false,
     current: [-2, -1, 0, -1],
-    center:2
+    center: 2
+  },
+  onShow() {
+    let day = app.globalData.personInfo.signned;
+    if (day == new Date().getDate()) {
+      this.setData({
+        signned: true
+      })
+    }
   },
   onLoad() {
+    let day = app.globalData.personInfo.signned;
+    
+    if (day == new Date().getDate()) {
+      this.setData({
+        signned: true
+      })
+    }
     wx.cloud.callFunction({
-      name:'spider'
-    }).then(res=>{
+      name: 'spider'
+    }).then(res => {
       console.log(res)
     })
     this.towerSwiper('circleLise');
     // 初始化towerSwiper 传已有的数组名即可
-    this.setData({
-      login:app.globalData.login
-    })
   },
   // towerSwiper
   // 初始化towerSwiper
@@ -121,9 +133,9 @@ Page({
         circleLise: list,
         current,
         center,
-        direction:''
+        direction: ''
       })
-    } else if (direction == 'left'){
+    } else if (direction == 'left') {
       let mLeft = list[list.length - 1].mLeft;
       let zIndex = list[list.length - 1].zIndex;
       for (let i = list.length - 1; i > 0; i--) {
@@ -132,7 +144,7 @@ Page({
       }
       list[0].mLeft = mLeft;
       list[0].zIndex = zIndex;
-      
+
       const current = this.data.current;
       let right = current.pop();
       current.unshift(right);
@@ -196,7 +208,7 @@ Page({
         };
         // 显示加载
         wx.showLoading({
-          title: '注册中',
+          title: '授权中',
         })
         // 用户注册函数，除了昵称和头像，全置为最低或空
         wx.cloud.callFunction({
@@ -204,7 +216,7 @@ Page({
           data: data
         }).then(res => {
           // 数据库已经注册完成
-          console.log("注册完成")
+          console.log("授权成功")
         })
           .then(() => {
             // 注册完成后获取一遍用户信息
@@ -217,17 +229,17 @@ Page({
               wx.hideLoading();
               // 提示注册完成
               wx.showModal({
-                title: '注册',
-                content: '注册完成',
+                title: '登录',
+                content: '登录成功',
               })
             })
           })
       }
     })
 
-  //   app.globalData = {
-  //     personInfo: {
-  //     }
-  //   }
+    //   app.globalData = {
+    //     personInfo: {
+    //     }
+    //   }
   }
 })

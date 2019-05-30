@@ -1,51 +1,42 @@
-<view id='mask' wx:if='{{!login}}'>
-  <view class='setting-con'>
-    <view class='title'>提示</view>
-    <view class='content'>请使用微信登录喲(✪ω✪)</view>
-    <button open-type="getUserInfo" bindtap='settingInfo' class='setting'>确定</button>
-  </view>
+<view class='page'>
+  <image src='../../images/bg.jpg' class='page-img'></image>
+  <swiper autoplay='true' vertical='true' circular="true" class='notice'>
+    <swiper-item wx:for='{{notice}}' wx:key>
+      <view>{{item}}</view>
+    </swiper-item>
+  </swiper>
 </view>
-<view class='head-swiper'>
-<swiper class="screen-swiper square-dot" circular="true" autoplay="true" indicator-dots="true" interval="3000" duration="500">
-  <swiper-item wx:for="{{swiperList}}" wx:key>
-    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
-    <view class='news'>{{item.news}}</view>
-  </swiper-item>
-</swiper>
+<view class='rankList-con' bindtap='toRankList'>
+<image class='con-img' src='https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/rank.svg?sign=3de359c055fda25f0a87b48b21f41b96&t=1559139605'></image><text class='con-text'>榜 单</text>
 </view>
-<swiper autoplay='true' vertical='true' circular="true" class='notice bg-blue'>
-  <swiper-item wx:for='{{notice}}' wx:key>
-    <view>{{item}}</view>
-  </swiper-item>
-</swiper>
-<view class='page-bottom bg-blue'>
-<view class='tennisnet t-left'></view>
-<view class='tennisnet t-right'></view>
-<view class='page-mask'></view>
-  <view class='rank-list bg-blue' bindtap='toRankList'>
-    <image src='https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/list.png?sign=3b6cc4383cf8d582475731b49a887940&t=1559030099' class='sign-icon'></image>
-    <view class='icon-t'>榜单</view>
+<view class='sign-con' bindtap='toSign'>
+<image class='con-img' src='https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/sign.svg?sign=31dc2b7807305ce91df0574924d1ef30&t=1559139636'></image><text class='con-text'>{{signned?"已 签":"签 到"}}</text>
+</view>
+<navigator url='../sameCity/sameCity' hover-class='none'>
+<view class='circle circle-active' id='samecity'>
+  <view class='star'>
+    <text class="cuIcon-favorfill lg"></text>
+    <text class="cuIcon-favorfill lg"></text>
+    <text class="cuIcon-favorfill lg"></text>
   </view>
-  <view class='rank-list-r bg-blue' bindtap='toSign'>
-    <image src='https://636f-coldday-67x7r-1259123272.tcb.qcloud.la/sign.png?sign=fb874c0c6373163644fac8541703a6cb&t=1559030055' class='sign-icon'></image>
-    <view class='icon-t'>打卡</view>
-  </view>
-  <view class='sign'></view>
-  <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
-    <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
-      <view class="swiper-item-">
-        <navigator url='{{item.index == center?"../"+item.name+"/"+item.name:""}}' hover-class='none' class='navigator'>
-          <view class='circle {{item.index == center?"circle-active":""}}'>
-            <view class='star'>
-              <text class="cuIcon-favorfill lg"></text>
-              <text class="cuIcon-favorfill lg"></text>
-              <text class="cuIcon-favorfill lg"></text>
-            </view>
-            <view class='circle-id'>{{item.id}}</view>
-            <view class='slogan'>{{item.slogan}}</view>
+  <view class='circle-id'>同城圈</view>
+  <view class='slogan'>我们相遇在一座城</view>
+</view>
+</navigator>
+<view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd">
+  <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{circleLise}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+    <view class="swiper-item-">
+      <navigator url='{{item.index == center?"../"+item.name+"/"+item.name:""}}' hover-class='none' class='navigator'>
+        <view class='circle {{item.index == center?"circle-active":""}}'>
+          <view class='star'>
+            <text class="cuIcon-favorfill lg"></text>
+            <text class="cuIcon-favorfill lg"></text>
+            <text class="cuIcon-favorfill lg"></text>
           </view>
-        </navigator>
-      </view>
+          <view class='circle-id'>{{item.id}}</view>
+          <view class='slogan'>{{item.slogan}}</view>
+        </view>
+      </navigator>
     </view>
   </view>
 </view>

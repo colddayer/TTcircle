@@ -12,13 +12,27 @@ Page({
     endtime: '点击选择',
     placeholder: {
       one: 'xxx球圈(10字内)',
-      two: 'xxxx乒乓球馆/室/俱乐部',
+      two: 'xxxx 乒乓球馆 | 室 | 俱乐部',
       three: '14:00 -- 20:30',
-      four: 'xxxx大学-体育馆',
+      four: '搜索选择  ',
       five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
     },
     backfill: '',
     disabled: true
+  },
+  onLoad() {
+    let picker = [];
+    for (let i = 1; i < 31; i++) {
+      picker.push(i)
+    }
+    this.setData({ picker })
+  },
+  PickerChange(e) {
+    this.setData({
+      index: e.detail.value
+    })
+    let table = this.data.picker[this.data.index];
+    this.setData({ table })
   },
   TimeChange(e) {
     this.setData({
@@ -70,9 +84,9 @@ Page({
           addressValue: this.data.suggestion[i].title,
           placeholder: {
             one: 'xxx球圈(10字内)',
-            two: 'xxxx乒乓球馆/室/俱乐部',
+            two: 'xxxx 乒乓球馆 | 室 | 俱乐部',
             three: '14:00 -- 20:30',
-            four: 'xxxx大学-体育馆',
+            four: '搜索选择  ',
             five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
           },
           latitude: this.data.suggestion[i].latitude,
@@ -117,9 +131,9 @@ Page({
       hidList: true,
       placeholder: {
         one: 'xxx球圈(10字内)',
-        two: 'xxxx乒乓球馆/室/俱乐部',
+        two: 'xxxx 乒乓球馆 | 室 | 俱乐部',
         three: '14:00 -- 20:30',
-        four: 'xxxx大学-体育馆',
+        four: '搜索选择  ',
         five: '以球会友，互相交流，互娱互乐，共同乒搏，推广国球文化，让更多乒乓球兴趣爱好者走到一起互相认识，提高球技，培养球德。'
       },
       addressValue: this.data.backfill,
@@ -165,7 +179,20 @@ Page({
       })
       return
     }
-    let cloudPath = this.data.imgList[0].split('//')[1]
+    let beginHour = this.data.begintime[0] + this.data.begintime[1];
+    let beginMin = this.data.begintime[3] + this.data.begintime[4];
+    let endHour = this.data.endtime[0] + this.data.endtime[1];
+    let endMin = this.data.endtime[3] + this.data.endtime[4];
+    if (beginHour - endHour > 0 || (beginHour - endHour < 0 && beginMin - endMin > 0))
+    {
+      wx.showModal({
+        title: '提交错误',
+        content: '错误时间信息!',
+        showCancel: false
+      })
+      return
+    }
+      let cloudPath = this.data.imgList[0].split('//')[1]
     let filePath = this.data.imgList[0];
     wx.cloud.uploadFile({
       cloudPath,
@@ -213,11 +240,14 @@ Page({
     })
   },
   testName(e) {
-    if (!e.detail.value.match(/乒乓球馆|乒乓球室|乒乓球俱乐部$/)){
+    if (!e.detail.value.match(/乒乓球馆|乒乓球室|乒乓球俱乐部$/)) {
       wx.showModal({
-        title: '提示',
-        content: '请以乒乓球馆或乒乓球室或乒乓球俱乐部结尾哦！',
-        showCancel:false
+        title: '友情提示--名称格式',
+        content: '请以 乒乓球馆 或乒乓球室 或乒乓球俱乐部 结尾命名哦！',
+        showCancel: false
+      })
+      this.setData({
+        areana: ''
       })
     }
   }

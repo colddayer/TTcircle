@@ -7,10 +7,12 @@
   background-size: cover;
   background-position: center;
   padding: 30rpx 36rpx 0 36rpx;
+  background-color: #5D7EDD;
 }
 .list{
   background-color: #fffef9;
   height: calc(100% - 50rpx);
+  border-radius:10px; 
 }
 .list-title{
   text-align: center;

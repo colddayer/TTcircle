@@ -1,10 +1,18 @@
 /* pages/openCircle/openCircle.wxss */
+#btn{
+  background-color: #5D7EDD;
+}
 input{
   text-align: center
 }
 #address{
-  text-align: center;
+  text-align: right;
   height: 60rpx;
+  margin-top: 50rpx;
+}
+.address-icon{
+  transform: translateX(10rpx);
+  margin-bottom: 10rpx;
 }
 .search-address{
   width: 100%;
@@ -20,8 +28,11 @@ input{
   margin: 15rpx 0;
 }
 .close-list{
-  font-size: 30rpx;
+  font-size: 35rpx;
 }
 .search-input{
   width: 80%
+}
+.cu-btn{
+  color: white;
 }

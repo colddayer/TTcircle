@@ -1,0 +1,238 @@
+/* miniprogram/pages/friend_date/friend_date.wxss */
+/* pages/rankList/rankList.wxss */
+.back_image{
+  /* position: absolute; */
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+.back_image .circle-1{
+  position: absolute;
+  width: 134rpx;
+	height: 134rpx;
+	left: 124rpx; 
+	top: 306rpx;
+	opacity: 0.33;
+	color: rgba(245, 166, 35, 1);
+	background-color: rgba(245, 166, 35, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+}
+.back_image .circle-2{
+  position: absolute;
+  width: 94rpx;
+	height: 94rpx;
+  left: 190rpx;
+	top: 364rpx;
+	opacity: 0.3;
+	color: rgba(175, 132, 250, 1);
+	background-color: rgba(175, 132, 250, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-3{
+  position: absolute;
+  width: 288rpx;
+	height: 288rpx;
+	left: 422rpx;
+	top: 284rpx;
+	opacity: 0.12;
+	color: rgba(205, 78, 72, 1);
+	background-color: rgba(205, 78, 72, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-4{
+  position: absolute;
+  width: 94rpx;
+	height: 94rpx;
+	left: 564rpx;
+	top: 526rpx;
+	opacity: 0.3;
+	color: rgba(251, 94, 87, 1);
+	background-color: rgba(251, 94, 87, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-5{
+  position: absolute;
+  width: 104rpx;
+	height: 104rpx;
+	left: 244rpx;
+	top: 670rpx;
+	opacity: 0.33;
+	color: rgba(126, 211, 33, 1);
+	background-color: rgba(126, 211, 33, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-6{
+  position: absolute;
+  width: 160rpx;
+	height: 160rpx;
+	left: 376rpx;
+	top: 814rpx;
+	opacity: 0.05;
+	color: rgba(189, 16, 224, 1);
+	background-color: rgba(189, 16, 224, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.back_image .circle-7{
+  position: absolute;
+  width: 62rpx;
+	height: 62rpx;
+	left: 404rpx;
+	top: 944rpx;
+	opacity: 0.3;
+	color: rgba(80, 227, 194, 1);
+	background-color: rgba(80, 227, 194, 1);
+	border-radius: 50%;
+	font-size: 12px;
+	line-height: 150%;
+	text-align: center;
+}
+.section{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0px; 
+}
+.page-bottom {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  /* background-image: url(https://image.weilanwl.com/color2.0/cardBg.png); */
+  background-size: cover;
+  background-position: center;
+  padding: 30rpx 36rpx 0 36rpx;
+}
+.list{
+  background-color: white;
+}
+.list-title{
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+  color: rgba(41, 41, 41, 1);
+}
+.li{
+  display: flex;
+  width: 100%;
+  height: 120rpx;
+  padding: 20rpx 0;
+}
+.number{
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 40rpx;
+  font-style:italic; 
+}
+.li-img{
+  width: 80rpx;
+  height: 80rpx;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.detail{
+  flex: 5;
+}
+.nickName,.rank{
+  margin-left: 16rpx;
+  color:rgba(80, 80, 80, 1);
+}
+.level,.score{
+  font-size: 24rpx;
+  line-height: 80rpx;
+  margin-right: 30rpx;
+  color:rgba(80, 80, 80, 1);
+}
+.active{
+  background-color: rgba(217, 217, 217, 1);
+}
+.hidview{
+  width: 90%;
+  position: absolute;
+  background: white;
+  margin-top: 30rpx;
+  top: 0;
+  animation: show 1s linear forwards;
+  z-index: 2;
+}
+@keyframes show{
+  0%{
+    opacity: 0
+  }
+  100%{
+    opacity: 1
+  }
+}
+image{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  /* border: 1px solid black; */
+  margin: 20rpx auto;
+  margin-top:30rpx; 
+}
+.hidview-score{
+  color: rgba(41, 41, 41, 1);
+  text-align: center;
+}
+.restbtn{
+  display: block;
+  width: 240rpx;
+  height: 70rpx;
+  background-color: #5D7EDD;
+  color: white;
+  font-size: 28rpx;
+  border-radius:38rpx;
+  margin: 20rpx auto; 
+}
+.hidview-list{
+  width: 100%;
+  height: 80rpx;
+}
+.hidview-left{
+  font-weight: bold;
+  font-size: 24rpx;
+  text-align: center;
+  width: 120rpx;
+  height: 36rpx;
+  margin-left: 44rpx;
+  display: inline-block;
+}
+.hidview-right{
+  margin-left: 60rpx;
+  font-size: 24rpx;
+  color: rgb(80, 80, 80);
+}
+.hidview-close{
+  position: absolute;
+  right: 10rpx;
+  top:10rpx;
+  font-size: 50rpx;
+}
+.mask{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0,0.6);
+  top:0;
+  z-index: 1;
+  animation: show 1s linear forwards;
+}

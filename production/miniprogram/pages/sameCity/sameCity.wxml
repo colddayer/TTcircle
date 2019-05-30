@@ -11,14 +11,21 @@
   </view>
 </view>
 <view wx:for="{{suggestion}}" wx:key="index" wx:if='{{!listHid}}'>
-  <view class='list-address'>
-    <view style="text-align:center;" bindtap="backfill" id="{{index}}">{{item.title}}</view>
+  <view class='list-address' catchtap='backfill' id='{{index}}'>
+    <view style="text-align:center;width:100%" id="{{index}}">{{item.title}}</view>
     <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
   </view>
 </view>
 <map id='map' show-location='true' latitude="{{latitude}}" longitude="{{longitude}}" scale='{{scale}}' markers='{{markers}}' bindmarkertap='markerTap' bindregionchange='moveMap'>
 
   <cover-view class='mask' wx:if='{{centerButton.ontab}}'></cover-view>
+  <cover-view class='c-location' bindtap='relocation'>
+  <cover-view class='c-img__con'>
+  <cover-view class='big-circle'>
+  <cover-view class='dot'></cover-view>
+  </cover-view>
+  </cover-view>
+  </cover-view>
   <cover-view class='controls {{!centerButton.ontab?"controls-active":""}}'>
     <cover-view class='center-button bg-blue {{centerButton.active}}' bindtap='centerButton'>
       {{centerButton.content}}
@@ -31,7 +38,7 @@
       <cover-view class='main-circle'>
         <cover-image src='{{current.img}}' class='circleImg'></cover-image>
       </cover-view>
-      <cover-view class='label about-circle' bindtap='goCircle'>相关球圈</cover-view>
+      <cover-view class='label about-circle' bindtap='goCircle'>活动人员</cover-view>
       <cover-view class='label active-time'>
         <cover-view class='active-time__text'>活动时间{{current.time}}</cover-view>
       </cover-view>

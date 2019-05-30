@@ -3,7 +3,7 @@
 		<view class="title">球龄</view>
 		<picker bindchange="PickerAgeChange" value="{{indexAge}}" range="{{pickerAge}}">
 			<view id='picker' class='picker'>
-				{{indexAge?pickerAge[indexAge]:personInfo.years}}
+				{{indexAge?pickerAge[indexAge]:personInfo.years}}<text class='cuIcon-title' style='opacity:0'></text>
 			</view>
 		</picker>
 	</view>
@@ -22,4 +22,4 @@
 		</picker>
 	</view>
   <button  class='button' bindtap="submit">点击提交</button>
-</view> 
+</view>  
