@@ -43,13 +43,13 @@ Page({
       // console.log(res, "---------------")
       if (res.result.data.length != 0) {
         // console.log(res.result.data.length)
-        console.log(this.data.other_id, "+1+1+1")
+        // console.log(this.data.other_id, "+1+1+1")
         wx.navigateTo({
           url: "../message_detail/message_detail?message=" + res.result.data[0].message + '&other_id=' + this.data.other_id + '&head_image_src=' + this.data.avatarUrl
         })
       }
       else {
-        console.log(this.data, "+2=2+2")
+        // console.log(this.data, "+2=2+2")
         wx.cloud.callFunction({
           name: 'addpingpang_dialogue',
           data: {
@@ -75,6 +75,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     wx.showLoading({
       title: '加载中...',
     })
@@ -116,12 +117,12 @@ Page({
       // 传递给云函数的参数
       data: {
         // openId: options.ball_friend_id
-        openId: options.ball_friend_id
+        openId: options.other_id
       },
       success: res => {
         // console.log(res);
         let _res = res.result.data[0]
-        console.log(_res, "555555555555555")
+        // console.log(_res, "555555555555555")
         this.setData({
           phone: _res.phone,
           years: _res.years,
