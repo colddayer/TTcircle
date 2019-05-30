@@ -15,7 +15,7 @@
 <view class='hidview-score'>
   <text>{{level}}</text>
 </view>
-<button class='restbtn' bindtap='creat_message' data-id='{{}}'>留言</button>
+<button class='restbtn' bindtap='{{creat_message}}' data-id='{{}}'>留言</button>
 <view class='hidview-list'>
 <text class='hidview-left'>个人简介</text><text class='hidview-right'>{{context}}</text>
 </view>

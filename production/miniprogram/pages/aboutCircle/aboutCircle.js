@@ -8,9 +8,19 @@ Page({
       // }
     ],
     hidview: false,
-    need: true
+    need: true,
+    message:'message'
   },
   message(){
+    this.setData({
+      message: '',
+    })
+    setTimeout(() => {
+      this.setData({
+        message: 'message',
+      })
+      console.log('ok')
+    }, 3000)
     wx.cloud.callFunction({
       name: 'getpingpang_dialogue',
       data: {

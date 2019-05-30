@@ -20,9 +20,19 @@ Page({
     board: "",
     infront_rubber: "",
     behind_rubber: "",
+    creat_message:'creat_message'
   },
   creat_message() {
     // console.log(this.data.other_id, "++++++++++++++++")
+    this.setData({
+      creat_message:'',
+    })
+    setTimeout(()=>{
+      this.setData({
+        creat_message: 'creat_message',
+      })
+      console.log('ok')
+    },3000)
     wx.cloud.callFunction({
       name: 'getpingpang_dialogue',
       data: {
