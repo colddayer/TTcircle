@@ -20,8 +20,8 @@
   opacity: 0;
 }
 .finger{
-  width: 150rpx;
-  height: 150rpx;
+  width: 200rpx;
+  height: 240rpx;
   position: absolute;
   bottom: 230rpx;
   left: 50%;
@@ -32,7 +32,7 @@
   height: 100rpx;
   position: absolute;
   font-size: 16px;
-  bottom: 130rpx;
+  bottom: 160rpx;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;

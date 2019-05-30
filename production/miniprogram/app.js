@@ -36,7 +36,7 @@ App({
                 console.log('登录从app.js')
                 this.globalData.ping_personInfo = res.result.data[0]
                 wx.switchTab({
-                  url: '../home/home',
+                  // url: '../home/home',
                 })
               }
             })

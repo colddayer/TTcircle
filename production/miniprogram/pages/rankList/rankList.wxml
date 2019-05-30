@@ -1,6 +1,6 @@
 <view class='page-bottom'>
 <view class='list'>
-<view class='list-title'>同城段位积分排行</view>
+<view class='list-title'>段位积分排行</view>
 <block wx:for='{{rankList}}' wx:key>
 <view class='li {{item.number==active?"active":""}}' bindtouchstart='tapDown' bindtouchend='tapEnd' id='{{item.number}}' data-id='{{item.openId}}'>
 <view class='number'>{{item.number}}</view>

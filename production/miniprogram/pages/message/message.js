@@ -51,7 +51,7 @@ Page({
       name: 'getPersonInfo',
       // 传递给云函数的参数
       data: {
-        city: "南昌"
+        all: "南昌"
       },
       success: res => {
         let _res = res.result.data
