@@ -52,14 +52,14 @@ Page({
             app.globalData.personInfo.intergal = res.result.intergal;
             app.globalData.personInfo.level = res.result.level;
             app.globalData.personInfo.signned = new Date().getDate();
+            wx.showToast({
+              title: `签到成功，积分增加!`,
+              icon: 'none'
+            })
             wx.cloud.callFunction({
               name: 'setPersonInfo',
               data: app.globalData.personInfo
             }).then(res => {
-              wx.showToast({
-                title: `签到成功，积分增加!`,
-                icon: 'none'
-              })
             })
           })
         }

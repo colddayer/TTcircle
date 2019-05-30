@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    personInfo: {},
+    personInfo: {
+    },
     picker: ['右手横拍', '右手直拍', '左手横拍', '左手直拍']
   },
   PickerChange(e) {

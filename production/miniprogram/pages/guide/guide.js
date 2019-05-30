@@ -26,7 +26,7 @@ Page({
                 app.globalData.ping_personInfo = res.result.data[0]
                 wx.setStorage({
                   key: 'login',
-                  data: this.data.login
+                  data: true
                 })
                 wx.switchTab({
                   url: '../home/home',
@@ -50,7 +50,7 @@ Page({
                 }).then(res => {
                   wx.setStorage({
                     key: 'login',
-                    data: this.data.login
+                    data: true
                   })
                   wx.switchTab({
                     url: '../home/home',
@@ -126,7 +126,7 @@ Page({
                 // })
                 wx.setStorage({
                   key: 'login',
-                  data: this.data.login
+                  data: true
                 })
                 wx.switchTab({
                   url: '../home/home',
