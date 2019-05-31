@@ -252,7 +252,7 @@ Page({
   },
   onHide(){
     wx.cloud.callFunction({
-      name:"addPersonInfo"
+      name:"setPersonInfo"
     })
   },
   dateCircle() {

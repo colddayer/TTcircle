@@ -109,6 +109,7 @@
   left: 50%;
   transform: translateX(-50%);
   animation: show 0.4s linear forwards;
+  z-index: 2;
 }
 
 @keyframes show {

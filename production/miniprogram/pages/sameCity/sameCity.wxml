@@ -16,9 +16,9 @@
     <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
   </view>
 </view>
+<view class='mask' wx:if='{{centerButton.ontab}}'></view>
 <map id='map' show-location='true' latitude="{{latitude}}" longitude="{{longitude}}" scale='{{scale}}' markers='{{markers}}' bindmarkertap='markerTap' bindregionchange='moveMap'>
 
-  <cover-view class='mask' wx:if='{{centerButton.ontab}}'></cover-view>
   <cover-view class='c-location' bindtap='relocation'>
   <cover-view class='c-img__con'>
   <cover-view class='big-circle'>
