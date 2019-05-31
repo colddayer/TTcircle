@@ -8,7 +8,8 @@ Page({
     login: false
   },
   getUserInfo(e) {
-    if (e.detail.userInfo) {
+    if (e.detail.userInfo && !this.data.login) {
+      console.log('登录中')
       let the_first = false;
       // 掉用获取用户信息函数，用openId作为唯一标识符
       wx.cloud.callFunction({

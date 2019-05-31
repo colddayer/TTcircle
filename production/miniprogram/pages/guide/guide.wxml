@@ -1,7 +1,7 @@
 <!--miniprogram/pages/guide/guide.wxml-->
 <view class='page'>
 <image src='../../images/yindao-page.jpg' class='bg'></image>
-<image src='../../images/finger.png' class='finger' wx:if='{{!login}}'></image>
-<view class='text' wx:if='{{!login}}'>点击进入</view>
+<image src='../../images/finger.png' class='finger'></image>
+<view class='text'>{{login?'欢迎使用':'点击进入'}}</view>
 <button open-type="getUserInfo" bindtap='settingInfo' class='setting' bindgetuserinfo='getUserInfo'></button>
 </view>
