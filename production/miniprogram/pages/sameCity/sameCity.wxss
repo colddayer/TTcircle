@@ -135,6 +135,7 @@
 
 .date-circle {
   top: 180rpx;
+  background-color: #B2B2B2;
 }
 
 .mask {
@@ -170,17 +171,17 @@
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  border: 5px solid #9d9087;
+  border: 2px solid #5D7EDD;
   overflow: visible;
   box-shadow: 5px 3px;
 }
 
 .circleImg {
   border-radius: 50%;
-  width: 80%;
-  height: 80%;
-  margin-top: 11%;
-  margin-left: 10%;
+  width: 90%;
+  height: 90%;
+  margin-top: 6%;
+  margin-left: 5%;
 }
 
 .label {

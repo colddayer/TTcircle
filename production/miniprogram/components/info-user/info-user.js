@@ -59,6 +59,9 @@ Component({
     },
     leaveMessage() {
       this.triggerEvent("message");
+    },
+    call(){
+      this.triggerEvent("call");
     }
   }
 })

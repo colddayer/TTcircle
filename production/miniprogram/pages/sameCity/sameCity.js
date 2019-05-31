@@ -19,9 +19,9 @@ Page({
   onReady(e) {
     // 使用 wx.createMapContext 获取 map 上下文
     let mapCtx = wx.createMapContext('map');
-    this.setData({mapCtx})
+    this.setData({ mapCtx })
   },
-  relocation(){
+  relocation() {
     console.log(1)
     this.data.mapCtx.moveToLocation()
   },
@@ -33,40 +33,84 @@ Page({
           latitude: res.latitude,
           longitude: res.longitude,
           avatar: app.globalData.personInfo.avatarUrl,
-          city: app.globalData.personInfo.city
+          city: app.globalData.personInfo.city,
         })
       }
     })
-    wx.cloud.callFunction({
-      name: 'getpingpang_venue',
-      data: {
-        city: app.globalData.personInfo.city
-      }
-    }).then(res => {
-      let markers = res.result.data;
-      markers = markers.map(e => {
-        return {
-          iconPath: '../../images/circle.png',
-          id: e._id,
-          latitude: e.latitude,
-          longitude: e.longitude,
-          width: 50,
-          height: 50,
-          detail: {
-            // name: i.name,
-            // members: i.members,
-            areana: e.areana,
-            img: e.img,
-            time: e.time,
-            address: e.address,
-            // introduce: e.introduce,
-            table: e.table
-          },
-          circles: e.circles
+    if (!app.globalData.personInfo.city) {
+      qqmapsdk.reverseGeocoder({
+        success:res=>{
+          console.log(res)
+          app.globalData.personInfo.city = res.result.address_component.city;
+          this.setData({
+            city: app.globalData.personInfo.city
+          })
+          wx.cloud.callFunction({
+            name: 'getpingpang_venue',
+            data: {
+              city: app.globalData.personInfo.city
+            }
+          }).then(res => {
+            console.log(2)
+            let markers = res.result.data;
+            markers = markers.map(e => {
+              return {
+                iconPath: '../../images/circle.png',
+                id: e._id,
+                latitude: e.latitude,
+                longitude: e.longitude,
+                width: 50,
+                height: 50,
+                detail: {
+                  // name: i.name,
+                  // members: i.members,
+                  areana: e.areana,
+                  img: e.img,
+                  time: e.time,
+                  address: e.address,
+                  // introduce: e.introduce,
+                  table: e.table
+                },
+                circles: e.circles
+              }
+            })
+            this.setData({ markers })
+          })
+          return
         }
       })
-      this.setData({ markers })
-    })
+      wx.cloud.callFunction({
+        name: 'getpingpang_venue',
+        data: {
+          city: app.globalData.personInfo.city
+        }
+      }).then(res => {
+        console.log(2)
+        let markers = res.result.data;
+        markers = markers.map(e => {
+          return {
+            iconPath: '../../images/circle.png',
+            id: e._id,
+            latitude: e.latitude,
+            longitude: e.longitude,
+            width: 50,
+            height: 50,
+            detail: {
+              // name: i.name,
+              // members: i.members,
+              areana: e.areana,
+              img: e.img,
+              time: e.time,
+              address: e.address,
+              // introduce: e.introduce,
+              table: e.table
+            },
+            circles: e.circles
+          }
+        })
+        this.setData({ markers })
+      })
+    }
   },
   onShow() {
     wx.cloud.callFunction({
@@ -146,7 +190,7 @@ Page({
             table: i.detail.table,
             address: i.detail.address,
             img: i.detail.img,
-            circles:i.circles
+            circles: i.circles
           }
         })
       }
@@ -206,10 +250,12 @@ Page({
       listHid: true
     })
   },
-  moveMap(e) {
-    // console.log(e)
+  onHide(){
+    wx.cloud.callFunction({
+      name:"addPersonInfo"
+    })
   },
-  dateCircle(){
+  dateCircle() {
     wx.showModal({
       title: '((^_−)☆)',
       content: '即日上线！',

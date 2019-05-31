@@ -15,6 +15,6 @@
   </view>
   <view class='user-info' wx:if='{{hidview}}'>
     <info-user hidview='{{hidview}}' bind:hidView='hidviewClose' bind:message='{{message}}' need='{{need}}' level='{{level}}' context='{{context}}' name='{{name}}' phone='{{phone}}' years='{{years}}' bat='{{bat}}' board='{{board}}' infront_rubber='{{infront_rubber}}' behind_rubber='{{behind_rubber}}'
-      img='{{img}}'></info-user>
+      img='{{img}}' bind:call='call'></info-user>
   </view>
 </view>

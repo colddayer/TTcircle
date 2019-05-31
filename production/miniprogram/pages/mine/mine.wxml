@@ -6,7 +6,7 @@
       <view class="info">
         <view class="name">
           <input class='username' wx:if="{{changename}}" value='{{personInfo.name}}' focus='true' bindblur='setname' ></input>
-          <text class="username" wx:else bindtap='changename' >{{personInfo.name}}</text>
+          <text class="username" wx:else>{{personInfo.name}}</text>
         </view>
         <view class="level">
           <text class="levelnumber">乒乓段位：{{level}}</text>

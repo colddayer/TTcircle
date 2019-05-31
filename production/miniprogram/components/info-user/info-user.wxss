@@ -67,3 +67,6 @@
   font-size: 60rpx;
   width: 50rpx;
 }
+.number{
+  color: #5D7EDD;
+}

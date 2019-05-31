@@ -23,7 +23,6 @@
     </view>
     <view class="message_list {{Choose == 'true' ? '' : 'hide'}}" >
       <block wx:for="{{messageList}}"  wx:key = "item" >
-        <!-- <navigator url="../friend_date/friend_date?id={{item.ball_friend_id}}" > -->
         <view class='jump_window' bindtap='jump_date' data-index_friend = "{{item.ball_friend_id}}">
           <view class="message" >
                 <view class="head_image">
@@ -36,7 +35,6 @@
                     <view class='arrow_icon'></view> 
                 </view>
           </view>
-        <!-- </navigator> -->
         </view>
       </block>
     </view>
@@ -58,4 +56,5 @@
       </block>
     </view>
 </view>
+<view class='tip'>刷新可查看最新留言哦</view>
 

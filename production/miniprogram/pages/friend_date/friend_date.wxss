@@ -236,3 +236,6 @@ image{
   z-index: 1;
   animation: show 1s linear forwards;
 }
+.aphone{
+  color: #5D7EDD
+}

@@ -22,6 +22,11 @@ Page({
     behind_rubber: "",
     creat_message:'creat_message'
   },
+  call(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.phone,
+    })
+  },
   creat_message() {
     // console.log(this.data.other_id, "++++++++++++++++")
     this.setData({

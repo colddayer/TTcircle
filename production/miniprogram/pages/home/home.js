@@ -34,17 +34,17 @@ Page({
       index: 0
     },
     {
-      id: '赛事圈',
-      slogan: '以球会友交流互娱',
-      name: 'competition',
-      index: 1
-    },
-    {
       id: '达人圈',
       slogan: '乒乓好手带你提升',
       name: 'star',
-      index: 2
+      index: 1
     },
+      {
+        id: '赛事圈',
+        slogan: '以球会友交流互娱',
+        name: 'competition',
+        index: 2
+      },
     {
       id: '快讯圈',
       slogan: '这里有你想知道的',
@@ -55,7 +55,7 @@ Page({
     notice: [
       '小提示:段位积分越高，排行榜排名也越高',
       '小提示:同城圈具有一键约球功能，快去寻找你的球友吧',
-      '小提示:欢迎进入乒乓圈，这里有你想要的',
+      '欢迎进入乒乓圈，这里有你想要的',
       '小提示:连续多日打卡，可以获得更多积分哦'
     ],
     login: false,
@@ -71,6 +71,9 @@ Page({
     }
   },
   onLoad() {
+    wx.hideLoading()
+    clearTimeout(app.timeout)
+    clearTimeout(app.neterror)
     let day = app.globalData.personInfo.signned;
     
     if (day == new Date().getDate()) {

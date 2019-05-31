@@ -11,6 +11,11 @@ Page({
     need: true,
     message:'message'
   },
+  call(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.phone,
+    })
+  },
   message(){
     this.setData({
       message: '',

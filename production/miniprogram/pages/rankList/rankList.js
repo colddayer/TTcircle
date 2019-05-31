@@ -7,6 +7,11 @@ Page({
     hidview: false,
     need:false
   },
+  call(){
+    wx.makePhoneCall({
+      phoneNumber: this.data.phone,
+    })
+  },
   onLoad() {
     wx.showLoading({
       title: '正在加载中',

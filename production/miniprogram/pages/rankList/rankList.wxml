@@ -15,6 +15,6 @@
 </block>
 </view>
 
-<info-user hidview='{{hidview}}' bind:hidView='hidviewClose' need='{{need}}' level='{{level}}' context='{{context}}' name='{{name}}' phone='{{phone}}' years='{{years}}' bat='{{bat}}' board='{{board}}' infront_rubber='{{infront_rubber}}' behind_rubber = '{{behind_rubber}}' img='{{img}}'></info-user>
+<info-user hidview='{{hidview}}' bind:hidView='hidviewClose' need='{{need}}' level='{{level}}' context='{{context}}' name='{{name}}' phone='{{phone}}' years='{{years}}' bat='{{bat}}' board='{{board}}' infront_rubber='{{infront_rubber}}' behind_rubber = '{{behind_rubber}}' img='{{img}}' bind:call='call'></info-user>
 </view>
 <view class='mask' wx:if='{{hidview}}'></view>
