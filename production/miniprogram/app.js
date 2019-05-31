@@ -25,6 +25,10 @@ App({
             wx.getUserInfo({
               lang: "zh_CN",
               success: res => {
+                let month = new Date().getMonth();
+                if (this.globalData.personInfo.sign.length != 0)
+                  if (this.globalData.personInfo.sign[0].yue != month)
+                    this.globalData.personInfo.sign = [];
                 this.globalData.personInfo.name = res.userInfo.nickName;
                 this.globalData.personInfo.avatarUrl = res.userInfo.avatarUrl;
                 qqmapsdk.reverseGeocoder({
