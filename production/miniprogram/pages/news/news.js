@@ -26,5 +26,11 @@ Page({
       url: 'http://xhimg.sports.cn/Image/190514/6-1Z5140T9422D.jpg',
       news: '中国公开赛｜“5金国乒”再次吹响“集结号”'
     }]
+  },
+  onLoad(){
+    wx.cloud.callFunction({
+      name:'spider'
+    })
+    console.log('!')
   }
 })
